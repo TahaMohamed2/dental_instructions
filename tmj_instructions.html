@@ -1,0 +1,83 @@
+<style>
+  /* Global Styles */
+  body {
+    direction: rtl;
+    text-align: right;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+
+  h1, h2, h3 {
+    color: #1a73e8;
+  }
+
+  ol, ul {
+    margin-left: 0;
+    padding-left: 20px;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+  }
+
+  /* Add new styles for the button */
+  .home-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #C7B8EA; /* light purple */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .home-button:hover {
+    background-color: #32CD32; /* light green */
+  }
+
+  .home-button:active {
+    background-color: #00BFFF; /* aqua marine blue */
+  }
+
+  /* Add new styles for the iframe */
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  }
+
+  .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+
+<body>
+  <button class="home-button" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'">الرئيسية</button>
+  <div class="headline">
+    <h1>تعليمات و تمارين لمفصل الفك</h1>
+  </div>
+  
+  <div class="content">
+    <h2>التعليمات لألم مفصل الفك</h2>
+    <p>استخدام الكمادات الدافئة فى الصباح مع مساج للعضلات المحركة للفك لمدة ٤ دقائق فى الصباح و بعد الاكل</p>
+    <div class="iframe-container">
+      <iframe src="https://www.youtube.com/embed/IMC-wvglf4E" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <p>و فى حالة استمرار الالم لمدة اكثر من اسبوع نبدأ بتناول احد الادوية الاتيه بالترتيب التالى فى حالة عدم تواجد احدها فى الصيدليات</p>
+    <p>Myolgin \Relax \ Relaxon</p>
+    <p>على حسب ارشادات الطبيب</p>
+    <p>قرص واحد كل ١٢ ساعة</p>
+    <p>و تخفض الجرعة لقرص واحد قبل النوم فى حالة الشعور بدوخة او دوار</p>
+  </div>
+</body>
