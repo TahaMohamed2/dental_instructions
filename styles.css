@@ -168,7 +168,8 @@ left: 10px;
    font-size: 1rem;
    cursor: pointer;
    transition: background-color 0.3s ease;
-   width: 8%;
+   width : 8%;
+   min-width: 100px;
    text-align: center;
    color: #000;
 }
