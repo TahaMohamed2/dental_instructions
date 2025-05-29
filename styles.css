@@ -1,0 +1,159 @@
+
+
+
+ /* existing styles... */
+  
+    /* add new styles for the button */
+    .home-button {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: #C7B8EA; /* light purple */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .home-button:hover {
+      background-color: #32CD32; /* light green */
+    }
+    
+    .home-button:active {
+      background-color: #00BFFF; /* aqua marine blue */
+    }
+     /* Global Styles */
+  
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      margin-bottom: 20px;
+    }
+    /* Embedded Image Styles */
+    .embedded-photo {
+      max-width: 35%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+  .link:hover {
+    text-decoration: underline;
+  }
+
+
+  /* Add new styles for the iframe */
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  }
+
+  .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+    /* Brushing Button Styles */
+  
+    .brushing-button {
+      background-color: #87ceeb; /* light purple */
+      color: rgb(0, 0, 0);
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    .brushing-button:hover {
+      background-color: #32CD32; /* light green */
+    }
+  
+    .brushing-button:active {
+      background-color: #00BFFF; /* aqua marine blue */
+    }
+  
+ /* Global Styles */
+ body {
+  direction: rtl;
+  text-align: right;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #1a73e8;
+}
+
+ol, ul {
+  margin-left: 0;
+  padding-left: 20px;
+}
+
+/* Home Button Styles */
+.home-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #C7B8EA; /* light purple */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #32CD32; /* light green */
+}
+
+.home-button:active {
+  background-color: #00BFFF; /* aqua marine blue */
+}
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+h1, h2, h3 {
+  color: #1a73e8;
+}
+ol, ul {
+  margin-left: 0;
+  padding-left: 20px;
+}
+.home-button {
+position: fixed;
+top: 10px;
+left: 10px;
+background-color: #C7B8EA; /* light purple */
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+background-color: #32CD32; /* light green */
+}
+
+.home-button:active {
+background-color: #00BFFF; /* aqua marine blue */
+}

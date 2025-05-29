@@ -4,83 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>تعليمات عيادة الأسنان</title>
-    <style>
-        /* General body styling */
-        body {
-            background-color: #d3d3d3; /* Light grey background */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            position: relative;
-        }
-        /* Headline styling */
-        h1 {
-            color: navy;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 3em; /* Approx 3 lines space */
-        }
-        /* Container for buttons */
-        .button-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px 30px;
-            justify-content: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        /* Styling for each button */
-        button {
-            background-color: #add8e6; /* Baby blue */
-            border: none;
-            border-radius: 12px;
-            padding: 15px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            width: 100%;
-            text-align: center;
-            color: #000;
-        }
-        button:hover,
-        button:focus {
-            background-color: #87ceeb; /* Slightly darker baby blue on hover/focus */
-            outline: none;
-        }
-        /* Credits button styling */
-        .credits-btn {
-            background-color: #d8bfd8; /* Light purple */
-            color: navy;
-            font-size: 0.7rem; /* Smaller font */
-            border: none;
-            border-radius: 8px;
-            padding: 4px 8px; /* Smaller padding */
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            width: auto;
-            min-width: 60px;
-            text-align: center;
-            z-index: 1000;
-        }
-        .credits-btn:hover,
-        .credits-btn:focus {
-            background-color: #c4a3c4;
-            outline: none;
-        }
-         /* Embedded Image Styles */
-  .embedded-photo {
-    max-width: 5%;
-    border-radius: 10px;
-    margin-top: 10px;
-  }
-    </style>
+    <link rel="stylesheet" type="text/css" href="index_styles.css">
+    <script src="QR_image_viewer.js"></script>
+
 </head>
 <body>
     <h1>تعليمات عيادة الأسنان</h1>
@@ -96,11 +22,11 @@
 
 
     
-<!--
+
 <button class="qr-btn" onclick="viewQRImage()">
   <img src="resources/QR.png" alt="QR" class="embedded-photo" />
 </button>
--->
+
       <button class="credits-btn" onclick="location.href='credits.html'">credits</button>
 </body>
 </html>
