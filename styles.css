@@ -157,3 +157,68 @@ background-color: #32CD32; /* light green */
 .home-button:active {
 background-color: #00BFFF; /* aqua marine blue */
 }
+.qr-btn {
+  position: fixed;
+bottom: 10px;
+left: 10px;
+   background-color: transparent; /* Baby blue */
+   border: none;
+   border-radius: 1px;
+   padding: 1px 2px;
+   font-size: 1rem;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+   width: 8%;
+   text-align: center;
+   color: #000;
+}
+/* Embedded Image Styles */
+.embedded_QR_photo {
+max-width: 100%;
+border-radius: 10px;
+margin-top: 10px;
+}
+/* QR Image Viewer Styles */
+
+.qr-image-viewer {
+  position: fixed; /* Change to fixed positioning */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust positioning */
+  width: 100%;
+height: 100%;
+background-color: #fff; /* Changed to solid white background */
+display: none;
+justify-content: center;
+align-items: center;
+}
+
+.qr-image-viewer img {
+max-width: 90%;
+max-height: 90%;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+  /* Credits button styling */
+  .credits-btn {
+    background-color: #d8bfd8; /* Light purple */
+    color: navy;
+    font-size: 0.7rem; /* Smaller font */
+    border: none;
+    border-radius: 8px;
+    padding: 4px 8px; /* Smaller padding */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: auto;
+    min-width: 60px;
+    text-align: center;
+    z-index: 1000;
+}
+.credits-btn:hover,
+.credits-btn:focus {
+    background-color: #c4a3c4;
+    outline: none;
+}
