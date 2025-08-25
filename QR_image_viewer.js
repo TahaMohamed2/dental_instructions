@@ -8,7 +8,7 @@ function viewQRImage() {
 
     // Create a new img element for the QR image
     const qrImage = document.createElement('img');
-    qrImage.src = 'resources/QR.png';
+    qrImage.src = 'resources/QR.jpeg';
     qrImage.alt = 'QR';
 
     // Add an event listener for the image load event
