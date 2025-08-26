@@ -170,7 +170,7 @@ left: 10px;
    cursor: pointer;
    transition: background-color 0.3s ease;
    width : 8%;
-   min-width: 100px;
+   min-width: 40px;
    text-align: center;
    color: #000;
 }
