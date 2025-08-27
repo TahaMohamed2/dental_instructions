@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواعيد عيادات د/طه</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .day-button {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .day-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .day-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .clinic-info {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .clinic-info.show {
+            opacity: 1;
+            transform: translateY(0);
+            height: auto;
+        }
+        
+        .portfolio-btn {
+            background: linear-gradient(45deg, #666, #999);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-btn:hover {
+            background: linear-gradient(45deg, #555, #888);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen py-8 px-4">
+    <!-- Configuration Section - Edit these values to customize clinic data -->
+    <script>
+        const clinicConfig = {
+            // Clinic data configuration - modify these values as needed
+            clinics: {
+                sunday: {
+                    name: "عيادة المركز الألماني",
+                    location: "https://maps.app.goo.gl/JcaiP6viBiuGuBN89",
+                    workingHours:"12:00 الى 05:00",
+                    contact: "+01030020376",
+                    services: "clinic_services.html"
+                },
+                monday: {
+                 name: "مركز نور الرحمن",
+                location: "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9",
+                workingHours: "06:00 الى 10:00",
+                contact: "01015929494 , 01273072101 , 01140447818",
+                services: "clinic_services.html"
+                },
+                tuesday: {
+                    name: "مركز الحميدى",
+                    location: "https://maps.app.goo.gl/vWcfGuHg89Ru5fNt7",
+                    workingHours: "08:00 الى 10:00",
+                    contact: "+20 100 362 1676",
+                    services: "clinic_services.html"
+                },
+                wednesday: {
+                    name: "عيادة المركز الألماني",
+                    location: "https://maps.app.goo.gl/JcaiP6viBiuGuBN89",
+                    workingHours:"12:00 الى 05:00",
+                    contact: "+01030020376",
+                    services: "clinic_services.html"
+                },
+                thursday: {
+                    name: "مركز نور الرحمن",
+                    location: "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9",
+                    workingHours:"06:00 الى 10:00",
+                    contact: "01015929494,01273072101,01140447818",
+                    services: "clinic_services.html"
+                },
+                friday: {
+                    closed: true,
+                    message: "العيادة مغلقة يوم الجمعة"
+                },
+                saturday: {
+                    name: "عيادة كوزميك",
+                    location: "https://maps.app.goo.gl/vYQwjw22KckXQxfk9",
+                    workingHours: "02:00 الى 10:00",
+                    contact: "+20105 5262066",
+                    services: "clinic_services.html"
+                }
+            },
+            portfolioLink: "portfolio.html"
+        };
+    </script>
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header with Portfolio Button -->
+        <div class="flex justify-between items-center mb-8">
+            <button id="portfolioBtn" class="portfolio-btn text-white px-6 py-3 rounded-lg shadow-lg font-semibold">
+                Portfolio
+            </button>
+            
+            <div class="text-center">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">مواعيد د/طه</h1>
+                <p class="text-gray-600">برجاء اختيار اليوم لمشاهدة تفاصيل العيادة</p>
+            </div>
+        </div>
+
+        <!-- Week Calendar -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">الجدول الأسبوعي</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-7 gap-3">
+                <!-- Sunday -->
+                <button onclick="showClinicInfo('sunday')" class="day-button bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-3 rounded-lg font-medium">
+                    الأحد
+                </button>
+
+                <!-- Monday -->
+                <button onclick="showClinicInfo('monday')" class="day-button bg-green-100 hover:bg-green-200 text-green-800 px-4 py-3 rounded-lg font-medium">
+                    الإثنين
+                </button>
+
+                <!-- Tuesday -->
+                <button onclick="showClinicInfo('tuesday')" class="day-button bg-purple-100 hover:bg-purple-200 text-purple-800 px-4 py-3 rounded-lg font-medium">
+                    الثلاثاء
+                </button>
+
+                <!-- Wednesday -->
+                <button onclick="showClinicInfo('wednesday')" class="day-button bg-yellow-100 hover:bg-yellow-200 text-yellow-800 px-4 py-3 rounded-lg font-medium">
+                    الأربعاء
+                </button>
+
+                <!-- Thursday -->
+                <button onclick="showClinicInfo('thursday')" class="day-button bg-red-100 hover:bg-red-200 text-red-800 px-4 py-3 rounded-lg font-medium">
+                    الخميس
+                </button>
+
+                <!-- Friday -->
+                <button onclick="showClinicInfo('friday')" class="day-button bg-gray-200 hover:bg-gray-300 text-gray-600 px-4 py-3 rounded-lg font-medium">
+                    الجمعة
+                </button>
+
+                <!-- Saturday -->
+                <button onclick="showClinicInfo('saturday')" class="day-button bg-indigo-100 hover:bg-indigo-200 text-indigo-800 px-4 py-3 rounded-lg font-medium">
+                    السبت
+                </button>
+            </div>
+        </div>
+
+        <!-- Clinic Information Display Area -->
+        <div id="clinicInfo" class="clinic-info bg-white rounded-2xl shadow-xl p-6">
+            <div class="text-center">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1a2bf8fc-a9c7-4db5-88fd-379915c1255b.png" alt="Modern medical clinic interior with professional examination rooms and waiting area" class="w-full h-48 object-cover rounded-lg mb-4 mx-auto" onerror="this.style.display='none'">
+                
+                <h3 id="clinicName" class="text-2xl font-bold text-gray-800 mb-4"></h3>
+                
+                <div class="grid md:grid-cols-2 gap-4 text-right">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-700 mb-2">ساعات العمل:</h4>
+                        <p id="workingHours" class="text-gray-600"></p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-700 mb-2">معلومات الاتصال:</h4>
+                        <p id="contactInfo" class="text-gray-600"></p>
+                    </div>
+                </div>
+
+                <div class="mt-6 space-y-3">
+                    <a id="locationLink" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                        الموقع على الخريطة
+                    </a>
+                    
+                    <a id="servicesLink" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors ml-3">
+                        الخدمات المتاحة بالعيادة
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize portfolio button
+        document.getElementById('portfolioBtn').addEventListener('click', function() {
+            window.location.href = clinicConfig.portfolioLink;
+        });
+
+        let currentActiveDay = null;
+
+        function showClinicInfo(day) {
+            const clinicData = clinicConfig.clinics[day];
+            const clinicInfoDiv = document.getElementById('clinicInfo');
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.day-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            currentActiveDay = day;
+
+            if (clinicData.closed) {
+                // Show closed message
+                document.getElementById('clinicName').textContent = clinicData.message;
+                document.getElementById('workingHours').textContent = "مغلق";
+                document.getElementById('contactInfo').textContent = "غير متاح";
+                document.getElementById('locationLink').style.display = 'none';
+                document.getElementById('servicesLink').style.display = 'none';
+            } else {
+                // Show clinic information
+                document.getElementById('clinicName').textContent = clinicData.name;
+                document.getElementById('workingHours').textContent = clinicData.workingHours;
+                document.getElementById('contactInfo').textContent = clinicData.contact;
+                document.getElementById('locationLink').href = clinicData.location;
+                document.getElementById('servicesLink').href = clinicData.services;
+                
+                document.getElementById('locationLink').style.display = 'inline-block';
+                document.getElementById('servicesLink').style.display = 'inline-block';
+            }
+
+            // Show the clinic info section with animation
+            clinicInfoDiv.classList.add('show');
+        }
+
+        // Close clinic info when clicking outside
+        document.addEventListener('click', function(e) {
+            const clinicInfo = document.getElementById('clinicInfo');
+            const dayButtons = document.querySelectorAll('.day-button');
+            
+            if (!clinicInfo.contains(e.target) && 
+                !Array.from(dayButtons).some(btn => btn.contains(e.target)) &&
+                clinicInfo.classList.contains('show')) {
+                
+                clinicInfo.classList.remove('show');
+                if (currentActiveDay) {
+                    document.querySelector(`.day-button.active`).classList.remove('active');
+                    currentActiveDay = null;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
