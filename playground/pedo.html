@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>التعليمات بعد حشو اسنان الاطفال</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index_styles.css" />
   <script src="QR_image_viewer.js"></script>
-
 </head>
-<body>
-	<button class="qr-btn" onclick="viewQRImage()">
-    <img src="resources/QR.jpeg" alt="QR" class="embedded_QR_photo" />
+<body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+  <button
+    class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100"
+    onclick="viewQRImage()"
+  >
+    <img src="resources/QR.jpeg" alt="QR" class="max-w-full rounded-lg shadow-lg" />
   </button>
-  
-        <button class="credits-btn" onclick="location.href='credits.html'">credits</button>
-    
 
-  <button class="home-button" alt="الرئيسية" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'">الرئيسية</button>
-  
-  <h1>التعليمات بعد حشو اسنان الاطفال</h1>
-  <ul>
-  <li>يقوم الطفل بالعض على القطنة مع ملاحظة الاهل له حتى لا يقوم بعض اللسان او الشفه حتى يزول مفعول البنج و ذلك من اجل تلاشى حدوث نزيف او تورم بالشفة او اللسان</li>
-  <li>تجنب الاكل على الجانب المعالج خصوصا خلال اول ٢٤ ساعة</li>
-  <li>تجنب الاطعمة القاسية او المقرمشة مثل المكسرات و المقليات</li>
-  <li>المداومة على غسيل الاسنان كما موضح هنا 
-    <button class="brushing-button" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/brushing.html'">طريقة غسيل الاسنان</button>
-  </li>
-  <li>مراجعة الطبيب فى حالة حدوث تورم او ازرقاق بالخد او الم شديد لا يمكن النوم بسببه</li>
-</ul>
+  <button
+    class="absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    onclick="location.href='credits.html'"
+  >
+    credits
+  </button>
+
+  <button
+    class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    alt="الرئيسية"
+    onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'"
+  >
+    الرئيسية
+  </button>
+
+	<div class="max-w-4xl mx-auto">
+		<h1 class="text-4xl font-bold text-center mb-8 text-white">التعليمات بعد حشو اسنان الاطفال</h1>
+		<ul class="list-disc list-inside mb-6 space-y-4 text-slate-200 leading-relaxed">
+			<li>يقوم الطفل بالعض على القطنة مع ملاحظة الاهل له حتى لا يقوم بعض اللسان او الشفه حتى يزول مفعول البنج و ذلك من اجل تلاشى حدوث نزيف او تورم بالشفة او اللسان</li>
+			<li>تجنب الاكل على الجانب المعالج خصوصا خلال اول ٢٤ ساعة</li>
+			<li>تجنب الاطعمة القاسية او المقرمشة مثل المكسرات و المقليات</li>
+			<li>
+				المداومة على غسيل الاسنان كما موضح هنا
+				<button
+					class="bg-blue-600 text-slate-100 text-sm border-none rounded-lg px-3 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-blue-500"
+					onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/brushing.html'"
+				>
+					طريقة غسيل الاسنان
+				</button>
+			</li>
+			<li>مراجعة الطبيب فى حالة حدوث تورم او ازرقاق بالخد او الم شديد لا يمكن النوم بسببه</li>
+		</ul>
+	</div>
 </body>
 </html>

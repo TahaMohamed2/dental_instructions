@@ -1,51 +1,73 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تعليمات ما بعد تنظيف الاسنان</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index_styles.css" />
   <script src="QR_image_viewer.js"></script>
-
 </head>
-
-<body>
-  <button class="qr-btn" onclick="viewQRImage()">
-    <img src="resources/QR.jpeg" alt="QR" class="embedded_QR_photo" />
+<body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+  <button
+    class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100"
+    onclick="viewQRImage()"
+  >
+    <img src="resources/QR.jpeg" alt="QR" class="max-w-full rounded-lg shadow-lg" />
   </button>
-  
-        <button class="credits-btn" onclick="location.href='credits.html'">credits</button>
-    
 
+  <button
+    class="absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    onclick="location.href='credits.html'"
+  >
+    credits
+  </button>
 
-  <button class="home-button" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'">الرئيسية</button>
-  <h1>تعليمات ما بعد تنظيف الاسنان</h1>
-  <p>يمكن حدوث بعض النزيف البسيط خلال أول يوم بعد الجلسة و هذا طبيعي بسبب التهاب اللثة و لكن في حالة زيادة النزيف أو عدم توقفه بعد فترة يتم المضمضة بماء بارد أو الضغط بقطعة شاش على مكان النزيف إلى أن يتوقف</p>
-  <p>و في حالة حدوث تورم شديد أو نزيف غزير جدا يرجى مراجعة الطبيب</p>
-  <p>ليس من الضروري استخدام خيط الأسنان في نفس اليوم الذي تم فيه التنظيف و لكن لابد من الحرص بعدها على العناية بالأسنان</p>
-  <p>قد تحتاج للمتابعة مع الطبيب كل 3إلى6 اشهر للتأكد من عدم تكون طبقة جديدة من الجير و إزالتها في حال تكونها</p>
-  <p>مع مرور الوقت ستتحول اللثة من اللون الأحمر المنتفخ إلى لون وردى و ذلك دليل على عودة اللثة لحالتها الطبيعية</p>
-  <p>إذا قام الطبيب باستخدام جل داخل الجيوب بين الأسنان يرجى تأجيل استخدام خيط الأسنان لمدة اسبوع للوصول إلى افضل نتيجة منه</p>
-  <p>
-    <ul>
-      <li>غسيل الاسنان بشكل دورى بحد ادنى مرتين فى اليوم</li>
-      <ul>
-        <li>مرة قبل النوم و مرة اول ما تصحى من النوم</li>
-        <li>و يفضل بعد كل وجبة بنصف ساعةكما موضح هنا 
-          <button class="brushing-button" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/brushing.html'">طريقة غسيل الاسنان</button>
-        </li>
-      </ul>
-      <li>و استخدام احد انواع الجيل الاتية على الاماكن الملتهبة جداً من اللثه:</li>
-      <ul>
-        <li>Oracure gel / Elugel / Ez care gel /  Gengigel</li>
-        <li>من 3 الى 5 مرات فى اليوم لمدة اسبوع</li>
-        <li>ولا يوجد مشكلة من بلع جزء منه ولا يحتاج الى ازالة بعد وقت محدد</li>
-      </ul>
-      <li>بالاضافة الى استخدام احد المضمضات الاتية:</li>
-      <ul>
-        <li>Hexitol / Sanihex / DG wash / Antiseptol / orovex-H</li>
-        <li>مرتين على الاقل فى اليوم بعد غسيل الاسنان بنصف ساعة لمدة اسبوع و يتم ايقافها</li>
-      </ul>
-      <li>يجب الا يقل وقت المضمضة عن دقيقة من اجل الوصول الى افضل نتيجة منها</li>
-    </ul>
-  </p>
+  <button
+    class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    alt="الرئيسية"
+    onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'"
+  >
+    الرئيسية
+  </button>
+
+	<div class="max-w-4xl mx-auto">
+		<h1 class="text-4xl font-bold text-center mb-8 text-white">تعليمات ما بعد تنظيف الاسنان</h1>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">يمكن حدوث بعض النزيف البسيط خلال أول يوم بعد الجلسة و هذا طبيعي بسبب التهاب اللثة و لكن في حالة زيادة النزيف أو عدم توقفه بعد فترة يتم المضمضة بماء بارد أو الضغط بقطعة شاش على مكان النزيف إلى أن يتوقف</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">و في حالة حدوث تورم شديد أو نزيف غزير جدا يرجى مراجعة الطبيب</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">ليس من الضروري استخدام خيط الأسنان في نفس اليوم الذي تم فيه التنظيف و لكن لابد من الحرص بعدها على العناية بالأسنان</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">قد تحتاج للمتابعة مع الطبيب كل 3إلى6 اشهر للتأكد من عدم تكون طبقة جديدة من الجير و إزالتها في حال تكونها</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">مع مرور الوقت ستتحول اللثة من اللون الأحمر المنتفخ إلى لون وردى و ذلك دليل على عودة اللثة لحالتها الطبيعية</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">إذا قام الطبيب باستخدام جل داخل الجيوب بين الأسنان يرجى تأجيل استخدام خيط الأسنان لمدة اسبوع للوصول إلى افضل نتيجة منه</p>
+
+		<ul class="list-disc list-inside mb-6 space-y-4 text-slate-200 leading-relaxed">
+			<li>غسيل الاسنان بشكل دورى بحد ادنى مرتين فى اليوم</li>
+			<ul class="list-disc list-inside space-y-2 ml-6">
+				<li>مرة قبل النوم و مرة اول ما تصحى من النوم</li>
+				<li>
+					و يفضل بعد كل وجبة بنصف ساعةكما موضح هنا
+					<button
+						class="bg-blue-600 text-slate-100 text-sm border-none rounded-lg px-3 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-blue-500"
+						onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/brushing.html'"
+					>
+						طريقة غسيل الاسنان
+					</button>
+				</li>
+			</ul>
+			<li>و استخدام احد انواع الجيل الاتية على الاماكن الملتهبة جداً من اللثه:</li>
+			<ul class="list-disc list-inside space-y-2 ml-6">
+				<li>Oracure gel / Elugel / Ez care gel /  Gengigel</li>
+				<li>من 3 الى 5 مرات فى اليوم لمدة اسبوع</li>
+				<li>ولا يوجد مشكلة من بلع جزء منه ولا يحتاج الى ازالة بعد وقت محدد</li>
+			</ul>
+			<li>بالاضافة الى استخدام احد المضمضات الاتية:</li>
+			<ul class="list-disc list-inside space-y-2 ml-6">
+				<li>Hexitol / Sanihex / DG wash / Antiseptol / orovex-H</li>
+				<li>مرتين على الاقل فى اليوم بعد غسيل الاسنان بنصف ساعة لمدة اسبوع و يتم ايقافها</li>
+			</ul>
+			<li>يجب الا يقل وقت المضمضة عن دقيقة من اجل الوصول الى افضل نتيجة منها</li>
+		</ul>
+	</div>
 </body>
 </html>

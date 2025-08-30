@@ -2,151 +2,157 @@
 <html dir="rtl" lang="ar">
 <head>
 	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>نصائح لارتداء طقم الأسنان</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-  <script src="QR_image_viewer.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="index_styles.css" />
+	<script src="QR_image_viewer.js"></script>
 </head>
-<body>
-	<button class="qr-btn" onclick="viewQRImage()">
-    <img src="resources/QR.jpeg" alt="QR" class="embedded_QR_photo" />
-  </button>
-  
-        <button class="credits-btn" onclick="location.href='credits.html'">credits</button>
-    
+<body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+	<button onclick="viewQRImage()" class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 cursor-pointer w-12">
+        <img src="resources/QR.jpeg" alt="QR" class="max-w-full rounded-lg shadow-lg" />
+    </button>
 
-	<button class="home-button" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'">الرئيسية</button>
-	<h1>نصائح لارتداء طقم الأسنان</h1>
+    <button onclick="location.href='credits.html'" class="absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500">credits</button>
+
+	<button onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'" class="absolute top-5 left-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500">الرئيسية</button>
+
+	<div class="max-w-4xl mx-auto">
+		<h1 class="text-4xl font-bold text-center mb-8 text-white">نصائح لارتداء طقم الأسنان</h1>
 	
-	<h2>النصائح العامة</h2>
+		<h2 class="text-3xl font-semibold mb-6 text-white">النصائح العامة</h2>
+
+		<ol class="list-decimal list-inside mb-8 space-y-4 text-slate-200 leading-relaxed">
+			<li>خلع طقم الأسنان الطقم أثناء النوم حتى يترك فرصه للأنسجة أن تتنفس بعد تغطيتها لفترات طويلة.</li>
+			<li>يقوم صاحب الطقم فى أول فتره بتقطيع الخبز مثلا لأجزاء صغيره ثم يبدأ بمضغ الطعام على منطقة الضروس.</li>
+			<li>يتم تنظيف طقم الأسنان فوق منشفة أو حوض ماء لأنه قابل للكسر إذا سقط.</li>
+			<li>يجب وضع طقم الأسنان فى مطهر أو فى الماء العادى إذا كنت لا تستخدمه و لا تدع طقم الأسنان يجف، مع عدم استخدام الماء الساخن لأنه قد يسبب تلف فى طقم الأسنان و اتلافه.</li>
+			<li>تنظيف طقم الأسنان باستخدام الفرشاة لإزالة رواسب الطعام والبلاك للمساعدة على منع بقع الأسنان و تغير لونها مع مرور الوقت.</li>
+			<li>استخدام فرشاة أسنان ناعمة لتنظيف اللثة واللسان كل صباح قبل استخدام طقم الأسنان لتنشيط الدورة الدموية فى الأنسجة وإزالة البلاك و طبقة البكتيريا اللتى تتكون اثناء النوم و اذا كان الطقم جزئى نقوم بغسيل الاسنان كالتالى
+				<button onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/brushing.html'" class="bg-blue-500 text-slate-100 px-3 py-1 rounded hover:bg-blue-600 transition">طريقة غسيل الاسنان</button>
+				.</li>
+			<li>خلال اول اسبوعين نقوم بالتدريب على الكلام عن طريق الكلام او القرائة بصوت مرتفع لمدة ساعة على الاقل كل يوم حتى يقوم اللسان بالوصول الى الحركات اللازمة من اجل ضبط مخارج الحروف.</li>
+			<li>عدم غلق الفكين على بعضهما قبل التاكد ان الطقمين نزلوا الى مكانهم بالكامل و ذلك لتجنب كسر الطقم او ايذاء اللثة و انسجة الفم.</li>
+		</ol>
 	
-	<ol>
-		<li>خلع طقم الأسنان الطقم أثناء النوم حتى يترك فرصه للأنسجة أن تتنفس بعد تغطيتها لفترات طويلة.</li>
-		<li>يقوم صاحب الطقم فى أول فتره بتقطيع الخبز مثلا لأجزاء صغيره ثم يبدأ بمضغ الطعام على منطقة الضروس.</li>
-		<li>يتم تنظيف طقم الأسنان فوق منشفة أو حوض ماء لأنه قابل للكسر إذا سقط.</li>
-		<li>يجب وضع طقم الأسنان فى مطهر أو فى الماء العادى إذا كنت لا تستخدمه و لا تدع طقم الأسنان يجف، مع عدم استخدام الماء الساخن لأنه قد يسبب تلف فى طقم الأسنان و اتلافه.</li>
-		<li>تنظيف طقم الأسنان باستخدام الفرشاة لإزالة رواسب الطعام والبلاك للمساعدة على منع بقع الأسنان و تغير لونها مع مرور الوقت.</li>
-		<li>استخدام فرشاة أسنان ناعمة لتنظيف اللثة واللسان كل صباح قبل استخدام طقم الأسنان لتنشيط الدورة الدموية فى الأنسجة وإزالة البلاك و طبقة البكتيريا اللتى تتكون اثناء النوم و اذا كان الطقم جزئى نقوم بغسيل الاسنان كالتالى
-			<button class="brushing-button" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/brushing.html'">طريقة غسيل الاسنان</button>
-			.</li>
-		<li>خلال اول اسبوعين نقوم بالتدريب على الكلام عن طريق الكلام او القرائة بصوت مرتفع لمدة ساعة على الاقل كل يوم حتى يقوم اللسان بالوصول الى الحركات اللازمة من اجل ضبط مخارج الحروف.</li>
-		<li>عدم غلق الفكين على بعضهما قبل التاكد ان الطقمين نزلوا الى مكانهم بالكامل و ذلك لتجنب كسر الطقم او ايذاء اللثة و انسجة الفم.</li>
-	</ol>
+		<h2 class="text-3xl font-semibold mb-6 text-white">نصائح للأكل</h2>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">عند استخدام طقم الاسنان للمرة الأولى تحتاج اللثة إلى أن تعتاد عليه لأن اللثة يمكن أن تكون ما تزال ملتهبة خلال الأسابيع القليلة الأولى بعد قلع الأسنان.</p>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">تذكر دائماً أن تبقي فمك رطباً، فالفم الجاف يوفر أفضل الشروط لتهيج الفم واللثة.</p>
+
+		<h3 class="text-2xl font-semibold mb-4 text-white">الأطعمة اللينة</h3>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">الأطعمة اللينة تساعد الفم على التعود على طقم الاسنان بسهولة و خصوصاً خلال اول اسبوع من ارتداء الطقم ، بعض خيارات الطعام هي:</p>
+
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>الفاصولياء الساخنة</li>
+			<li>الأطعمة المهروسة</li>
+			<li>الحلوى الطرية (الارز باللبن ،البليلة،...)</li>
+			<li>البيض</li>
+			<li>الحلوى على شكل جيل</li>
+			<li>البطاطا المهروسة والخضراوات الأخرى</li>
+			<li>عصير الفاكهة</li>
+			<li>اللبن و منتجاته</li>
+			<li>المثلجات</li>
+		</ul>
+
+		<h3 class="text-2xl font-semibold mb-4 text-white">الأطعمة الصلبة</h3>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">بعد مرور اسبوع وبعد أن تكون قد اتبعت الخطوات المنصوح بها خلال الأيام الأولى يمكنك أن تأكل طعاماً صلباً أيضاً، الأطعمة المنصوح بأكلها بعد أن استقر طقم الاسنان في فمك هي التالية:</p>
+
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>الأرز المطبوخ</li>
+			<li>المعكرونة</li>
+			<li>الخبز الطري</li>
+			<li>حساء الخضار المطبوخة مع اللحم المفروم</li>
+			<li>الخضار المطبوخة</li>
+			<li>اللحم الطري</li>
+			<li>الفاصولياء المطبوخة</li>
+		</ul>
+
+		<h3 class="text-2xl font-semibold mb-4 text-white">الأطعمة الممنوعة</h3>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">تبقى بعض الأطعمة محظورة حتى عندما يعتاد لابسو أطقم الأسنان على أسنانهم الصناعية لأنها يمكن أن تزيح الجهاز أو تطبق ضغطاً غير متساوٍى عليه أو الكثير من الضغط على الأسنان الصناعية واللثة معاً مسببة الألم والتهيج، وهذه الأطعمة هي التالية:</p>
+
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>الأطعمة اللزقة : مثل زبدة الفول السوداني والعلكة والحلويات اللزقة والكراميل</li>
+			<li>الأطعمة القاسية: المكسرات والتفاح والجزر والذرة</li>
+			<li>اللحم القاسي: شرائح اللحم والريش</li>
+			<li>الأطعمة الصغيرة التي يصعب مضغها مثل حبات الفشار وبذور السمسم</li>
+		</ul>
 	
-	<h2>نصائح للأكل</h2>
+		<h2 class="text-3xl font-semibold mb-6 text-white">نصائح للمضغ</h2>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">يشكل المضغ تحدياً كبيراً يواجهه كل لابسي أطقم الأسنان خلال الأيام القليلة الأولى بينما يحاولون التعود على أسنانهم الجديدة. لذلك ينصح بما يلي:</p>
+
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>تناول لقيمات صغيرة ومضغها باستخدام كلا الجانبين من فمك.</li>
+			<li>قطع الطعام إلى قطع صغيرة لتقليل جهود المضغ المطلوبة.</li>
+			<li>تجنب القطع بالاسنان الأمامية خلال فترة التعود على طقم الاسنان واستخدام الجزء الخلفي من الفم من أجل المضغ.</li>
+		</ul>
 	
-	<p>عند استخدام طقم الاسنان للمرة الأولى تحتاج اللثة إلى أن تعتاد عليه لأن اللثة يمكن أن تكون ما تزال ملتهبة خلال الأسابيع القليلة الأولى بعد قلع الأسنان.</p>
-	
-	<p>تذكر دائماً أن تبقي فمك رطباً، فالفم الجاف يوفر أفضل الشروط لتهيج الفم واللثة.</p>
-	
-	<h3>الأطعمة اللينة</h3>
-	
-	<p>الأطعمة اللينة تساعد الفم على التعود على طقم الاسنان بسهولة و خصوصاً خلال اول اسبوع من ارتداء الطقم ، بعض خيارات الطعام هي:</p>
-	
-	<ul>
-		<li>الفاصولياء الساخنة</li>
-		<li>الأطعمة المهروسة</li>
-		<li>الحلوى الطرية (الارز باللبن ،البليلة،...)</li>
-		<li>البيض</li>
-		<li>الحلوى على شكل جيل</li>
-		<li>البطاطا المهروسة والخضراوات الأخرى</li>
-		<li>عصير الفاكهة</li>
-		<li>اللبن و منتجاته</li>
-		<li>المثلجات</li>
-	</ul>
-	
-	<h3>الأطعمة الصلبة</h3>
-	
-	<p>بعد مرور اسبوع وبعد أن تكون قد اتبعت الخطوات المنصوح بها خلال الأيام الأولى يمكنك أن تأكل طعاماً صلباً أيضاً، الأطعمة المنصوح بأكلها بعد أن استقر طقم الاسنان في فمك هي التالية:</p>
-	
-	<ul>
-		<li>الأرز المطبوخ</li>
-		<li>المعكرونة</li>
-		<li>الخبز الطري</li>
-		<li>حساء الخضار المطبوخة مع اللحم المفروم</li>
-		<li>الخضار المطبوخة</li>
-		<li>اللحم الطري</li>
-		<li>الفاصولياء المطبوخة</li>
-	</ul>
-	
-	<h3>الأطعمة الممنوعة</h3>
-	
-	<p>تبقى بعض الأطعمة محظورة حتى عندما يعتاد لابسو أطقم الأسنان على أسنانهم الصناعية لأنها يمكن أن تزيح الجهاز أو تطبق ضغطاً غير متساوٍى عليه أو الكثير من الضغط على الأسنان الصناعية واللثة معاً مسببة الألم والتهيج، وهذه الأطعمة هي التالية:</p>
-	
-	<ul>
-		<li>الأطعمة اللزقة : مثل زبدة الفول السوداني والعلكة والحلويات اللزقة والكراميل</li>
-		<li>الأطعمة القاسية: المكسرات والتفاح والجزر والذرة</li>
-		<li>اللحم القاسي: شرائح اللحم والريش</li>
-		<li>الأطعمة الصغيرة التي يصعب مضغها مثل حبات الفشار وبذور السمسم</li>
-	</ul>
-	
-	<h2>نصائح للمضغ</h2>
-	
-	<p>يشكل المضغ تحدياً كبيراً يواجهه كل لابسي أطقم الأسنان خلال الأيام القليلة الأولى بينما يحاولون التعود على أسنانهم الجديدة. لذلك ينصح بما يلي:</p>
-	
-	<ul>
-		<li>تناول لقيمات صغيرة ومضغها باستخدام كلا الجانبين من فمك.</li>
-		<li>قطع الطعام إلى قطع صغيرة لتقليل جهود المضغ المطلوبة.</li>
-		<li>تجنب القطع بالاسنان الأمامية خلال فترة التعود على طقم الاسنان واستخدام الجزء الخلفي من الفم من أجل المضغ.</li>
-	</ul>
-	
-	<h2>الأثار الجانبية</h2>
-	
-	<p>يمكن حدوث بعض الاثار الجانبية بعد ارتداء الطقم خلال الايام الاولى منها:</p>
-	
-	<ul>
-		<li>صعوبة البلع</li>
-		<li>عدم التحكم فى المضغ</li>
-		<li>صعوبة النطق لبعض الكلمات او الحروف</li>
-		<li>احمرار او حرارة بالانسجه اسفل الطقم و المحيطة به</li>
-		<li>زيادة افراز اللعاب</li>
-		<li>عدم الاحساس بحرارة او برودة الطعام</li>
-		<li>عدم ثبات الطقم خلال عملية المضغ على احد الجانبين</li>
-		<li>وجود الم مع المضغ خصوصاً مع الاطعمة القاسية و الجافة</li>
-	</ul>
-	
-	<p>و هذه الاشياء ليست دليل على فشل الطقم ولكنها امور طبيعية يمكن التغلب عليها بسبب وجود جسم غريب فى الفم و يرجى التواصل مع الطبيب من اجل حلها.</p>
-	
-	<p>و فى حالة حدوث التهاب فى اللثة يتم استخدام احد انواع الجيل الاتية:</p>
-	
-	<ul>
-		<li>Oracure</li>
-		<li>elugel</li>
-		<li>ez care</li>
-		<li>gengigel</li>
-	</ul>
-	
-	<p>٣-٥ مرات فى اليوم لمدة ٥ ايام.</p>
-	
-	<p>و مضمضة:</p>
-	
-	<ul>
-		<li>Hexitol</li>
-		<li>antiseptol</li>
-		<li>orovex-H</li>
-		<li>sanihex</li>
-		<li>gengicare</li>
-	</ul>
-	
-	<p>مرتين على الاقل فى اليوم بعد غسيل الاسنان بنصف ساعة لمدة اسبوع.</p>
-	
-	<p>و فى حالة ان التركيبة تسقط من الفم يتم استخدام لاصق للتركيبات مثل:</p>
-	
-	<ul>
-		<li>COREGA</li>
-		<li>Fitty dent</li>
-		<li>Fixodent</li>
-	</ul>
-	
-	<p>يتم وضع جزء تحت التركيبة من الداخل و تثبيتها فى مكانها جيداً.</p>
-	
-	<p>يمكن وضع التركيبة فى محلول مطهر بديل للماء خلال الليل مثل:</p>
-	
-	<ul>
-		<li>Corega denture cleanser</li>
-		<li>Efferdent appliance cleanser</li>
-		<li>Rapident denture cleanser</li>
-		<li>Dental duty retainer cleanser</li>
-	</ul>
+		<h2 class="text-3xl font-semibold mb-6 text-white">الأثار الجانبية</h2>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">يمكن حدوث بعض الاثار الجانبية بعد ارتداء الطقم خلال الايام الاولى منها:</p>
+
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>صعوبة البلع</li>
+			<li>عدم التحكم فى المضغ</li>
+			<li>صعوبة النطق لبعض الكلمات او الحروف</li>
+			<li>احمرار او حرارة بالانسجه اسفل الطقم و المحيطة به</li>
+			<li>زيادة افراز اللعاب</li>
+			<li>عدم الاحساس بحرارة او برودة الطعام</li>
+			<li>عدم ثبات الطقم خلال عملية المضغ على احد الجانبين</li>
+			<li>وجود الم مع المضغ خصوصاً مع الاطعمة القاسية و الجافة</li>
+		</ul>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">و هذه الاشياء ليست دليل على فشل الطقم ولكنها امور طبيعية يمكن التغلب عليها بسبب وجود جسم غريب فى الفم و يرجى التواصل مع الطبيب من اجل حلها.</p>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">و فى حالة حدوث التهاب فى اللثة يتم استخدام احد انواع الجيل الاتية:</p>
+
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>Oracure</li>
+			<li>elugel</li>
+			<li>ez care</li>
+			<li>gengigel</li>
+		</ul>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">٣-٥ مرات فى اليوم لمدة ٥ ايام.</p>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">و مضمضة:</p>
+
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>Hexitol</li>
+			<li>antiseptol</li>
+			<li>orovex-H</li>
+			<li>sanihex</li>
+			<li>gengicare</li>
+		</ul>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">مرتين على الاقل فى اليوم بعد غسيل الاسنان بنصف ساعة لمدة اسبوع.</p>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">و فى حالة ان التركيبة تسقط من الفم يتم استخدام لاصق للتركيبات مثل:</p>
+
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>COREGA</li>
+			<li>Fitty dent</li>
+			<li>Fixodent</li>
+		</ul>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">يتم وضع جزء تحت التركيبة من الداخل و تثبيتها فى مكانها جيداً.</p>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">يمكن وضع التركيبة فى محلول مطهر بديل للماء خلال الليل مثل:</p>
+
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>Corega denture cleanser</li>
+			<li>Efferdent appliance cleanser</li>
+			<li>Rapident denture cleanser</li>
+			<li>Dental duty retainer cleanser</li>
+		</ul>
+	</div>
+</body>
+</html>
 </body>
 </html>
 

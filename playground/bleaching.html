@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تعليمات ما بعد عمل تبيض الأسنان بالعيادة</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index_styles.css" />
   <script src="QR_image_viewer.js"></script>
-
 </head>
-<body>
-	<button class="qr-btn" onclick="viewQRImage()">
-    <img src="resources/QR.jpeg" alt="QR" class="embedded_QR_photo" />
-  </button>
-  
-        <button class="credits-btn" onclick="location.href='credits.html'">credits</button>
-    
+<body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+	<button onclick="viewQRImage()" class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100">
+        <img src="resources/QR.jpeg" alt="QR" class="max-w-full rounded-lg shadow-lg" />
+    </button>
 
-  <button class="home-button" alt="الرئيسية" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'">الرئيسية</button>
-  <h1>تعليمات ما بعد عمل تبيض الأسنان بالعيادة</h1>
-  <p>ممنوع تماما التدخين لفترة لا تقل عن 48 ساعة بعد الانتهاء من التبييض</p>
-  <p>تجنب الأطعمة و المشروبات الملونة و خصوصا ذات الصبغات الغامقة مثل (الشاي , القهوة , الكاتشب , الطماطم , الصلصة , العصائر ,صوص الصويا و غيرها من الأطعمة الملونة)</p>
-  <p>يمكن الشعور بحساسية أو الم بسيط في الأسنان خلال أول فترة بعد الانتهاء من الجلسة تنتهى غالبا خلال 3 أيام و لكن قد تستمر لحوالي اسبوع و في تلك الحالة ينصح بعد استشارة الطبيب المعالج بتناول مسكن بعد الطعام مثل:</p>
-  <p>PARACETAMOL</p>
-  <p>BRUFEN</p>
-  <p>مع استخدام معجون أسنان مهدئ لحساسية الأسنان مثل : Sensodyne Rapid action</p>
-  <p>غسيل الأسنان بشكل منتظم و دوري يساعد على الحفاظ على نتيجة التبييض لفترة أطول</p>
-  <p>مضغ لبان خالي من الألوان و السكر قد يساعد على التغلب على اثر مادة التبييض المتبقية للراحة من حساسية الأسنان</p>
-  <p>إذا كان هناك حساسية في اللثة أو التهاب أو قرحة بعد الانتهاء من العلاج يتم تفادى تلك المنطقة من اللثة خلال غسيل الأسنان</p>
-  <p>كما يمكن استخدام كبسولة من فيتامين ه بشكل موضعي على الشفتين و اللثة للتقليل من اثر المواد المستخدمة في التبيض و الجفاف الناتج عن فتح الفم لفترة طويلة للتخلص من تشققات الشفاه</p>
-  <p>إذا كنت تستخدم مضمضة ملونة أو مضمضة تحتوى على Chlorhexidine مثل المضمضات الأتية يتم إيقافها أول 3 أيام للحصول على نتيجة تدوم لمدة أطول</p>
-  <p>hexitol\ sanihex\ DG wash\ orovex</p>
-  <p>النتيجة الفورية بعد الانتهاء من جلسة التبييض قد تكون اكثر من المتوقع إلى لون شديد البياض و لكن يأخذ في الحسبان أن درجة لون الأسنان تتحول إلى لون طبعيي اكثر مع مرور الوقت بعد ترطيب الأسنان لتصل إلى لون طبيعي اكثر</p>
-  <p>يرجى العلم أن أي حشوات أو تركيبات سابقة لن تتأثر بعملية التبييض و قد تحتاج إلى التغيير لاحقا لكى تتماشى مع درجة اللون الجديدة للاسنان</p>
-  <p>قد تختلف النتيجة من شخص إلى اخر و ذلك لاختلاف درجات ألوان الطبقات المختلفة للاسنان و سماكة كلة منها و العادات الشخصية لكل فرد من حيث غسيل الأسنان المنتظم و التدخين و العمر و كمية الأطعمة الملونة التي يتناولها</p>
-  <p>قد تحتاج إلى جلسة دورية للمحافظة على نفس درجة لون الأسنان كل 6 اشهر أو سنة</p>
+    <button onclick="location.href='credits.html'" class="absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500">credits</button>
+
+    <button onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'" class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500" alt="الرئيسية">الرئيسية</button>
+
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-8 text-white">تعليمات ما بعد عمل تبيض الأسنان بالعيادة</h1>
+        <p class="mb-4 text-slate-200 leading-relaxed">ممنوع تماما التدخين لفترة لا تقل عن 48 ساعة بعد الانتهاء من التبييض</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">تجنب الأطعمة و المشروبات الملونة و خصوصا ذات الصبغات الغامقة مثل (الشاي , القهوة , الكاتشب , الطماطم , الصلصة , العصائر ,صوص الصويا و غيرها من الأطعمة الملونة)</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">يمكن الشعور بحساسية أو الم بسيط في الأسنان خلال أول فترة بعد الانتهاء من الجلسة تنتهى غالبا خلال 3 أيام و لكن قد تستمر لحوالي اسبوع و في تلك الحالة ينصح بعد استشارة الطبيب المعالج بتناول مسكن بعد الطعام مثل:</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">PARACETAMOL</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">BRUFEN</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">مع استخدام معجون أسنان مهدئ لحساسية الأسنان مثل : Sensodyne Rapid action</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">غسيل الأسنان بشكل منتظم و دوري يساعد على الحفاظ على نتيجة التبييض لفترة أطول</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">مضغ لبان خالي من الألوان و السكر قد يساعد على التغلب على اثر مادة التبييض المتبقية للراحة من حساسية الأسنان</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">إذا كان هناك حساسية في اللثة أو التهاب أو قرحة بعد الانتهاء من العلاج يتم تفادى تلك المنطقة من اللثة خلال غسيل الأسنان</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">كما يمكن استخدام كبسولة من فيتامين ه بشكل موضعي على الشفتين و اللثة للتقليل من اثر المواد المستخدمة في التبيض و الجفاف الناتج عن فتح الفم لفترة طويلة للتخلص من تشققات الشفاه</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">إذا كنت تستخدم مضمضة ملونة أو مضمضة تحتوى على Chlorhexidine مثل المضمضات الأتية يتم إيقافها أول 3 أيام للحصول على نتيجة تدوم لمدة أطول</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">hexitol\ sanihex\ DG wash\ orovex</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">النتيجة الفورية بعد الانتهاء من جلسة التبييض قد تكون اكثر من المتوقع إلى لون شديد البياض و لكن يأخذ في الحسبان أن درجة لون الأسنان تتحول إلى لون طبعيي اكثر مع مرور الوقت بعد ترطيب الأسنان لتصل إلى لون طبيعي اكثر</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">يرجى العلم أن أي حشوات أو تركيبات سابقة لن تتأثر بعملية التبييض و قد تحتاج إلى التغيير لاحقا لكى تتماشى مع درجة اللون الجديدة للاسنان</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">قد تختلف النتيجة من شخص إلى اخر و ذلك لاختلاف درجات ألوان الطبقات المختلفة للاسنان و سماكة كلة منها و العادات الشخصية لكل فرد من حيث غسيل الأسنان المنتظم و التدخين و العمر و كمية الأطعمة الملونة التي يتناولها</p>
+        <p class="mb-4 text-slate-200 leading-relaxed">قد تحتاج إلى جلسة دورية للمحافظة على نفس درجة لون الأسنان كل 6 اشهر أو سنة</p>
+    </div>
 </body>
 </html>

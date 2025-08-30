@@ -4,37 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>تعليمات عيادة الأسنان</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" type="text/css" href="index_styles.css">
     <script src="QR_image_viewer.js"></script>
     <script src="circular-gallery.js"></script>
 
 </head>
-<body>
-    <h1>تعليمات عيادة الأسنان</h1>
+<body class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+    <h1 class="text-white font-bold text-center mb-12 text-4xl">تعليمات عيادة الأسنان</h1>
 
-    <div class="button-container" role="navigation" aria-label="تعليمات عيادة الأسنان">
-        <button onclick="location.href='extraction_instruction.html'">تعليمات ما بعد الخلع</button>
-        <button onclick="location.href='denture_instructions.html'">تعليمات استخدام الطقم المتحرك</button>
-        <button onclick="location.href='endo_instructions.html'">تعليمات ما بعد حشو العصب</button>
-        <button onclick="location.href='tmj_instructions.html'">تعليمات و تمارين لمفصل الفك</button>
-        <button onclick="location.href='scalling_instructions.html'">تعليمات ما بعد تنظيف الاسنان</button>
-        <button onclick="location.href='brushing.html'">الطريقة الصحيحة لغسيل الأسنان</button>
-        <button onclick="location.href='bleaching.html'">تعليمات بعد تبييض الاسنان</button>
-        <button onclick="location.href='ortho.html'">تعليمات التقويم</button>
-        <button onclick="location.href='restoration.html'">تعليمات الحشو الدائم و التجميلى</button>
-        <button onclick="location.href='perio_surgery.html'">تعليمات ما بعد جراحة اللثة</button>
-        <button onclick="location.href='fixed.html'">التركيبات الثابتة</button>
-        <button onclick="location.href='implant.html'">تعليمات زراعة الاسنان</button>
-         <button onclick="location.href='pedo.html'">تعليمات و توعية للاطفال</button>
-        </div>
+    <div class="button-container fixed top-1/2 right-5 transform -translate-y-1/2 w-48 h-60 bg-gradient-to-br from-gray-600 to-gray-800 shadow-lg rounded-3xl p-2.5 overflow-visible" role="navigation" aria-label="تعليمات عيادة الأسنان">
+        <button onclick="location.href='extraction_instruction.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-0">تعليمات ما بعد الخلع</button>
+        <button onclick="location.href='denture_instructions.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-20">تعليمات استخدام الطقم المتحرك</button>
+        <button onclick="location.href='endo_instructions.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-40">تعليمات ما بعد حشو العصب</button>
+        <button onclick="location.href='tmj_instructions.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-60">تعليمات و تمارين لمفصل الفك</button>
+        <button onclick="location.href='scalling_instructions.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-80">تعليمات ما بعد تنظيف الاسنان</button>
+        <button onclick="location.href='brushing.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-100">الطريقة الصحيحة لغسيل الأسنان</button>
+        <button onclick="location.href='bleaching.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-120">تعليمات بعد تبييض الاسنان</button>
+        <button onclick="location.href='ortho.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-140">تعليمات التقويم</button>
+        <button onclick="location.href='restoration.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-160">تعليمات الحشو الدائم و التجميلى</button>
+        <button onclick="location.href='perio_surgery.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-180">تعليمات ما بعد جراحة اللثة</button>
+        <button onclick="location.href='fixed.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-200">التركيبات الثابتة</button>
+        <button onclick="location.href='implant.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-220">تعليمات زراعة الاسنان</button>
+        <button onclick="location.href='pedo.html'" class="bg-gray-600 text-slate-100 hover:bg-gray-500 transition-all duration-300 shadow-lg rounded-2xl w-40 h-20 text-lg p-5 flex items-center justify-center absolute right-0 top-240">تعليمات و توعية للاطفال</button>
+    </div>
 
+    <button onclick="viewQRImage()" class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100">
+        <img src="resources/QR.jpeg" alt="QR" class="max-w-full rounded-lg shadow-lg" />
+    </button>
 
-    
-
-<button class="qr-btn" onclick="viewQRImage()">
-  <img src="resources/QR.jpeg" alt="QR" class="embedded_QR_photo" />
-</button>
-
-      <button class="credits-btn" onclick="location.href='credits.html'">credits</button>
+    <button onclick="location.href='credits.html'" class="absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500">credits</button>
 </body>
 </html>

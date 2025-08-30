@@ -1,62 +1,85 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>تعليمات ما بعد الخلع</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index_styles.css" />
   <script src="QR_image_viewer.js"></script>
 </head>
-<body>
-    <button class="qr-btn" onclick="viewQRImage()">
-    <img src="resources/QR.jpeg" alt="QR" class="embedded_QR_photo" />
+<body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+  <button
+    class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100"
+    onclick="viewQRImage()"
+  >
+    <img src="resources/QR.jpeg" alt="QR" class="max-w-full rounded-lg shadow-lg" />
   </button>
-  
-        <button class="credits-btn" onclick="location.href='credits.html'">credits</button>
-    
-  <button class="home-button" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'">الرئيسية</button>
-  <h1>تعليمات ما بعد الخلع</h1>
-  
-  <li>نعض على قطعة الشاش فى مكانها بدون تحريكها او تغيرها لمدة ساعة على الاقل</li>
-  <li>اذا كان هناك دم كثير بعد ازالة الشاش نقوم بالعض على قطعة شاش جديدة او كيس شاى مبلول بماء بارد فى نفس المكان مع الضغط بشكل مستمر لمدة ساعة اخرى</li>
-  <li>فى حالة استمرار النزيف بشكل شديد يرجى مراجعة الطبيب</li>
-  
-  <h2>الممنوع خلال اول ٢٤ ساعة</h2>
-  <ul>
-    <li>ممنوع التدخين</li>
-    <li>ممنوع المضمضة حتى للوضوء</li>
-    <li>ممنوع الاكل الناشف او المقرمش او الساخن</li>
-    <li>ممنوع المشروبات الساخنة او الغازية او استخدام الشفاطة</li>
-    <li>ممنوع لمس الجرح باللسان او الاصابع او المضغ عليه او غسيل الاسنان</li>
-    <li>ممنوع البصق او تناول الحلويات مثل الملبس و المصاصات و نقوم بابتلاع اللعاب بطريقة طبيعية</li>
-  </ul>
-  
-  <h2>المسموح خلال اول ٢٤ ساعة بعد الخلع</h2>
-  <li>الاكل الطرى و البارد الذى لا يحتاج للمضغ مثل الزبادي البارد او الرز بلبن او الكاستر و مثيلاتهم</li>
-  <li>اذا كان هناك تورم بسيط نقوم بوضع كمادات باردة على الخد</li>
-  
-  <h2>خلال اول ٥ ايام</h2>
-  <li>يمنع الاكل القاسى او المقرمش و الساخن </li>
-  <li> و يكون الاكل على الجهه المقابلة من الفم </li>
-  <li> يكون الاكل طرى شوية و بارد شوية لتفادى ان حاجه تدخل فى الجرح او تلوثة او تفتحه تانى و يرجع يلتهب </li>
-  <li> المضمضة بماء بملح دافئ او فاتر او مضمضة بيتادين</li>
-  <li>فى حالة وجود الم متزايد او لمدة تزيد عن ٤ ايام يرجى مراجعة الطبيب</li>
-  
-  <p>إذا كنت تعانى من حساسية أو التهابات في الجيوب الأنفية يرجى تناول الدواء الخاص بك بشكل منتظم<br>
-  الكمادات الباردة 20 دقيقة على الخد ثم تزال لمدة 20 دقيقة و يكرر في حالة عدم زوال التورم<br>
-  تجنب ممارسة الرياضات العنيفة حتى التئام الجرح<br>
-  للتقليل من التورم يمكن استعمال كمادات دافئة مع مضمضة بماء دافئ عليه معلقة ملح لكل كوب و يزول التورم في خلال 48 ساعة في المعتاد</p>
-  
-  <h3>فى حالة ان الضرس المخلوع كان ضرس العقل: </h3>
-  <ul>
-    <li> اذا حدث صعوبة فى فتح او غلق الفكين نبدأ بتناول احد الادوية الاتيه بالترتيب التالى فى حالة عدم تواجد احدها فى الصيدليات</li>
-  <ul>
-    <li>Myolgin \Relax \ Relaxon</li>
-  <li>على حسب ارشادات الطبيب</li>
-  <li>قرص واحد كل ١٢ ساعة</li></ul>
-  <li>و تخفض الجرعة لقرص واحد قبل النوم فى حالة الشعور بدوخة او دوار</li></ul>
-  
 
+  <button
+    class="absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    onclick="location.href='credits.html'"
+  >
+    credits
+  </button>
 
+  <button
+    class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'"
+  >
+    الرئيسية
+  </button>
+
+	<div class="max-w-4xl mx-auto">
+		<h1 class="text-4xl font-bold text-center mb-8 text-white">تعليمات ما بعد الخلع</h1>
+
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>نعض على قطعة الشاش فى مكانها بدون تحريكها او تغيرها لمدة ساعة على الاقل</li>
+			<li>اذا كان هناك دم كثير بعد ازالة الشاش نقوم بالعض على قطعة شاش جديدة او كيس شاى مبلول بماء بارد فى نفس المكان مع الضغط بشكل مستمر لمدة ساعة اخرى</li>
+			<li>فى حالة استمرار النزيف بشكل شديد يرجى مراجعة الطبيب</li>
+		</ul>
+
+		<h2 class="text-3xl font-semibold mb-6 text-white">الممنوع خلال اول ٢٤ ساعة</h2>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>ممنوع التدخين</li>
+			<li>ممنوع المضمضة حتى للوضوء</li>
+			<li>ممنوع الاكل الناشف او المقرمش او الساخن</li>
+			<li>ممنوع المشروبات الساخنة او الغازية او استخدام الشفاطة</li>
+			<li>ممنوع لمس الجرح باللسان او الاصابع او المضغ عليه او غسيل الاسنان</li>
+			<li>ممنوع البصق او تناول الحلويات مثل الملبس و المصاصات و نقوم بابتلاع اللعاب بطريقة طبيعية</li>
+		</ul>
+
+		<h2 class="text-3xl font-semibold mb-6 text-white">المسموح خلال اول ٢٤ ساعة بعد الخلع</h2>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>الاكل الطرى و البارد الذى لا يحتاج للمضغ مثل الزبادي البارد او الرز بلبن او الكاستر و مثيلاتهم</li>
+			<li>اذا كان هناك تورم بسيط نقوم بوضع كمادات باردة على الخد</li>
+		</ul>
+
+		<h2 class="text-3xl font-semibold mb-6 text-white">خلال اول ٥ ايام</h2>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>يمنع الاكل القاسى او المقرمش و الساخن</li>
+			<li>و يكون الاكل على الجهه المقابلة من الفم</li>
+			<li>يكون الاكل طرى شوية و بارد شوية لتفادى ان حاجه تدخل فى الجرح او تلوثة او تفتحه تانى و يرجع يلتهب</li>
+			<li>المضمضة بماء بملح دافئ او فاتر او مضمضة بيتادين</li>
+			<li>فى حالة وجود الم متزايد او لمدة تزيد عن ٤ ايام يرجى مراجعة الطبيب</li>
+		</ul>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">إذا كنت تعانى من حساسية أو التهابات في الجيوب الأنفية يرجى تناول الدواء الخاص بك بشكل منتظم</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">الكمادات الباردة 20 دقيقة على الخد ثم تزال لمدة 20 دقيقة و يكرر في حالة عدم زوال التورم</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">تجنب ممارسة الرياضات العنيفة حتى التئام الجرح</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">للتقليل من التورم يمكن استعمال كمادات دافئة مع مضمضة بماء دافئ عليه معلقة ملح لكل كوب و يزول التورم في خلال 48 ساعة في المعتاد</p>
+
+		<h3 class="text-2xl font-semibold mb-4 text-white">فى حالة ان الضرس المخلوع كان ضرس العقل:</h3>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>اذا حدث صعوبة فى فتح او غلق الفكين نبدأ بتناول احد الادوية الاتيه بالترتيب التالى فى حالة عدم تواجد احدها فى الصيدليات
+				<ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+					<li>Myolgin \Relax \ Relaxon</li>
+					<li>على حسب ارشادات الطبيب</li>
+					<li>قرص واحد كل ١٢ ساعة</li>
+				</ul>
+			</li>
+			<li>و تخفض الجرعة لقرص واحد قبل النوم فى حالة الشعور بدوخة او دوار</li>
+		</ul>
+	</div>
 </body>
 </html>

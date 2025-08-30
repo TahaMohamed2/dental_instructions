@@ -1,429 +1,172 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Taha Mohamed - Dental Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        @page {
-            size: 27.94cm 21.59cm;
-            margin: 0; /* Remove margin for print */
-        }
-        
-        body {
-            font-family: 'Lato', sans-serif;
-            background: linear-gradient(to right, #2c2c2c, #606060, #2c2c2c); /* Dark grey gradient */
-            color: #e0e0e0; /* Light grey text */
-            line-height: 1.6;
-            margin: 0;
-            padding: 2cm;
-        }
-
-        .container {
-            max-width: 21.59cm;
-            margin: 0 auto;
-            padding: 25px;
-            background-color: #404040; /* Dark grey content background */
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-            border-radius: 12px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 2cm;
-            border-bottom: 1px solid #808080; /* Grey separator */
-            padding-bottom: 1cm;
-        }
-
-        .name {
-            font-family: 'Playfair Display', serif;
-            font-size: 36pt;
-            font-weight: 700;
-            margin: 0;
-            padding: 0;
-            color: #ffffff; /* White */
-        }
-
-        .title {
-            font-size: 18pt;
-            margin: 0.5cm 0 0 0;
-            color: #cccccc; /* Light grey */
-        }
-
-        .section {
-            margin-bottom: 2cm;
-            padding-bottom: 1cm;
-            border-bottom: 1px solid #808080;
-            page-break-inside: avoid;
-        }
-
-        .section:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 22pt;
-            font-weight: 700;
-            margin-bottom: 1cm;
-            text-align: left;
-            color: #f0f0f0; /* Very light grey */
-        }
-
-        .content {
-            font-size: 12pt;
-            line-height: 1.8;
-            margin-bottom: 0.5cm;
-            text-align: justify;
-        }
-
-        .note {
-            font-size: 11pt;
-            font-style: italic;
-            margin: 0.5cm 0;
-            color: #000000;
-            text-align: center;
-            padding: 0.5cm;
-            background-color: #d0d0d0; /* Light grey */
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .image-container {
-            text-align: center;
-            margin: 1cm 0;
-        }
-
-        .image-row {
-            display: flex;
-            justify-content: center;
-            gap: 1cm;
-            margin: 1cm 0;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        img {
-            min-width: 62%;
-            max-width: 80%;
-            height: auto;
-            border-radius: 16px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-            display: block;
-            margin: 0 auto;
-        }
-
-        img:hover {
-            transform: scale(1.05);
-        }
-
-        .table-container {
-            margin: 1cm auto;
-            width: 100%;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        td {
-            border: none;
-            padding: 0;
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        .page-break {
-            page-break-before: always;
-        }
-
-        /* Mobile devices (portrait and landscape) */
-        @media (max-width: 600px) {
-            body {
-                padding: 3%;
-            }
-            .container {
-                padding: 15px;
-            }
-            .name {
-                font-size: 20pt;
-            }
-            .title {
-                font-size: 12pt;
-            }
-            .section-title {
-                font-size: 16pt;
-            }
-            .content {
-                font-size: 9pt;
-            }
-            .note {
-                font-size: 8pt;
-            }
-            .image-row {
-                flex-direction: column;
-                gap: 0.5cm;
-            }
-            img {
-                min-width: 90%;
-                max-width: 100%;
-            }
-        }
-
-        /* Tablets (portrait and landscape) */
-        @media (min-width: 601px) and (max-width: 1024px) {
-            body {
-                padding: 4%;
-            }
-            .container {
-                padding: 20px;
-            }
-            .name {
-                font-size: 28pt;
-            }
-            .title {
-                font-size: 16pt;
-            }
-            .section-title {
-                font-size: 20pt;
-            }
-            .content {
-                font-size: 11pt;
-            }
-            .note {
-                font-size: 10pt;
-            }
-            img {
-                min-width: 70%;
-                max-width: 90%;
-            }
-        }
-
-        /* Desktop and larger screens */
-        @media (min-width: 1025px) {
-            body {
-                padding: 2cm;
-            }
-            .container {
-                padding: 25px;
-            }
-            .name {
-                font-size: 36pt;
-            }
-            .title {
-                font-size: 18pt;
-            }
-            .section-title {
-                font-size: 22pt;
-            }
-            .content {
-                font-size: 12pt;
-            }
-            .note {
-                font-size: 11pt;
-            }
-            img {
-                min-width: 62%;
-                max-width: 80%;
-            }
-        }
-
-        /* Orientation specific styles */
-
-        /* Portrait */
-        @media (orientation: portrait) {
-            body {
-                background: linear-gradient(to bottom, #2c2c2c, #606060, #2c2c2c);
-            }
-        }
-
-        /* Landscape */
-        @media (orientation: landscape) {
-            body {
-                background: linear-gradient(to right, #2c2c2c, #606060, #2c2c2c);
-            }
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../index_styles.css" />
 </head>
-<body>
-    <div class="container">
+<body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+    <button onclick="window.location.href='../index.html'" class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500" alt="الرئيسية">الرئيسية</button>
+
+    <div class="max-w-4xl mx-auto bg-slate-700 rounded-2xl shadow-xl p-6 mb-8">
         <!-- Header Section -->
-        <div class="header">
-            <h1 class="name">Taha Mohamed</h1>
-            <h2 class="title">Dental Portfolio</h2>
+        <div class="text-center mb-8 border-b border-slate-500 pb-4">
+            <h1 class="text-4xl font-bold text-white mb-2">Taha Mohamed</h1>
+            <h2 class="text-xl text-slate-300">Dental Portfolio</h2>
         </div>
 
         <!-- Rehab Case Section -->
-        <div class="section">
-            <h3 class="section-title">Rehab case</h3>
-            
-            <div class="image-container">
+        <div class="mb-8 pb-4 border-b border-slate-500">
+            <h3 class="text-2xl font-bold text-white mb-4">Rehab case</h3>
 
-                <img data-src="photo22.jpg" alt="Rehab case image">
+            <div class="text-center mb-4">
+                <img data-src="photo22.jpg" alt="Rehab case image" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
-            
-            <p class="content">
+
+            <p class="text-slate-200 leading-relaxed mb-4 text-justify">
                 The case that I enjoyed and proud of the most was a rehab case for a woman presented with failed long-span bridge from 7| to |5 (patient had coronary artery insufficiency) and multiple failed endodontic treatments and loss of VDO. So we started with removing caries and calculus to evaluate remaining tooth structure then re-treatment of the failed endodontic treatments followed by gingivectomy using LASER Then post and core followed by preparing the teeth for temporization along with RPD for elevating the bite to regain the lost VDO follow up after 3 months showed almost regained VDO, and after it was fully regained we proceeded to deliver the final bridge with success.
             </p>
-            
-            <p class="content">
+
+            <p class="text-slate-200 leading-relaxed mb-4 text-justify">
                 Patient encouragement and low stress management played a huge role in the treatment.
             </p>
-            
-            <p class="note">
+
+            <p class="text-sm italic text-center bg-slate-600 text-slate-100 p-4 rounded-lg shadow-lg mb-4">
                 Note: shade was selected according to patient's desire.
             </p>
-            
-            <div class="image-row">
-                <img data-src="photo12.jpg" alt="Case image 1">
-                <img data-src="photo27.jpg" alt="Case image 2">
+
+            <div class="flex justify-center gap-4 mb-4 flex-wrap">
+                <img data-src="photo12.jpg" alt="Case image 1" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
+                <img data-src="photo27.jpg" alt="Case image 2" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
             </div>
-            
-            <div class="table-container">
-                <table>
-                    <tr>
-                        <td>
-                            &nbsp;
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img data-src="photo10.jpg" alt="Detailed case image">
-                        </td>
-                    </tr>
-                </table>
+
+            <div class="text-center">
+                <img data-src="photo10.jpg" alt="Detailed case image" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
         </div>
 
         <!-- Lateral Restoration Section -->
-        <div class="section page-break">
-            <div class="image-container">
-                <img data-src="photo14.jpg" alt="Lateral restoration">
+        <div class="mb-8 pb-4 border-b border-slate-500">
+            <div class="text-center mb-4">
+                <img data-src="photo14.jpg" alt="Lateral restoration" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
-            
-            <p class="note">
+
+            <p class="text-sm italic text-center bg-slate-600 text-slate-100 p-4 rounded-lg shadow-lg mb-4">
                 Note: lateral is the one I'm restoring
             </p>
-            
-            <div class="image-row">
-                <img data-src="photo6.jpg" alt="Restoration image 1">
-                <img data-src="photo23.jpg" alt="Restoration image 2">
+
+            <div class="flex justify-center gap-4 mb-4 flex-wrap">
+                <img data-src="photo6.jpg" alt="Restoration image 1" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
+                <img data-src="photo23.jpg" alt="Restoration image 2" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
             </div>
-            
-            <div class="image-row">
-                <img data-src="photo25.jpg" alt="Restoration image 3">
-                <img data-src="photo29.jpg" alt="Restoration image 4">
+
+            <div class="flex justify-center gap-4 mb-4 flex-wrap">
+                <img data-src="photo25.jpg" alt="Restoration image 3" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
+                <img data-src="photo29.jpg" alt="Restoration image 4" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
             </div>
         </div>
 
         <!-- Retreatment Section -->
-        <div class="section page-break">
-            <h3 class="section-title">Retreatment</h3>
-            
-            <div class="image-container">
-                <img data-src="photo28.jpg" alt="Retreatment image 1">
-                <img data-src="photo18.jpg" alt="Retreatment image 2">
-                <img data-src="photo24.jpg" alt="Retreatment image 3">
+        <div class="mb-8 pb-4 border-b border-slate-500">
+            <h3 class="text-2xl font-bold text-white mb-4">Retreatment</h3>
+
+            <div class="flex justify-center gap-4 mb-4 flex-wrap">
+                <img data-src="photo28.jpg" alt="Retreatment image 1" class="w-1/3 max-w-sm h-auto rounded-lg shadow-lg">
+                <img data-src="photo18.jpg" alt="Retreatment image 2" class="w-1/3 max-w-sm h-auto rounded-lg shadow-lg">
+                <img data-src="photo24.jpg" alt="Retreatment image 3" class="w-1/3 max-w-sm h-auto rounded-lg shadow-lg">
             </div>
-            
-            <div class="image-container">
-                <img data-src="photo3.jpg" alt="Retreatment detail">
+
+            <div class="text-center mb-4">
+                <img data-src="photo3.jpg" alt="Retreatment detail" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
-            
-            <div class="image-row">
-                <img data-src="photo26.jpg" alt="Retreatment image 4">
-                <img data-src="photo5.jpg" alt="Retreatment image 5">
+
+            <div class="flex justify-center gap-4 mb-4 flex-wrap">
+                <img data-src="photo26.jpg" alt="Retreatment image 4" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
+                <img data-src="photo5.jpg" alt="Retreatment image 5" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
             </div>
         </div>
 
         <!-- Lateral Perforation Section -->
-        <div class="section page-break">
-            <h3 class="section-title">Lateral Perforation closed using MTA + collagen gel foam</h3>
-            
-            <div class="image-container">
-                <img data-src="photo20.jpg" alt="Perforation treatment">
+        <div class="mb-8 pb-4 border-b border-slate-500">
+            <h3 class="text-2xl font-bold text-white mb-4">Lateral Perforation closed using MTA + collagen gel foam</h3>
+
+            <div class="text-center">
+                <img data-src="photo20.jpg" alt="Perforation treatment" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
         </div>
 
         <!-- Depigmentation Section -->
-        <div class="section page-break">
-            <h3 class="section-title">Depigmentation & gingivectomy</h3>
-            
-            <div class="image-container">
-                <img data-src="photo13.jpg" alt="Depigmentation procedure">
+        <div class="mb-8 pb-4 border-b border-slate-500">
+            <h3 class="text-2xl font-bold text-white mb-4">Depigmentation & gingivectomy</h3>
+
+            <div class="text-center">
+                <img data-src="photo13.jpg" alt="Depigmentation procedure" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
         </div>
 
         <!-- Pulpectomy Section -->
-        <div class="section page-break">
-            <h3 class="section-title">Pulpectomy C|C with composite restoration</h3>
-            
-            <div class="image-container">
-                <img data-src="photo8.jpg" alt="Pulpectomy procedure">
+        <div class="mb-8 pb-4 border-b border-slate-500">
+            <h3 class="text-2xl font-bold text-white mb-4">Pulpectomy C|C with composite restoration</h3>
+
+            <div class="text-center mb-4">
+                <img data-src="photo8.jpg" alt="Pulpectomy procedure" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
-            
-            <div class="image-row">
-                <img data-src="photo9.jpg" alt="Pulpectomy detail 1">
-                <img data-src="photo15.jpg" alt="Pulpectomy detail 2">
+
+            <div class="flex justify-center gap-4 mb-4 flex-wrap">
+                <img data-src="photo9.jpg" alt="Pulpectomy detail 1" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
+                <img data-src="photo15.jpg" alt="Pulpectomy detail 2" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
             </div>
         </div>
 
         <!-- Restorations Section -->
-        <div class="section page-break">
-            <h3 class="section-title">Restorations</h3>
-            
-            <div class="image-container">
-                <img data-src="photo19.jpg" alt="Restoration case">
+        <div class="mb-8 pb-4 border-b border-slate-500">
+            <h3 class="text-2xl font-bold text-white mb-4">Restorations</h3>
+
+            <div class="text-center">
+                <img data-src="photo19.jpg" alt="Restoration case" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
-            
-           
         </div>
 
         <!-- Diastema Section -->
-        <div class="section page-break">
-            <h3 class="section-title">Diastema</h3>
-            
-						 <div class="image-container">
-                <img data-src="photo11.jpg" alt="Restoration detail">
+        <div class="mb-8 pb-4 border-b border-slate-500">
+            <h3 class="text-2xl font-bold text-white mb-4">Diastema</h3>
+
+            <div class="text-center mb-4">
+                <img data-src="photo11.jpg" alt="Restoration detail" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
-						
-            <div class="image-container">
-                <img data-src="photo4.jpg" alt="Diastema treatment">
+
+            <div class="text-center mb-4">
+                <img data-src="photo4.jpg" alt="Diastema treatment" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
-            
-            <div class="image-container">
-                <img data-src="photo1.jpg" alt="Diastema result">
+
+            <div class="text-center">
+                <img data-src="photo1.jpg" alt="Diastema result" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
         </div>
 
         <!-- Bleaching Section -->
-        <div class="section page-break">
-            <h3 class="section-title">Bleaching</h3>
-            
-            <div class="image-row">
-                <img data-src="photo2.jpg" alt="Bleaching before">
-                <img data-src="photo21.jpg" alt="Bleaching after">
+        <div class="mb-8 pb-4 border-b border-slate-500">
+            <h3 class="text-2xl font-bold text-white mb-4">Bleaching</h3>
+
+            <div class="flex justify-center gap-4 mb-4 flex-wrap">
+                <img data-src="photo2.jpg" alt="Bleaching before" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
+                <img data-src="photo21.jpg" alt="Bleaching after" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
             </div>
         </div>
 
         <!-- Laser Surgery Section -->
-        <div class="section page-break">
-            <h3 class="section-title">Laser surgery</h3>
-            
-            <div class="image-container">
-                <img data-src="photo16.jpg" alt="Laser surgery overview">
+        <div class="mb-8 pb-4 border-b border-slate-500">
+            <h3 class="text-2xl font-bold text-white mb-4">Laser surgery</h3>
+
+            <div class="text-center mb-4">
+                <img data-src="photo16.jpg" alt="Laser surgery overview" class="w-full max-w-2xl h-auto rounded-lg shadow-lg mx-auto">
             </div>
-            
-            <div class="image-row">
-                <img data-src="photo17.jpg" alt="Laser surgery detail 1">
-                <img data-src="photo7.jpg" alt="Laser surgery detail 2">
+
+            <div class="flex justify-center gap-4 mb-4 flex-wrap">
+                <img data-src="photo17.jpg" alt="Laser surgery detail 1" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
+                <img data-src="photo7.jpg" alt="Laser surgery detail 2" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">
             </div>
         </div>
     </div>

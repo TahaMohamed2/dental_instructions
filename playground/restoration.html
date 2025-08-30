@@ -1,56 +1,79 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <script src="QR_image_viewer.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>تعليمات ما بعد حشوة دائمة</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index_styles.css" />
+  <script src="QR_image_viewer.js"></script>
 </head>
-<body>
-  <button class="qr-btn" onclick="viewQRImage()">
-    <img src="resources/QR.jpeg" alt="QR" class="embedded_QR_photo" />
+<body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+  <button
+    class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100"
+    onclick="viewQRImage()"
+  >
+    <img src="resources/QR.jpeg" alt="QR" class="max-w-full rounded-lg shadow-lg" />
   </button>
-  
-  <button class="credits-btn" onclick="location.href='credits.html'">credits</button>
-  
-  <button class="home-button" alt="الرئيسية" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'">الرئيسية</button>
 
-  <div class="content">
-    <h1>تعليمات ما بعد عمل حشوة دائمة</h1>
-    
-    <p>اغلب الناس لا يشعرون بأي الم أو عدم راحة بعد عمل الحشو</p>
-    
-    <p>يرجى مراجعة الطبيب المعالج في حالة حدوث احد الأعراض الأتية:</p>
-    <ul>
-      <li>وجود الم أو تورم يحدث بعد 24 ساعة</li>
-      <li>حدوث حساسية من الأدوية الموصوفة</li>
-    </ul>
-    
-    <p>بعد الانتهاء التام من الحشو  إذا كان هناك شعور بعدم الارتياح أو انك تقوم بالعض على بذرة أو حبة رمل يرجى مراجعة الطبيب لضبط ارتفاع الحشو و ذلك للحفاظ على الضرس و تجنب حدوث كسر به علما أن الجلسة تحتاج فقط إلى عدة دقائق</p>
-    
-    <p>يرجى اتباع العليمات الأتية للحصول على افضل نتيجة من العلاج:</p>
-    <ul>
-      <li>عدم تناول الطعام أو الشراب قبل زوال مفعول البنج</li>
-      <li>عدم العض على الضرس أو تناول الأطعمة القاسية أو المقرمشة مثل المكسرات و المقليات أو الأطعمة اللزقة مثل الكراميل و التوفي و اللبان خلال أول 24 ساعة من الحشو</li>
-      <li>الاستمرار على استخدام خيط الأسنان و غسيل الأسنان إلا إذا نصح الطبيب بغير ذلك</li>
-    </ul>
-    
-    <p>يمكن حدوث بعض الألم أو الإحساس بشئ غريب بعد الانتهاء من الحشو و ذلك غالبا بسبب احد الأسباب الأتية:</p>
-    <ul>
-      <li>الأم في مفصل الفك و ذلك بسبب فتح الفم لفترة طويلة</li>
-      <li>الم في العضلات و الأنسجة حول مكان حقن البنج</li>
-      <li>الم بسبب أن الحشو مرتفع جزئيا عن المستوى الطبيعي لباقي الأسنان و يرجى مراجعة الطبيب في تلك الحالة</li>
-    </ul>
-    
-    <p><strong>في حالة استخدام حشوة مؤقتة:</strong></p>
-    <ul>
-      <li>إذا انكسرت الحشوة المؤقتة أو خلعت من مكانها يرجى مراجعة الطبيب</li>
-      <li>يجب تفادى تناول الأطعمة اللزقة مثل التوفي و الكراميل و اللبان على الحشوة المؤقتة لتفادى خلعها حتى يتم وضع الحشوة النهائية</li>
-    </ul>
-  </div>
-<li>المداومة على غسيل الاسنان كما موضح هنا 
-    <button class="brushing-button" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/brushing.html'">طريقة غسيل الاسنان</button>
-  للحفاظ على باقى الاسنان و تجنب تكرار نفس الموضوع</li>
+  <button
+    class="absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    onclick="location.href='credits.html'"
+  >
+    credits
+  </button>
 
+  <button
+    class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    alt="الرئيسية"
+    onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'"
+  >
+    الرئيسية
+  </button>
+
+	<div class="max-w-4xl mx-auto">
+		<h1 class="text-4xl font-bold text-center mb-8 text-white">تعليمات ما بعد عمل حشوة دائمة</h1>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">اغلب الناس لا يشعرون بأي الم أو عدم راحة بعد عمل الحشو</p>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">يرجى مراجعة الطبيب المعالج في حالة حدوث احد الأعراض الأتية:</p>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>وجود الم أو تورم يحدث بعد 24 ساعة</li>
+			<li>حدوث حساسية من الأدوية الموصوفة</li>
+		</ul>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">بعد الانتهاء التام من الحشو  إذا كان هناك شعور بعدم الارتياح أو انك تقوم بالعض على بذرة أو حبة رمل يرجى مراجعة الطبيب لضبط ارتفاع الحشو و ذلك للحفاظ على الضرس و تجنب حدوث كسر به علما أن الجلسة تحتاج فقط إلى عدة دقائق</p>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">يرجى اتباع العليمات الأتية للحصول على افضل نتيجة من العلاج:</p>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>عدم تناول الطعام أو الشراب قبل زوال مفعول البنج</li>
+			<li>عدم العض على الضرس أو تناول الأطعمة القاسية أو المقرمشة مثل المكسرات و المقليات أو الأطعمة اللزقة مثل الكراميل و التوفي و اللبان خلال أول 24 ساعة من الحشو</li>
+			<li>الاستمرار على استخدام خيط الأسنان و غسيل الأسنان إلا إذا نصح الطبيب بغير ذلك</li>
+		</ul>
+
+		<p class="mb-4 text-slate-200 leading-relaxed">يمكن حدوث بعض الألم أو الإحساس بشئ غريب بعد الانتهاء من الحشو و ذلك غالبا بسبب احد الأسباب الأتية:</p>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>الأم في مفصل الفك و ذلك بسبب فتح الفم لفترة طويلة</li>
+			<li>الم في العضلات و الأنسجة حول مكان حقن البنج</li>
+			<li>الم بسبب أن الحشو مرتفع جزئيا عن المستوى الطبيعي لباقي الأسنان و يرجى مراجعة الطبيب في تلك الحالة</li>
+		</ul>
+
+		<h2 class="text-3xl font-semibold mb-6 text-white">في حالة استخدام حشوة مؤقتة:</h2>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-slate-200 leading-relaxed">
+			<li>إذا انكسرت الحشوة المؤقتة أو خلعت من مكانها يرجى مراجعة الطبيب</li>
+			<li>يجب تفادى تناول الأطعمة اللزقة مثل التوفي و الكراميل و اللبان على الحشوة المؤقتة لتفادى خلعها حتى يتم وضع الحشوة النهائية</li>
+		</ul>
+
+		<p class="mb-6 text-slate-200 leading-relaxed">
+			المداومة على غسيل الاسنان كما موضح هنا
+			<button
+				class="bg-blue-600 text-slate-100 text-sm border-none rounded-lg px-3 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-blue-500"
+				onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/brushing.html'"
+			>
+				طريقة غسيل الاسنان
+			</button>
+			للحفاظ على باقى الاسنان و تجنب تكرار نفس الموضوع
+		</p>
+	</div>
 </body>
 </html>
