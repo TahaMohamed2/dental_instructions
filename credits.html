@@ -263,14 +263,14 @@
 
       // Reorder letters to form "smile it's free"
       const sentence = " Smile it's free ☺";
-      const maxWidth = 126;
+      const maxWidth = Math.floor(stackContainer.offsetWidth / 10);
       const maxHeight = 2;
       const index = stackedCharacters.length;
       const x = index % maxWidth;
       const y = Math.floor(index / maxWidth);
 
       // Calculate position
-      charElement.style.left = `${(x * 10) % (maxWidth * 10)}px`;
+      charElement.style.left = `${x * 10}px`;
       charElement.style.bottom = `${y * 20}px`;
       charElement.style.opacity = '0';
       charElement.style.transform = 'translateY(20px)';
