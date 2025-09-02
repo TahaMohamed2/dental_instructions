@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="QR_image_viewer.js"></script>
+      <link rel="icon" href="resources/instructions_logo.ico" type="image/x-icon">
+
   <title>توعية للأطفال</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
@@ -44,15 +46,65 @@
             height: auto;
         }
 
-        .qr-btn, .credits-btn, .home-button {
-            background: linear-gradient(45deg, #666, #999);
-            transition: all 0.3s ease;
-        }
+    .qr-btn {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        background-color: transparent;
+        border: none;
+        border-radius: 1px;
+        padding: 1px 2px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 8%;
+        min-width: 40px;
+        text-align: center;
+        color: #000;
+    }
 
-        .qr-btn:hover, .credits-btn:hover, .home-button:hover {
-            background: linear-gradient(45deg, #555, #888);
-            transform: scale(1.05);
-        }
+    .credits-btn {
+        background-color: #d8bfd8;
+        color: navy;
+        font-size: 0.7rem;
+        border: none;
+        border-radius: 8px;
+        padding: 4px 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: auto;
+        min-width: 60px;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    .credits-btn:hover {
+        background-color: #c4a3c4;
+    }
+
+    .home-button {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background-color: #C7B8EA;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+        background-color: #32CD32;
+    }
+
+    .home-button:active {
+        background-color: #00BFFF;
+    }
     </style>
 </head>
 <body class="min-h-screen py-8 px-4">
@@ -60,9 +112,9 @@
     <!-- Header with buttons -->
     <div class="flex justify-between items-center mb-8">
       <div class="flex space-x-4">
-        <button class="qr-btn text-white px-4 py-2 rounded-lg font-semibold">
-          <img src="resources/QR.jpeg" alt="QR" class="embedded_QR_photo w-8 h-8" />
-        </button>
+<button class="qr-btn" onclick="viewQRImage()">
+  <img src="resources/QR.jpeg" alt="QR" class="embedded_QR_photo" />
+</button>
         <button class="credits-btn text-white px-4 py-2 rounded-lg font-semibold" onclick="location.href='credits.html'">credits</button>
         <button class="home-button text-white px-4 py-2 rounded-lg font-semibold" onclick="window.location.href='https://tahamohamed2.github.io/dental_instructions/'">الرئيسية</button>
       </div>
