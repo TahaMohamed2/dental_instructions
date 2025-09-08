@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.button-container');
+  if (!container) return; // Exit if container not found to prevent errors
   const buttons = Array.from(container.querySelectorAll('button'));
   const visibleCount = 5;
   const isRTL = document.documentElement.dir === 'rtl';
