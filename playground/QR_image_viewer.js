@@ -2,6 +2,16 @@
  * Displays a QR image viewer.
  */
 function viewQRImage() {
+    // Check if a QR image viewer already exists and remove it
+    const existingViewer = document.querySelector('.qr-image-viewer');
+    if (existingViewer) {
+        existingViewer.remove();
+    }
+
+    // Record the current scroll position
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+
     // Create a new div element for the QR image viewer
     const qrImageViewer = document.createElement('div');
     qrImageViewer.classList.add('qr-image-viewer');
@@ -30,5 +40,7 @@ function viewQRImage() {
     qrImageViewer.addEventListener('click', () => {
         // Remove the QR image viewer from the body
         qrImageViewer.remove();
+        // Scroll back to the original position
+        window.scrollTo(scrollX, scrollY);
     });
 }
