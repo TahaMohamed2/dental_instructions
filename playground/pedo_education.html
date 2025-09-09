@@ -400,6 +400,9 @@
       // Show the topic info section with animation
       const topicInfoDiv = document.getElementById('topicInfo');
       topicInfoDiv.classList.add('show');
+
+      // Scroll to the topic info section
+      topicInfoDiv.scrollIntoView({ behavior: 'smooth' });
     }
 
     // Close topic info when clicking outside
