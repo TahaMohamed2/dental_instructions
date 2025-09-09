@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.addEventListener('mouseleave', () => {
         const overlay = card.querySelector('.stone-content-overlay');
         if (overlay) {
-          overlay.style.transform = 'translateY(100%)';
+          overlay.style.transform = 'translateY(10%)';
           overlay.style.transition = 'transform 0.3s ease';
         }
       });
