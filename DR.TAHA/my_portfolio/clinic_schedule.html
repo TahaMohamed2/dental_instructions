@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواعيد عيادات د/طه</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../index_styles.css" />
+</head>
+<body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+    <!-- Configuration Section - Edit these values to customize clinic data -->
+    <script>
+        const clinicConfig = {
+            // Clinic data configuration - modify these values as needed
+            clinics: {
+                sunday: {
+                    name: "عيادة المركز الألماني",
+                    location: "https://maps.app.goo.gl/JcaiP6viBiuGuBN89",
+                    workingHours:"12:00 الى 05:00",
+                    contact: "+01030020376",
+                    services: "clinic_services.html"
+                },
+                monday: {
+                 name: "مركز نور الرحمن",
+                location: "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9",
+                workingHours: "06:00 الى 10:00",
+                contact: "01015929494 , 01273072101 , 01140447818",
+                services: "clinic_services.html"
+                },
+                tuesday: {
+                    name: "مركز الحميدى",
+                    location: "https://maps.app.goo.gl/vWcfGuHg89Ru5fNt7",
+                    workingHours: "08:00 الى 10:00",
+                    contact: "+20 100 362 1676",
+                    services: "clinic_services.html"
+                },
+                wednesday: {
+                    name: "عيادة المركز الألماني",
+                    location: "https://maps.app.goo.gl/JcaiP6viBiuGuBN89",
+                    workingHours:"12:00 الى 05:00",
+                    contact: "+01030020376",
+                    services: "clinic_services.html"
+                },
+                thursday: {
+                    name: "مركز نور الرحمن",
+                    location: "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9",
+                    workingHours:"06:00 الى 10:00",
+                    contact: "01015929494,01273072101,01140447818",
+                    services: "clinic_services.html"
+                },
+                friday: {
+                    closed: true,
+                    message: "العيادة مغلقة يوم الجمعة"
+                },
+                saturday: {
+                    name: "عيادة كوزميك",
+                    location: "https://maps.app.goo.gl/vYQmjw22KckXQxfk9",
+                    workingHours: "02:00 الى 10:00",
+                    contact: "+20105 5262066",
+                    services: "clinic_services.html"
+                }
+            },
+            portfolioLink: "dental_portfolio.html"
+        };
+    </script>
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header with Portfolio Button -->
+        <div class="flex justify-between items-center mb-8">
+            <button id="portfolioBtn" class="bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500">
+                Portfolio
+            </button>
+
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-white mb-2">مواعيد د/طه</h1>
+                <p class="text-slate-300">برجاء اختيار اليوم لمشاهدة تفاصيل العيادة</p>
+            </div>
+        </div>
+
+        <!-- Week Calendar -->
+        <div class="bg-slate-700 rounded-2xl shadow-xl p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-white mb-6 text-center">الجدول الأسبوعي</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-7 gap-3">
+                <!-- Sunday -->
+                <button onclick="showClinicInfo('sunday')" class="day-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300">
+                    الأحد
+                </button>
+
+                <!-- Monday -->
+                <button onclick="showClinicInfo('monday')" class="day-button bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300">
+                    الإثنين
+                </button>
+
+                <!-- Tuesday -->
+                <button onclick="showClinicInfo('tuesday')" class="day-button bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300">
+                    الثلاثاء
+                </button>
+
+                <!-- Wednesday -->
+                <button onclick="showClinicInfo('wednesday')" class="day-button bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300">
+                    الأربعاء
+                </button>
+
+                <!-- Thursday -->
+                <button onclick="showClinicInfo('thursday')" class="day-button bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300">
+                    الخميس
+                </button>
+
+                <!-- Friday -->
+                <button onclick="showClinicInfo('friday')" class="day-button bg-gray-600 hover:bg-gray-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300">
+                    الجمعة
+                </button>
+
+                <!-- Saturday -->
+                <button onclick="showClinicInfo('saturday')" class="day-button bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300">
+                    السبت
+                </button>
+            </div>
+        </div>
+
+        <!-- Clinic Information Display Area -->
+        <div id="clinicInfo" class="clinic-info bg-slate-700 rounded-2xl shadow-xl p-6">
+            <div class="text-center">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1a2bf8fc-a9c7-4db5-88fd-379915c1255b.png" alt="Modern medical clinic interior with professional examination rooms and waiting area" class="w-full h-48 object-cover rounded-lg mb-4 mx-auto" onerror="this.style.display='none'">
+
+                <h3 id="clinicName" class="text-2xl font-bold text-white mb-4"></h3>
+
+                <div class="grid md:grid-cols-2 gap-4 text-right">
+                    <div class="bg-slate-600 p-4 rounded-lg">
+                        <h4 class="font-semibold text-slate-200 mb-2">ساعات العمل:</h4>
+                        <p id="workingHours" class="text-slate-300"></p>
+                    </div>
+
+                    <div class="bg-slate-600 p-4 rounded-lg">
+                        <h4 class="font-semibold text-slate-200 mb-2">معلومات الاتصال:</h4>
+                        <p id="contactInfo" class="text-slate-300"></p>
+                    </div>
+                </div>
+
+                <div class="mt-6 space-y-3">
+                    <a id="locationLink" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg">
+                        الموقع على الخريطة
+                    </a>
+
+                    <a id="servicesLink" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg ml-3">
+                        الخدمات المتاحة بالعيادة
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize portfolio button
+        document.getElementById('portfolioBtn').addEventListener('click', function() {
+            window.location.href = clinicConfig.portfolioLink;
+        });
+
+        let currentActiveDay = null;
+
+        function showClinicInfo(day) {
+            const clinicData = clinicConfig.clinics[day];
+            const clinicInfoDiv = document.getElementById('clinicInfo');
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.day-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            currentActiveDay = day;
+
+            if (clinicData.closed) {
+                // Show closed message
+                document.getElementById('clinicName').textContent = clinicData.message;
+                document.getElementById('workingHours').textContent = "مغلق";
+                document.getElementById('contactInfo').textContent = "غير متاح";
+                document.getElementById('locationLink').style.display = 'none';
+                document.getElementById('servicesLink').style.display = 'none';
+            } else {
+                // Show clinic information
+                document.getElementById('clinicName').textContent = clinicData.name;
+                document.getElementById('workingHours').textContent = clinicData.workingHours;
+                document.getElementById('contactInfo').textContent = clinicData.contact;
+                document.getElementById('locationLink').href = clinicData.location;
+                document.getElementById('servicesLink').href = clinicData.services;
+                
+                document.getElementById('locationLink').style.display = 'inline-block';
+                document.getElementById('servicesLink').style.display = 'inline-block';
+            }
+
+            // Show the clinic info section with animation
+            clinicInfoDiv.classList.add('show');
+        }
+
+        // Close clinic info when clicking outside
+        document.addEventListener('click', function(e) {
+            const clinicInfo = document.getElementById('clinicInfo');
+            const dayButtons = document.querySelectorAll('.day-button');
+            
+            if (!clinicInfo.contains(e.target) && 
+                !Array.from(dayButtons).some(btn => btn.contains(e.target)) &&
+                clinicInfo.classList.contains('show')) {
+                
+                clinicInfo.classList.remove('show');
+                if (currentActiveDay) {
+                    document.querySelector(`.day-button.active`).classList.remove('active');
+                    currentActiveDay = null;
+                }
+            }
+        });
+    </script>
+
+<footer style="text-align:center; margin-top: 20px;">
+    <script type="text/javascript" src="https://www.free-counters.org/count/iih0"></script><br>
+    <a href='https://www.versicherungen.at/pflegevorsorge/'>private Pflegevorsorge</a> 
+    <script type='text/javascript' src='https://www.whomania.com/ctr?id=af0893ed73140160bc92141f811e25dbde57140d'></script>
+</footer>
+
+</body>
+</html>
+

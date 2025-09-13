@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head> <link rel="icon" href="resources/instructions_logo.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تعليمات و تمارين لمفصل الفك</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index_styles.css" />
+  <script src="QR_image_viewer.js"></script>
+</head>
+<body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+  <button
+    class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100"
+    onclick="viewQRImage()"
+  >
+    <img src="resources/QR.jpeg" alt="QR" class="max-w-full rounded-lg shadow-lg" />
+  </button>
+
+  <button
+    class="absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    onclick="location.href='credits.html'"
+  >
+    credits
+  </button>
+
+  <button
+    class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    alt="الرئيسية"
+    onclick="window.location.href='index.html'"
+  >
+    الرئيسية
+  </button>
+
+	<div class="max-w-4xl mx-auto">
+		<h1 class="text-4xl font-bold text-center mb-8 text-white">تعليمات و تمارين لمفصل الفك</h1>
+
+		<h2 class="text-3xl font-semibold mb-6 text-white">التعليمات لألم مفصل الفك</h2>
+		<ul class="list-disc list-inside mb-6 space-y-4 text-slate-200 leading-relaxed">
+			<li>استخدام الكمادات الدافئة فى الصباح مع مساج للعضلات المحركة للفك لمدة ٤ دقائق فى الصباح و بعد الاكل</li>
+			<div class="flex justify-center my-6">
+				<iframe
+					src="https://www.youtube.com/embed/IMC-wvglf4E"
+					frameborder="0"
+					allowfullscreen
+					class="w-full max-w-2xl h-64 rounded-lg shadow-lg"
+				></iframe>
+			</div>
+			<li>و فى حالة استمرار الالم لمدة اكثر من اسبوع نبدأ بتناول احد الادوية الاتيه بالترتيب التالى فى حالة عدم تواجد احدها فى الصيدليات</li>
+			<ul class="list-disc list-inside space-y-2 ml-6">
+				<li>Myolgin</li>
+				<li>Relax</li>
+				<li>Relaxon</li>
+				<li>على حسب ارشادات الطبيب</li>
+				<li>قرص واحد كل ١٢ ساعة</li>
+			</ul>
+			<li>و تخفض الجرعة لقرص واحد قبل النوم فى حالة الشعور بدوخة او دوار</li>
+		</ul>
+	</div>
+</body>
+</html>
+

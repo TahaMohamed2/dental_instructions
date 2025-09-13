@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head> <link rel="icon" href="resources/instructions_logo.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تعليمات تقويم الأسنان</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index_styles.css" />
+  <script src="QR_image_viewer.js"></script>
+</head>
+
+<body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+  <button
+    class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100"
+    onclick="viewQRImage()"
+  >
+    <img src="resources/QR.jpeg" alt="QR" class="max-w-full rounded-lg shadow-lg" />
+  </button>
+
+  <button
+    class="absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    onclick="location.href='credits.html'"
+  >
+    credits
+  </button>
+
+  <button
+    class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+    alt="الرئيسية"
+    onclick="window.location.href='index.html'"
+  >
+    الرئيسية
+  </button>
+
+	<div class="max-w-4xl mx-auto">
+		<h1 class="text-4xl font-bold text-center mb-8 text-white">تعليمات تقويم الأسنان</h1>
+
+		<h2 class="text-3xl font-semibold mb-6 text-white">اشياء ممكن حدوثها عند تركيب التقويم لأول مرة :</h2>
+		<p class="mb-4 text-slate-200 leading-relaxed">قد يكون هناك الم بسيط في الأسنان و الشفة خلال أول أسبوعين</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">إذا قام الطبيب برفع العضة فان الأسنان لن تلمس بعضها إلا في الضرس اللذى رفع عنده العضة و لن تلمس بعضها إلا بعد مرور شهرين إلى 4 اشهر من بداية العلاج</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">ستحتاج إلى بعض الوقت حتى تتعود على العضة الجديدة بعد رفعها حتى تستطيع الأكل بشكل طبيعي عليها</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">يمكن استخدام المسكنات لتخفيف الألم الناتج عن تركيب التقويم على حسب تعليمات الطبيب</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">خلال الأسابيع الأولي يمكن استخدام الشمع المرفق لتغطية الأماكن التي تسبب جرح الخد أو الشفتين أو اللسان</p>
+
+		<h2 class="text-3xl font-semibold mb-6 text-white">ما يمكن عمله لتخفيف من الأم التقويم :</h2>
+		<p class="mb-4 text-slate-200 leading-relaxed">خلال الأسابيع الأولي من المتوقع وجود بعض الألم نتيجة الأجزاء الجديدة من التقويم و يمكن التغلب عنه باستخدام احدي الطرق الأتية:</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">استخدام الشمع لتغطية الجزء من التقويم الذي يسبب الألم</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">استخدام المسكنات أو الجل الموضعي كما أوصى الطبيب</p>
+
+		<h2 class="text-3xl font-semibold mb-6 text-white">ماذا تفعل عند سقوط احدي الفصوص من على الأسنان ؟</h2>
+		<p class="mb-4 text-slate-200 leading-relaxed">في حالة سقوط احدي الفصوص من على احد الأسنان ( و هذا لا يحدث ابدا إلا إذا لم تقم باتباع التعليمات الخاصة بالأكل الذي يجب تجنبه و كيفية الاعتناء بالتقويم كما سيتم شرحه )</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">فتقع من على احدي الأسنان و إما تقع من الفم بالكامل أو تبقى معلقة في السلك الخاص بالتقويم و في كلتا الحالتين لا نقلق و إذا كان الجزء المخلوع لا يسبب إزعاج لك يمكنك الانتظار حتى موعد المتابعة الخاص بك إما إذا كان يسبب لك إزعاج فيمكنك التواصل مع العيادة لمراجعة الطبيب في اقرب وقت ممكن لتثبيتها مجددا على السن أو تغيرها إذا لزم الأمر .</p>
+
+		<h2 class="text-3xl font-semibold mb-6 text-white">الأطعمة التي ينبغي تجنبها تماما :</h2>
+		<p class="mb-4 text-slate-200 leading-relaxed">أي شئ اقسي من البسكوت</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">الأطعمة التي يمكن أن تخلع احدي الفصوص من على الأسنان مثل ( المقرمشات , المكسرات , الحبوب , الفشار , الدوم , اللب , الخضراوات القاسية مثل الجزر , الملبس , الدجاج المقلى , التوفى , التلج , البقسماط , … )</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">العديد من الأطعمة الملونة التي قد تصبغ التقويم مثل ( القهوة , صوص الطماطم , الشاي , الفراولة , البيبسبى و المشروبات الغازية , … ) يرجى التقليل منهم و خصوصا إذا كنا نستخدم التقويم الشفاف</p>
+
+		<h2 class="text-3xl font-semibold mb-6 text-white">كيفية الاهتمام بالأسنان مع تقويم الأسنان</h2>
+		<p class="mb-4 text-slate-200 leading-relaxed">يرجى الأخذ بالاعتبار أن حركة الأسنان تكون أبطا في حالة تكون الجير عليها و لذلك يجب عليك تنظيف أسنانك باستمرار كما في الطبيعي كالاتي :</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">غسيل الأسنان 3 مرات يوميا بحيث تكون كل مرة منهم لمدة 3 دقائق</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">استخدام خيط الأسنان بشكل يومي</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">إزالة كل الأكل و البكتيريا التى تتراكم على الأسنان حتى لا تتصلب و تتحول إلى طبقة جيرية</p>
+		<p class="mb-4 text-slate-200 leading-relaxed">و هنا فيديو لكيفية استخدام خيط الأسنان مع التقويم</p>
+		<div class="flex justify-center mb-6">
+			<iframe
+				width="853"
+				height="480"
+				src="https://www.youtube.com/embed/3_vHsOGiIo4"
+				title="Flossing Braces With a Threader"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+				class="rounded-lg shadow-lg"
+			></iframe>
+		</div>
+	</div>
+</body>
+</html>
+
