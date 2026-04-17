@@ -1,0 +1,63 @@
+{
+  "site": {
+    "name": "Root Site",
+    "version": "1.0.0",
+    "description": "Basic HTML version with minimal styling",
+    "baseUrl": "/",
+    "language": "ar",
+    "textDirection": "rtl"
+  },
+  "styling": {
+    "cssFramework": "basic",
+    "customStyles": "styles.css",
+    "frameworkOptions": {
+      "basic": {
+        "useCustomStyles": true,
+        "responsive": false,
+        "modernFeatures": false
+      }
+    }
+  },
+  "assets": {
+    "favicon": "resources/instructions_logo.ico",
+    "qrImage": "resources/QR.jpeg",
+    "qrScript": "QR_image_viewer.js",
+    "homeUrl": "index.html",
+    "creditsUrl": "credits.html",
+    "resourcesPath": "resources/"
+  },
+  "navigation": {
+    "showQRButton": true,
+    "showCreditsButton": true,
+    "showHomeButton": true,
+    "buttonStyle": "basic",
+    "buttonPosition": {
+      "qrButton": "bottom-left",
+      "creditsButton": "bottom-right",
+      "homeButton": "top-right"
+    }
+  },
+  "content": {
+    "source": "content/database/",
+    "standardVersion": "root",
+    "allowOverrides": false,
+    "cacheEnabled": false
+  },
+  "features": {
+    "modernStyling": false,
+    "responsiveDesign": false,
+    "advancedNavigation": false,
+    "customThemes": false
+  },
+  "compatibility": {
+    "supportedBrowsers": ["chrome", "firefox", "safari", "edge"],
+    "minimumScreenWidth": 320,
+    "requiresJavaScript": true
+  },
+  "metadata": {
+    "created": "2024-01-01T00:00:00Z",
+    "lastUpdated": "2024-01-01T00:00:00Z",
+    "author": "Dental Instructions CMS",
+    "targetAudience": "general"
+  }
+}

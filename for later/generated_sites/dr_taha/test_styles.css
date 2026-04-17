@@ -1,0 +1,57 @@
+/* Test styles to verify CSS loading */
+body {
+    background-color: #1e293b !important;
+    color: #f1f5f9 !important;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(30, 41, 59, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#instruction-title {
+    color: white !important;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#content-area p {
+    color: #cbd5e1 !important;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#qr-button, #credits-button, #home-button {
+    background-color: #4b5563 !important;
+    color: white !important;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#qr-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+#credits-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#home-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}

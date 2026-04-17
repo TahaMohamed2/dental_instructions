@@ -1,0 +1,112 @@
+{
+  "site": {
+    "name": "Playground Testing Site",
+    "version": "1.0.0",
+    "description": "Testing environment with modern styling",
+    "baseUrl": "/playground/",
+    "language": "ar",
+    "textDirection": "rtl"
+  },
+  "styling": {
+    "cssFramework": "tailwind",
+    "customStyles": "playground/index_styles.css",
+    "frameworkOptions": {
+      "tailwind": {
+        "cdn": "https://cdn.tailwindcss.com",
+        "useCustomStyles": true,
+        "darkMode": true,
+        "responsive": true
+      }
+    },
+    "theme": {
+      "primaryColor": "slate-800",
+      "secondaryColor": "gray-600",
+      "textColor": "slate-100",
+      "accentColor": "blue-600"
+    }
+  },
+  "assets": {
+    "favicon": "resources/instructions_logo.ico",
+    "qrImage": "playground/resources/QR.jpeg",
+    "qrScript": "playground/QR_image_viewer.js",
+    "homeUrl": "playground/index.html",
+    "creditsUrl": "playground/credits.html",
+    "resourcesPath": "playground/resources/"
+  },
+  "navigation": {
+    "showQRButton": true,
+    "showCreditsButton": true,
+    "showHomeButton": true,
+    "buttonStyle": "modern",
+    "buttonPosition": {
+      "qrButton": "bottom-left",
+      "creditsButton": "bottom-right",
+      "homeButton": "top-right"
+    },
+    "advancedFeatures": {
+      "hoverEffects": true,
+      "transitions": true,
+      "shadows": true
+    }
+  },
+  "content": {
+    "source": "content/database/",
+    "standardVersion": "playground",
+    "allowOverrides": true,
+    "cacheEnabled": true,
+    "cacheDuration": 1800,
+    "testingMode": true
+  },
+  "features": {
+    "modernStyling": true,
+    "responsiveDesign": true,
+    "advancedNavigation": true,
+    "customThemes": true,
+    "experimentalFeatures": true,
+    "debugMode": true
+  },
+  "compatibility": {
+    "supportedBrowsers": ["chrome", "firefox", "safari", "edge"],
+    "minimumScreenWidth": 320,
+    "requiresJavaScript": true,
+    "requiresModernCSS": true
+  },
+  "layout": {
+    "maxWidth": "4xl",
+    "containerStyle": "mx-auto",
+    "spacing": {
+      "section": "mb-8",
+      "element": "mb-4",
+      "compact": "space-y-2"
+    },
+    "typography": {
+      "titleSize": "text-4xl",
+      "titleWeight": "font-bold",
+      "titleAlignment": "text-center",
+      "bodySize": "text-slate-200",
+      "bodySpacing": "leading-relaxed"
+    }
+  },
+  "testing": {
+    "enableDebugLogging": true,
+    "showPerformanceMetrics": true,
+    "allowContentEditing": true,
+    "experimentalFeatures": [
+      "dynamic_content_loading",
+      "real_time_updates",
+      "advanced_caching"
+    ]
+  },
+  "metadata": {
+    "created": "2024-01-01T00:00:00Z",
+    "lastUpdated": "2024-01-01T00:00:00Z",
+    "author": "Development Team",
+    "targetAudience": "development",
+    "environment": "testing",
+    "versionControl": {
+      "branch": "development",
+      "lastCommit": "abc123",
+      "lastDeployed": "2024-01-01T00:00:00Z"
+    }
+  }
+}

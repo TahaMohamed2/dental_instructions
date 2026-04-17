@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Dental Instructions</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="resources/instructions_logo.ico" id="favicon" type="image/x-icon">
+
+    <!-- CSS Framework Loading -->
+    <div id="css-frameworks">
+        <!-- Tailwind CSS will be loaded here for modern sites -->
+    </div>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css" id="custom-styles">
+
+    <!-- JavaScript Libraries -->
+    <script src="QR_image_viewer.js" id="qr-viewer-script"></script>
+    <script src="templates/style_injector.js"></script>
+    <script src="templates/asset_manager.js"></script>
+</head>
+<body id="page-body">
+    <!-- Navigation Buttons -->
+    <button id="qr-button" onclick="viewQRImage()" style="display: none;">
+        <img id="qr-image" alt="QR" />
+    </button>
+
+    <button id="credits-button" onclick="location.href='credits.html'" style="display: none;">credits</button>
+
+    <button id="home-button" onclick="location.href='index.html'" style="display: none;" alt="الرئيسية">الرئيسية</button>
+
+    <!-- Main Content Container -->
+    <div id="main-container">
+        <!-- Page Title -->
+        <h1 id="instruction-title">Dental Instructions</h1>
+
+        <!-- Content Area -->
+        <div id="content-area">Loading content...</div>
+    </div>
+
+    <!-- JavaScript for Content Loading -->
+    <script>
+        // Configuration object that will be populated by the CMS
+        const siteConfig = {
+            instructionType: '',
+            siteVersion: '',
+            cssFramework: '',
+            assets: {}
+        };
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Get instruction type from URL or default
+            const urlParams = new URLSearchParams(window.location.search);
+            const instructionType = urlParams.get('type') || 'bleaching';
+
+            // Load site configuration
+            loadSiteConfiguration(instructionType);
+
+            // Content is already embedded in HTML, just apply styling
+            console.log('Content already embedded, applying styling only');
+        });
+
+        // Load site configuration based on current site version
+        function loadSiteConfiguration(instructionType) {
+            // This will be replaced by the actual configuration loading
+            const currentPath = window.location.pathname;
+            const isDrTaha = currentPath.includes('dr_taha');
+            const isPlayground = currentPath.includes('playground');
+
+            if (isDrTaha || isPlayground) {
+                siteConfig.cssFramework = 'tailwind';
+                siteConfig.siteVersion = isDrTaha ? 'dr_taha' : 'playground';
+            } else {
+                siteConfig.cssFramework = 'basic';
+                siteConfig.siteVersion = 'root';
+            }
+
+            // Apply CSS framework
+            applyCSSFramework(siteConfig.cssFramework);
+
+            // Load assets
+            loadAssets(siteConfig.siteVersion);
+        }
+
+        // Apply appropriate CSS framework
+        async function applyCSSFramework(framework) {
+            const cssContainer = document.getElementById('css-frameworks');
+
+            if (framework === 'tailwind') {
+                // Load Tailwind CSS synchronously
+                const tailwindLink = document.createElement('link');
+                tailwindLink.rel = 'stylesheet';
+                tailwindLink.href = 'https://cdn.tailwindcss.com';
+                cssContainer.appendChild(tailwindLink);
+
+                // Apply Tailwind classes to body immediately
+                document.getElementById('page-body').className = 'bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative';
+
+                // Style main container
+                const mainContainer = document.getElementById('main-container');
+                mainContainer.className = 'max-w-4xl mx-auto';
+
+                // Style title
+                document.getElementById('instruction-title').className = 'text-4xl font-bold text-center mb-8 text-white';
+
+                // Style content area
+                document.getElementById('content-area').className = 'space-y-4';
+
+                // Apply button styles
+                applyButtonStyles();
+
+            } else {
+                // Basic styling
+                document.getElementById('page-body').className = '';
+                document.getElementById('main-container').className = '';
+                document.getElementById('instruction-title').className = '';
+                document.getElementById('content-area').className = '';
+            }
+        }
+
+        // Apply button styles
+        function applyButtonStyles() {
+            // Style QR button
+            const qrButton = document.getElementById('qr-button');
+            if (qrButton) {
+                qrButton.className = 'absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100';
+            }
+
+            // Style credits button
+            const creditsButton = document.getElementById('credits-button');
+            if (creditsButton) {
+                creditsButton.className = 'absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500';
+            }
+
+            // Style home button
+            const homeButton = document.getElementById('home-button');
+            if (homeButton) {
+                homeButton.className = 'absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500';
+            }
+        }
+
+        // Load site-specific assets
+        async function loadAssets(siteVersion) {
+            try {
+                // Initialize asset manager with site version
+                if (window.AssetManager) {
+                    await window.AssetManager.initializeAssets(siteVersion);
+                }
+
+                // Apply styling using StyleInjector
+                if (window.StyleInjector) {
+                    await window.StyleInjector.loadFramework(siteConfig.cssFramework);
+                    window.StyleInjector.applyResponsiveClasses(siteConfig.cssFramework);
+                    window.StyleInjector.applyButtonStyles(siteConfig.cssFramework);
+                    window.StyleInjector.applyContentStyles(siteConfig.cssFramework);
+                }
+
+                // Show navigation buttons
+                document.getElementById('qr-button').style.display = 'block';
+                document.getElementById('credits-button').style.display = 'block';
+                document.getElementById('home-button').style.display = 'block';
+
+            } catch (error) {
+                console.error('Error loading assets:', error);
+            }
+        }
+    </script>
+</body>
+</html>

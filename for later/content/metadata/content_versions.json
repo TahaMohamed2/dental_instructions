@@ -1,0 +1,143 @@
+{
+  "metadata": {
+    "created": "2024-01-01T00:00:00Z",
+    "last_updated": "2024-01-01T00:00:00Z",
+    "version": "1.0.0",
+    "description": "Content versions and consistency tracking for dental instructions CMS"
+  },
+  "instruction_types": {
+    "bleaching": {
+      "title": "تعليمات ما بعد عمل تبيض الأسنان بالعيادة",
+      "versions_consistent": true,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "All versions have identical content"
+    },
+    "brushing": {
+      "title": "طريقة غسيل الأسنان الصحيحة",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    },
+    "denture_instructions": {
+      "title": "تعليمات العناية بأطقم الأسنان",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    },
+    "endo_instructions": {
+      "title": "تعليمات ما بعد حشو العصب",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Formatting differences detected - DR.TAHA version has better structure"
+    },
+    "extraction_instruction": {
+      "title": "تعليمات ما بعد خلع الأسنان",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    },
+    "fixed": {
+      "title": "تعليمات ما بعد التركيبات الثابتة",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    },
+    "implant": {
+      "title": "تعليمات ما بعد زراعة الأسنان",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    },
+    "ortho": {
+      "title": "تعليمات ما بعد تقويم الأسنان",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    },
+    "pedo_education": {
+      "title": "تعليمات طب أسنان الأطفال",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    },
+    "pedo": {
+      "title": "تعليمات طب أسنان الأطفال",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    },
+    "perio_surgery": {
+      "title": "تعليمات ما بعد جراحة اللثة",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    },
+    "restoration": {
+      "title": "تعليمات ما بعد حشو الأسنان",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    },
+    "scalling_instructions": {
+      "title": "تعليمات ما بعد التنظيف العميق",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    },
+    "tmj_instructions": {
+      "title": "تعليمات علاج مفصل الفك",
+      "versions_consistent": false,
+      "standard_version": "dr_taha",
+      "last_reviewed": "2024-01-01T00:00:00Z",
+      "notes": "Content differences detected between versions"
+    }
+  },
+  "site_configurations": {
+    "root": {
+      "name": "Root Site",
+      "description": "Basic HTML version with minimal styling",
+      "css_framework": "basic",
+      "features": ["basic_styling", "simple_navigation"],
+      "target_audience": "general"
+    },
+    "dr_taha": {
+      "name": "Dr. Taha Professional Site",
+      "description": "Modern styled version with Tailwind CSS",
+      "css_framework": "tailwind",
+      "features": ["modern_styling", "responsive_design", "professional_layout"],
+      "target_audience": "professional"
+    },
+    "playground": {
+      "name": "Playground Testing Site",
+      "description": "Testing environment with modern styling",
+      "css_framework": "tailwind",
+      "features": ["modern_styling", "testing_environment", "experimental_features"],
+      "target_audience": "development"
+    }
+  },
+  "content_standards": {
+    "language": "ar",
+    "text_direction": "rtl",
+    "medical_content": true,
+    "requires_medical_disclaimer": true,
+    "quality_checks": [
+      "medical_accuracy",
+      "completeness",
+      "consistency",
+      "formatting"
+    ]
+  }
+}

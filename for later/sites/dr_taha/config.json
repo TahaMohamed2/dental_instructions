@@ -1,0 +1,99 @@
+{
+  "site": {
+    "name": "Dr. Taha Professional Site",
+    "version": "1.0.0",
+    "description": "Modern styled version with Tailwind CSS",
+    "baseUrl": "/DR.TAHA/",
+    "language": "ar",
+    "textDirection": "rtl"
+  },
+  "styling": {
+    "cssFramework": "tailwind",
+    "customStyles": "DR.TAHA/index_styles.css",
+    "frameworkOptions": {
+      "tailwind": {
+        "cdn": "https://cdn.tailwindcss.com",
+        "useCustomStyles": true,
+        "darkMode": true,
+        "responsive": true
+      }
+    },
+    "theme": {
+      "primaryColor": "slate-800",
+      "secondaryColor": "gray-600",
+      "textColor": "slate-100",
+      "accentColor": "blue-600"
+    }
+  },
+  "assets": {
+    "favicon": "DR.TAHA/resources/instructions_logo.ico",
+    "qrImage": "DR.TAHA/resources/QR.png",
+    "qrScript": "DR.TAHA/QR_image_viewer.js",
+    "homeUrl": "DR.TAHA/index.html",
+    "creditsUrl": "DR.TAHA/credits.html",
+    "resourcesPath": "DR.TAHA/resources/"
+  },
+  "navigation": {
+    "showQRButton": true,
+    "showCreditsButton": true,
+    "showHomeButton": true,
+    "buttonStyle": "modern",
+    "buttonPosition": {
+      "qrButton": "bottom-left",
+      "creditsButton": "bottom-right",
+      "homeButton": "top-left"
+    },
+    "advancedFeatures": {
+      "hoverEffects": true,
+      "transitions": true,
+      "shadows": true
+    }
+  },
+  "content": {
+    "source": "content/database/",
+    "standardVersion": "dr_taha",
+    "allowOverrides": true,
+    "cacheEnabled": true,
+    "cacheDuration": 3600
+  },
+  "features": {
+    "modernStyling": true,
+    "responsiveDesign": true,
+    "advancedNavigation": true,
+    "customThemes": true,
+    "professionalLayout": true
+  },
+  "compatibility": {
+    "supportedBrowsers": ["chrome", "firefox", "safari", "edge"],
+    "minimumScreenWidth": 320,
+    "requiresJavaScript": true,
+    "requiresModernCSS": true
+  },
+  "layout": {
+    "maxWidth": "4xl",
+    "containerStyle": "mx-auto",
+    "spacing": {
+      "section": "mb-8",
+      "element": "mb-4",
+      "compact": "space-y-2"
+    },
+    "typography": {
+      "titleSize": "text-4xl",
+      "titleWeight": "font-bold",
+      "titleAlignment": "text-center",
+      "bodySize": "text-slate-200",
+      "bodySpacing": "leading-relaxed"
+    }
+  },
+  "metadata": {
+    "created": "2024-01-01T00:00:00Z",
+    "lastUpdated": "2024-01-01T00:00:00Z",
+    "author": "Dr. Taha",
+    "targetAudience": "professional",
+    "branding": {
+      "logo": "DR.TAHA/resources/instructions_logo.ico",
+      "primaryColor": "#1e293b",
+      "secondaryColor": "#4b5563"
+    }
+  }
+}

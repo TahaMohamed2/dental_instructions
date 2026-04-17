@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Dental Instructions</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="" id="favicon" type="image/x-icon">
+
+    <!-- CSS Framework Loading -->
+    <div id="css-frameworks"></div>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="" id="custom-styles">
+
+    <!-- JavaScript Libraries -->
+    <script src="" id="qr-viewer-script"></script>
+    <script src="templates/style_injector.js"></script>
+    <script src="templates/asset_manager.js"></script>
+</head>
+<body id="page-body">
+    <!-- Navigation Buttons -->
+    <button id="qr-button" onclick="viewQRImage()" style="display: none;">
+        <img id="qr-image" alt="QR" />
+    </button>
+
+    <button id="credits-button" onclick="location.href=''" style="display: none;">credits</button>
+
+    <button id="home-button" onclick="location.href=''" style="display: none;" alt="الرئيسية">الرئيسية</button>
+
+    <!-- Main Content Container -->
+    <div id="main-container">
+        <!-- Page Title -->
+        <h1 id="instruction-title"></h1>
+
+        <!-- Content Area -->
+        <div id="content-area"></div>
+    </div>
+
+    <!-- JavaScript for Content Loading -->
+    <script>
+        // Configuration object that will be populated by the CMS
+        const siteConfig = {
+            instructionType: '',
+            siteVersion: '',
+            cssFramework: '',
+            assets: {}
+        };
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get instruction type from URL or default
+            const urlParams = new URLSearchParams(window.location.search);
+            const instructionType = urlParams.get('type') || 'bleaching';
+
+            // Load site configuration
+            loadSiteConfiguration(instructionType);
+
+            // Load and display content
+            loadInstructionContent(instructionType);
+        });
+
+        // Load site configuration based on current site version
+        function loadSiteConfiguration(instructionType) {
+            // This will be replaced by the actual configuration loading
+            const currentPath = window.location.pathname;
+            const isDrTaha = currentPath.includes('DR.TAHA');
+            const isPlayground = currentPath.includes('playground');
+
+            if (isDrTaha || isPlayground) {
+                siteConfig.cssFramework = 'tailwind';
+                siteConfig.siteVersion = isDrTaha ? 'dr_taha' : 'playground';
+            } else {
+                siteConfig.cssFramework = 'basic';
+                siteConfig.siteVersion = 'root';
+            }
+
+            // Apply CSS framework
+            applyCSSFramework(siteConfig.cssFramework);
+
+            // Load assets
+            loadAssets(siteConfig.siteVersion);
+        }
+
+        // Apply appropriate CSS framework
+        function applyCSSFramework(framework) {
+            const cssContainer = document.getElementById('css-frameworks');
+
+            if (framework === 'tailwind') {
+                // Load Tailwind CSS
+                const tailwindLink = document.createElement('link');
+                tailwindLink.rel = 'stylesheet';
+                tailwindLink.href = 'https://cdn.tailwindcss.com';
+                cssContainer.appendChild(tailwindLink);
+
+                // Apply Tailwind classes to body
+                document.getElementById('page-body').className = 'bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative';
+
+                // Style main container
+                const mainContainer = document.getElementById('main-container');
+                mainContainer.className = 'max-w-4xl mx-auto';
+
+                // Style title
+                document.getElementById('instruction-title').className = 'text-4xl font-bold text-center mb-8 text-white';
+
+                // Style content area
+                document.getElementById('content-area').className = 'space-y-4';
+
+            } else {
+                // Basic styling
+                document.getElementById('page-body').className = '';
+                document.getElementById('main-container').className = '';
+                document.getElementById('instruction-title').className = '';
+                document.getElementById('content-area').className = '';
+            }
+        }
+
+        // Load site-specific assets
+        function loadAssets(siteVersion) {
+            const assetConfig = {
+                'dr_taha': {
+                    favicon: 'resources/instructions_logo.ico',
+                    customStyles: 'DR.TAHA/index_styles.css',
+                    qrScript: 'DR.TAHA/QR_image_viewer.js',
+                    qrImage: 'DR.TAHA/resources/QR.png',
+                    homeUrl: 'DR.TAHA/index.html',
+                    creditsUrl: 'DR.TAHA/credits.html'
+                },
+                'playground': {
+                    favicon: 'resources/instructions_logo.ico',
+                    customStyles: 'playground/index_styles.css',
+                    qrScript: 'playground/QR_image_viewer.js',
+                    qrImage: 'playground/resources/QR.jpeg',
+                    homeUrl: 'playground/index.html',
+                    creditsUrl: 'playground/credits.html'
+                },
+                'root': {
+                    favicon: 'resources/instructions_logo.ico',
+                    customStyles: 'styles.css',
+                    qrScript: 'QR_image_viewer.js',
+                    qrImage: 'resources/QR.jpeg',
+                    homeUrl: 'index.html',
+                    creditsUrl: 'credits.html'
+                }
+            };
+
+            const assets = assetConfig[siteVersion] || assetConfig['root'];
+
+            // Set asset paths
+            document.getElementById('favicon').href = assets.favicon;
+            document.getElementById('custom-styles').href = assets.customStyles;
+            document.getElementById('qr-viewer-script').src = assets.qrScript;
+            document.getElementById('qr-image').src = assets.qrImage;
+
+            // Set navigation URLs
+            document.getElementById('home-button').onclick = () => location.href = assets.homeUrl;
+            document.getElementById('credits-button').onclick = () => location.href = assets.creditsUrl;
+
+            // Show navigation buttons
+            document.getElementById('qr-button').style.display = 'block';
+            document.getElementById('credits-button').style.display = 'block';
+            document.getElementById('home-button').style.display = 'block';
+        }
+
+        // Load instruction content
+        async function loadInstructionContent(instructionType) {
+            try {
+                // In a real implementation, this would fetch from the content database
+                // For now, we'll simulate loading from the JSON files
+                const contentData = await loadContentFromJSON(instructionType);
+
+                if (contentData) {
+                    displayContent(contentData);
+                } else {
+                    document.getElementById('content-area').innerHTML = '<p>Content not found</p>';
+                }
+            } catch (error) {
+                console.error('Error loading content:', error);
+                document.getElementById('content-area').innerHTML = '<p>Error loading content</p>';
+            }
+        }
+
+        // Load content from JSON database (simulated)
+        async function loadContentFromJSON(instructionType) {
+            // This would normally fetch from content/database/{instructionType}.json
+            // For demonstration, we'll return mock data
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve({
+                        title: `تعليمات ${instructionType}`,
+                        content: [
+                            "هذه تعليمات تجريبية",
+                            "سيتم تحميل المحتوى الحقيقي من قاعدة البيانات",
+                            "المحتوى موحد عبر جميع الإصدارات"
+                        ]
+                    });
+                }, 100);
+            });
+        }
+
+        // Display content on the page
+        function displayContent(contentData) {
+            // Set title
+            document.getElementById('instruction-title').textContent = contentData.title;
+
+            // Set page title
+            document.getElementById('page-title').textContent = contentData.title;
+
+            // Display content
+            const contentArea = document.getElementById('content-area');
+            contentArea.innerHTML = '';
+
+            contentData.content.forEach((item, index) => {
+                if (item.startsWith('http') || item.includes('button')) {
+                    // This is a link or button - create appropriate element
+                    const button = document.createElement('button');
+                    button.className = 'bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700';
+                    button.onclick = () => window.location.href = item;
+                    button.textContent = 'رابط';
+                    contentArea.appendChild(button);
+                } else {
+                    // Regular paragraph
+                    const p = document.createElement('p');
+                    p.className = 'mb-4 text-slate-200 leading-relaxed';
+                    p.textContent = item;
+                    contentArea.appendChild(p);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
