@@ -17,124 +17,13 @@
         .clinic-info.show { opacity: 1; transform: translateY(0); display: block; }
     </style>
 </head>
-<body class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+<body data-page="schedule" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
     <header id="site-header"></header>
 
-    <main class="max-w-4xl mx-auto w-full flex-grow">
-        <div class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-white mb-2">
-                <span class="ar-only">مواعيد العيادة</span>
-                <span class="en-only" style="display:none;">Clinic Schedule</span>
-            </h1>
-            <p class="text-slate-300">
-                <span class="ar-only">برجاء اختيار اليوم لمشاهدة تفاصيل العيادة</span>
-                <span class="en-only" style="display:none;">Please select a day to view clinic details</span>
-            </p>
-        </div>
-
-        <div class="bg-slate-700 rounded-2xl shadow-xl p-6 mb-8">
-            <div class="grid grid-cols-2 md:grid-cols-7 gap-3">
-                <button onclick="showClinicInfo('sunday')" class="day-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium">
-                    <span class="ar-only">الأحد</span><span class="en-only" style="display:none;">Sunday</span>
-                </button>
-                <button onclick="showClinicInfo('monday')" class="day-button bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-medium">
-                     <span class="ar-only">الإثنين</span><span class="en-only" style="display:none;">Monday</span>
-                </button>
-                <button onclick="showClinicInfo('tuesday')" class="day-button bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg font-medium">
-                     <span class="ar-only">الثلاثاء</span><span class="en-only" style="display:none;">Tuesday</span>
-                </button>
-                <button onclick="showClinicInfo('wednesday')" class="day-button bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-3 rounded-lg font-medium">
-                     <span class="ar-only">الأربعاء</span><span class="en-only" style="display:none;">Wednesday</span>
-                </button>
-                <button onclick="showClinicInfo('thursday')" class="day-button bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg font-medium">
-                     <span class="ar-only">الخميس</span><span class="en-only" style="display:none;">Thursday</span>
-                </button>
-                <button onclick="showClinicInfo('friday')" class="day-button bg-gray-600 hover:bg-gray-700 text-white px-4 py-3 rounded-lg font-medium">
-                     <span class="ar-only">الجمعة</span><span class="en-only" style="display:none;">Friday</span>
-                </button>
-                <button onclick="showClinicInfo('saturday')" class="day-button bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 rounded-lg font-medium">
-                     <span class="ar-only">السبت</span><span class="en-only" style="display:none;">Saturday</span>
-                </button>
-            </div>
-        </div>
-
-        <div id="clinicInfo" class="clinic-info bg-slate-700 rounded-2xl shadow-xl p-6">
-            <div class="text-center">
-                <h3 id="clinicName" class="text-2xl font-bold text-white mb-4"></h3>
-
-                <div class="grid md:grid-cols-2 gap-4 text-right" dir="auto">
-                    <div class="bg-slate-600 p-4 rounded-lg">
-                        <h4 class="font-semibold text-slate-200 mb-2">
-                             <span class="ar-only">ساعات العمل:</span><span class="en-only" style="display:none;">Working Hours:</span>
-                        </h4>
-                        <p id="workingHours" class="text-slate-300"></p>
-                    </div>
-
-                    <div class="bg-slate-600 p-4 rounded-lg">
-                        <h4 class="font-semibold text-slate-200 mb-2">
-                             <span class="ar-only">معلومات الاتصال:</span><span class="en-only" style="display:none;">Contact Info:</span>
-                        </h4>
-                        <p id="contactInfo" class="text-slate-300"></p>
-                    </div>
-                </div>
-
-                <div class="mt-6 space-y-3 flex justify-center gap-3 flex-wrap">
-                    <a id="locationLink" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium shadow-lg">
-                        <span class="ar-only">الموقع على الخريطة</span><span class="en-only" style="display:none;">Map Location</span>
-                    </a>
-                    <a id="servicesLink" href="clinic_services.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium shadow-lg">
-                        <span class="ar-only">الخدمات المتاحة</span><span class="en-only" style="display:none;">Available Services</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+    <main id="page-content" class="max-w-4xl mx-auto w-full flex-grow">
+        <!-- Content injected by site-loader.js -->
     </main>
 
     <footer id="site-footer"></footer>
-
-    <script>
-        let currentActiveDay = null;
-
-        window.showClinicInfo = function(day) {
-            if (!window.clinicData || !window.clinicData.schedule) return;
-            const lang = window.i18n ? window.i18n.getLanguage() : 'ar';
-            const schedule = window.clinicData.schedule;
-            const clinicData = schedule[day];
-            
-            if (!clinicData) return;
-
-            document.querySelectorAll('.day-button').forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
-            currentActiveDay = day;
-
-            if (clinicData.closed) {
-                document.getElementById('clinicName').textContent = lang === 'ar' ? 'مغلق' : 'Closed';
-                document.getElementById('workingHours').textContent = '-';
-                document.getElementById('contactInfo').textContent = '-';
-                document.getElementById('locationLink').style.display = 'none';
-            } else {
-                document.getElementById('clinicName').textContent = lang === 'ar' ? clinicData.name_ar : (clinicData.name_en || clinicData.name_ar);
-                document.getElementById('workingHours').textContent = clinicData.hours || '-';
-                document.getElementById('contactInfo').textContent = clinicData.phone || '-';
-                
-                const locLink = document.getElementById('locationLink');
-                if (clinicData.location_url) {
-                    locLink.href = clinicData.location_url;
-                    locLink.style.display = 'inline-block';
-                } else {
-                    locLink.style.display = 'none';
-                }
-                
-                document.getElementById('servicesLink').style.display = 'inline-block';
-            }
-
-            document.getElementById('clinicInfo').classList.add('show');
-        };
-
-        window.addEventListener('languageChanged', () => {
-            if (currentActiveDay) showClinicInfo(currentActiveDay);
-        });
-
-    </script>
 </body>
 </html>

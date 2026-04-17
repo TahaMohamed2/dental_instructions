@@ -228,6 +228,24 @@
         </div>
     </section>
 
+    <script>
+    const pages = [
+        {id: 'extraction', file: 'extraction_instruction.html', image: 'resources/Button_extraction.jpg'},
+        {id: 'denture', file: 'denture_instructions.html', image: 'resources/Button_remove.jpg'},
+        {id: 'endo', file: 'endo_instructions.html', image: 'resources/button_endo.webp'},
+        {id: 'tmj', file: 'tmj_instructions.html', image: 'resources/button_tmj.jpg'},
+        {id: 'scalling', file: 'scalling_instructions.html', image: 'resources/Button_scalling.jpg'},
+        {id: 'brushing', file: 'brushing.html', image: 'resources/button_brushing.webp'},
+        {id: 'bleaching', file: 'bleaching.html', image: 'resources/button_bleaching.png'},
+        {id: 'ortho', file: 'ortho.html', image: 'resources/button_ortho.png'},
+        {id: 'restoration', file: 'restoration.html', image: 'resources/button_restoration.png'},
+        {id: 'perio_surgery', file: 'perio_surgery.html', image: 'resources/button_perio_surgery.jpg'},
+        {id: 'fixed', file: 'fixed.html', image: 'resources/button_fixed.png'},
+        {id: 'implant', file: 'implant.html', image: 'resources/button_implant.webp'},
+        {id: 'pedo', file: 'pedo.html', image: 'resources/button_pedo.png'},
+        {id: 'pedo_education', file: 'pedo_education.html', image: 'resources/button_pedo_education.png'}
+    ];
+
     function renderCards() {
     if (!window.instructionsData) return;
     const lang = window.i18n ? window.i18n.getLanguage() : 'ar';

@@ -1,24 +1,24 @@
 {
   "services": [
     {
-      "id": "fixed_prosthodontics",
+      "id": "fixed",
       "title_ar": "التركيبات الثابتة",
       "title_en": "Fixed Prosthodontics",
       "images": [
-        "Resources/fixed1.jpg",
-        "Resources/fixed2.jpg",
-        "Resources/fixed3.jpg",
-        "Resources/veneer1.jpg"
+        "resources/services/fixed1.jpg",
+        "resources/services/fixed2.jpg",
+        "resources/services/fixed3.jpg",
+        "resources/services/veneer1.jpg"
       ]
     },
     {
       "id": "bleaching",
       "title_ar": "التبييض",
-      "title_en": "Bleaching",
+      "title_en": "Whitening / Bleaching",
       "images": [
-        "Resources/bleaching1.jpg",
-        "Resources/bleaching2.jpg",
-        "Resources/bleaching3.jpg"
+        "resources/services/bleaching1.jpg",
+        "resources/services/bleaching2.jpg",
+        "resources/services/bleaching3.jpg"
       ]
     },
     {
@@ -26,18 +26,18 @@
       "title_ar": "الحشو التجميلى",
       "title_en": "Cosmetic Fillings",
       "images": [
-        "Resources/ant_comp1.jpg",
-        "Resources/ant_comp2.jpg",
-        "Resources/ant_comp3.jpg"
+        "resources/services/ant_comp1.jpg",
+        "resources/services/ant_comp2.jpg",
+        "resources/services/ant_comp3.jpg"
       ]
     },
     {
-      "id": "cleaning_and_polishing",
+      "id": "cleaning",
       "title_ar": "التنظيف و التلميع",
       "title_en": "Cleaning and Polishing",
       "images": [
-        "Resources/scalling1.jpg",
-        "Resources/bleaching3.jpg"
+        "resources/services/scalling1.jpg",
+        "resources/services/bleaching3.jpg"
       ]
     },
     {
@@ -45,27 +45,27 @@
       "title_ar": "جراحات اللثة",
       "title_en": "Gum Surgery",
       "images": [
-        "Resources/gingivectomy1.jpg",
-        "Resources/gingival_depridement1.jpg",
-        "Resources/gingival_depridement2.jpg"
+        "resources/services/gingivectomy1.jpg",
+        "resources/services/gingival_depridement1.jpg",
+        "resources/services/gingival_depridement2.jpg"
       ]
     },
     {
-      "id": "post_and_core",
+      "id": "post_core",
       "title_ar": "الدعامة و اعادة بناء الضرس",
       "title_en": "Post and Core",
       "images": [
-        "Resources/post_core1.jpg",
-        "Resources/post_core2.jpg"
+        "resources/services/post_core1.jpg",
+        "resources/services/post_core2.jpg"
       ]
     },
     {
-      "id": "childrens_fillings",
+      "id": "pedo_fillings",
       "title_ar": "حشوات الاطفال",
       "title_en": "Children's Fillings",
       "images": [
-        "Resources/pedo1.jpg",
-        "Resources/pedo2.jpg"
+        "resources/services/pedo1.jpg",
+        "resources/services/pedo2.jpg"
       ]
     },
     {
@@ -73,7 +73,7 @@
       "title_ar": "حافظ المسافة للاطفال",
       "title_en": "Space Maintainer",
       "images": [
-        "Resources/space_maintainer.jpg"
+        "resources/services/space_maintainer.jpg"
       ]
     },
     {
@@ -81,9 +81,9 @@
       "title_ar": "الحشو الدائم للاضراس",
       "title_en": "Permanent Fillings",
       "images": [
-        "Resources/button_restoration.png",
-        "Resources/post_comp2.jpg",
-        "Resources/post_comp3.jpg"
+        "resources/services/button_restoration.png",
+        "resources/services/post_comp2.jpg",
+        "resources/services/post_comp3.jpg"
       ]
     },
     {
@@ -91,15 +91,15 @@
       "title_ar": "الطقم الكامل",
       "title_en": "Complete Denture",
       "images": [
-        "Resources/complete.jpg"
+        "resources/services/complete.jpg"
       ]
     },
     {
-      "id": "flexible_partial_denture",
+      "id": "flexible_denture",
       "title_ar": "الطقم المرن الجزئى",
       "title_en": "Flexible Partial Denture",
       "images": [
-        "Resources/partial__flex.gif"
+        "resources/services/partial__flex.gif"
       ]
     },
     {
@@ -107,15 +107,15 @@
       "title_ar": "واقى الاسنان الليلى",
       "title_en": "Night Guard",
       "images": [
-        "resources/nightguard.webp"
+        "resources/services/nightguard.webp"
       ]
     },
     {
-      "id": "root_canal_treatment",
+      "id": "endo",
       "title_ar": "حشو العصب",
       "title_en": "Root Canal Treatment",
       "images": [
-        "Resources/button_endo.webp"
+        "resources/services/button_endo.webp"
       ]
     },
     {
@@ -123,39 +123,39 @@
       "title_ar": "خلع الجذور المتبقية",
       "title_en": "Root Extraction",
       "images": [
-        "Resources/extraction_RR1.jpg"
+        "resources/services/extraction_RR1.jpg"
       ]
     },
     {
-      "id": "wisdom_tooth_extraction",
+      "id": "wisdom_extraction",
       "title_ar": "خلع ضرس العقل",
       "title_en": "Wisdom Tooth Extraction",
       "images": [
-        "Resources/extraction_wisdom.jpg"
+        "resources/services/extraction_wisdom.jpg"
       ]
     },
     {
       "id": "recementation",
-      "title_ar": "اعادة لصق التركيبات",
+      "title_ar": "اعادة لصق التركيبات القديمة",
       "title_en": "Recementation",
       "images": [
-        "Resources/button_fixed.png"
+        "resources/services/button_fixed.png"
       ]
     },
     {
-      "id": "fluoride_treatment",
+      "id": "fluoride",
       "title_ar": "جلسات الفلورايد",
       "title_en": "Fluoride Treatment",
       "images": [
-        "resources/Fluoride_Varnish.webp"
+        "resources/services/Fluoride_Varnish.webp"
       ]
     },
     {
-      "id": "dental_x",
-      "title_ar": "عمل اشعة على الاسنان",
-      "title_en": "Dental X",
+      "id": "xray",
+      "title_ar": "اشعة على الاسنان",
+      "title_en": "Dental X-ray",
       "images": [
-        "resources/xray.jpg"
+        "resources/services/xray.jpg"
       ]
     }
   ]

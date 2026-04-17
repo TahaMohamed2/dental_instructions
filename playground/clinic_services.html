@@ -14,60 +14,10 @@
 <body data-page="services" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
     <header id="site-header"></header>
 
-    <main class="max-w-4xl mx-auto w-full flex-grow bg-slate-700 rounded-2xl shadow-xl p-6 mb-8">
-        <div class="text-center mb-8 border-b border-slate-500 pb-4">
-            <h1 class="text-4xl font-bold text-white mb-2">
-                <span class="ar-only">الخدمات المقدمة بالعيادة</span>
-                <span class="en-only" style="display:none;">Clinic Services</span>
-            </h1>
-        </div>
-
-        <div id="services-container">
-            <!-- Rendered by JS -->
-        </div>
+    <main id="page-content" class="max-w-4xl mx-auto w-full flex-grow bg-slate-700/50 rounded-2xl shadow-xl p-6 mb-8">
+        <!-- Content injected by site-loader.js -->
     </main>
 
     <footer id="site-footer"></footer>
-
-    <script>
-        async function loadAndRenderServices() {
-            try {
-                const res = await fetch('data/services.json');
-                const data = await res.json();
-                window.servicesData = data;
-                renderServices();
-            } catch(e) {
-                console.error("Failed to load services data", e);
-            }
-        }
-
-        function renderServices() {
-            if (!window.servicesData) return;
-            const lang = window.i18n ? window.i18n.getLanguage() : 'ar';
-            const container = document.getElementById('services-container');
-            
-            let html = '';
-            window.servicesData.services.forEach(service => {
-                const title = lang === 'ar' ? service.title_ar : (service.title_en || service.title_ar);
-                html += `
-                <div class="mb-8 pb-4 border-b border-slate-500">
-                    <h3 class="text-2xl font-bold text-white mb-4">${title}</h3>
-                    <div class="flex justify-center gap-4 mb-4 flex-wrap">
-                `;
-                
-                service.images.forEach(img => {
-                    html += `<img data-src="${img}" src="${img}" alt="${title}" class="w-1/2 max-w-sm h-auto rounded-lg shadow-lg">`;
-                });
-                
-                html += `</div></div>`;
-            });
-            
-            container.innerHTML = html;
-        }
-
-        window.addEventListener('languageChanged', renderServices);
-        
-        loadAndRenderServices();
-    </script>
 </body>
 </html>

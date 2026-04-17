@@ -1,0 +1,127 @@
+{
+  "cases": [
+    {
+      "id": "rehab",
+      "title_ar": "حالة إعادة تأهيل كاملة",
+      "title_en": "Rehab Case",
+      "description_ar": "الحالة التي استمتعت بها وكنت فخوراً بها للغاية كانت حالة إعادة تأهيل كاملة لامرأة تعاني من فشل في جسر طويل المدى من 7| إلى |5 (مريضة تعاني من قصور في الشرايين التاجية) وفشل في العديد من علاجات الجذور وفقدان في البعد العمودي الإطباقي (VDO). بدأنا بإزالة التسوس والجير لتقييم بنية الأسنان المتبقية، ثم إعادة علاج الجذور الفاشلة، تليها عملية قص اللثة باستخدام الليزر (LASER)، ثم بناء دعامة وقلب (Post and core)، تليها تحضير الأسنان للتركيبات المؤقتة مع تعويض جزئي متحرك (RPD) لرفع العضة لاستعادة البعد العمودي المفقود. أظهرت المتابعة بعد 3 أشهر استعادة البعد العمودي الإطباقي (VDO) تقريباً، وبعد استعادته بالكامل، شرعنا في تسليم الجسر النهائي بنجاح. لعب تشجيع المريض وإدارة التوتر المنخفض دوراً كبيراً في نجاح العلاج.",
+      "description_en": "The case that I enjoyed and proud of the most was a rehab case for a woman presented with failed long-span bridge from 7| to |5 (patient had coronary artery insufficiency) and multiple failed endodontic treatments and loss of VDO. So we started with removing caries and calculus to evaluate remaining tooth structure then re-treatment of the failed endodontic treatments followed by gingivectomy using LASER Then post and core followed by preparing the teeth for temporization along with RPD for elevating the bite to regain the lost VDO follow up after 3 months showed almost regained VDO, and after it was fully regained we proceeded to deliver the final bridge with success. Patient encouragement and low stress management played a huge role in the treatment.",
+      "note_ar": "ملاحظة: تم اختيار اللون وفقاً لرغبة المريضة.",
+      "note_en": "Note: shade was selected according to patient's desire.",
+      "images": [
+        "resources/portfolio/photo22.jpg",
+        "resources/portfolio/photo12.jpg",
+        "resources/portfolio/photo27.jpg",
+        "resources/portfolio/photo10.jpg"
+      ]
+    },
+    {
+      "id": "lateral_restoration",
+      "title_ar": "ترميم السن الجانبي",
+      "title_en": "Lateral Restoration",
+      "description_ar": "عملية ترميم للسن الجانبي باستخدام الحشو التجميلي لاستعادة الشكل والوظيفة الطبيعية.",
+      "description_en": "The lateral is the one I'm restoring.",
+      "note_ar": null,
+      "note_en": "Note: lateral is the one I'm restoring",
+      "images": [
+        "resources/portfolio/photo14.jpg",
+        "resources/portfolio/photo6.jpg",
+        "resources/portfolio/photo23.jpg",
+        "resources/portfolio/photo25.jpg",
+        "resources/portfolio/photo29.jpg"
+      ]
+    },
+    {
+      "id": "retreatment",
+      "title_ar": "إعادة علاج الجذور",
+      "title_en": "Retreatment",
+      "description_ar": "إعادة علاج جذور فاشلة لضمان نظافة القنوات وحمايتها من الالتهابات المستقبلية.",
+      "description_en": "Endodontic retreatment of failed root canal therapy to ensure canal cleanliness and prevent future infections.",
+      "images": [
+        "resources/portfolio/photo28.jpg",
+        "resources/portfolio/photo18.jpg",
+        "resources/portfolio/photo24.jpg",
+        "resources/portfolio/photo3.jpg",
+        "resources/portfolio/photo26.jpg",
+        "resources/portfolio/photo5.jpg"
+      ]
+    },
+    {
+      "id": "lateral_perforation",
+      "title_ar": "غلق ثقب جانبي بالجذر",
+      "title_en": "Lateral Perforation",
+      "description_ar": "غلق ثقب جانبي في الجذر باستخدام مادة MTA مع اسفنجة الكولاجين.",
+      "description_en": "Lateral Perforation closed using MTA + collagen gel foam.",
+      "images": [
+        "resources/portfolio/photo20.jpg"
+      ]
+    },
+    {
+      "id": "depigmentation",
+      "title_ar": "إزالة تصبغات اللثة وقصها",
+      "title_en": "Depigmentation & Gingivectomy",
+      "description_ar": "عملية إزالة التصبغات الداكنة من اللثة مع قص اللثة الزائدة لتحسين المظهر الجمالي.",
+      "description_en": "Depigmentation & gingivectomy to improve aesthetic appearance by removing dark pigments and excess gum tissue.",
+      "images": [
+        "resources/portfolio/photo13.jpg"
+      ]
+    },
+    {
+      "id": "pulpectomy",
+      "title_ar": "استئصال اللب وحشو تجميلي",
+      "title_en": "Pulpectomy with Composite",
+      "description_ar": "استئصال اللب (C|C) مع بناء السن باستخدام الحشو التجميلي.",
+      "description_en": "Pulpectomy C|C with composite restoration.",
+      "images": [
+        "resources/portfolio/photo8.jpg",
+        "resources/portfolio/photo9.jpg",
+        "resources/portfolio/photo15.jpg"
+      ]
+    },
+    {
+      "id": "restorations",
+      "title_ar": "ترميمات تجميلية",
+      "title_en": "Restorations",
+      "description_ar": "مجموعة من الترميمات التجميلية للأسنان الأمامية.",
+      "description_en": "A set of aesthetic restorations for anterior teeth.",
+      "images": [
+        "resources/portfolio/photo19.jpg"
+      ]
+    },
+    {
+      "id": "diastema",
+      "title_ar": "غلق الفراغات بين الأسنان",
+      "title_en": "Diastema Closure",
+      "description_ar": "علاج الفراغات بين الأسنان الأمامية للحصول على ابتسامة متناسقة.",
+      "description_en": "Treating gaps between anterior teeth for a more symmetrical smile.",
+      "images": [
+        "resources/portfolio/photo11.jpg",
+        "resources/portfolio/photo4.jpg",
+        "resources/portfolio/photo1.jpg"
+      ]
+    },
+    {
+      "id": "bleaching",
+      "title_ar": "تبييض الأسنان",
+      "title_en": "Bleaching",
+      "description_ar": "نتائج تبييض الأسنان في العيادة.",
+      "description_en": "In-office teeth bleaching results.",
+      "images": [
+        "resources/portfolio/photo2.jpg",
+        "resources/portfolio/photo21.jpg"
+      ]
+    },
+    {
+      "id": "laser_surgery",
+      "title_ar": "جراحة بالليزر",
+      "title_en": "Laser Surgery",
+      "description_ar": "استخدام تقنية الليزر في العمليات الجراحية البسيطة للثة لتقليل النزيف وتسريع الالتئام.",
+      "description_en": "Using LASER technology for minor surgical procedures to minimize bleeding and fast-track healing.",
+      "images": [
+        "resources/portfolio/photo16.jpg",
+        "resources/portfolio/photo17.jpg",
+        "resources/portfolio/photo7.jpg"
+      ]
+    }
+  ]
+}

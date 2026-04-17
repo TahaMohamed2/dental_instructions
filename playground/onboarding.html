@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Onboarding - Joining the Platform</title>
+    <link rel="icon" href="resources/instructions_logo.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index_styles.css" />
+    <script src="js/i18n.js" defer></script>
+    <script src="js/onboarding-logic.js" defer></script>
+    <style>
+        .step-content { display: none; }
+        .step-content.active { display: block; }
+        .progress-dot.active { background-color: #2dd4bf; box-shadow: 0 0 10px #2dd4bf; }
+        .preview-card { transition: all 0.3s ease; }
+        .preview-card:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col items-center p-4 md:p-10">
+    
+    <header class="max-w-4xl w-full flex justify-between items-center mb-10 pb-6 border-b border-white/10">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center font-bold text-slate-900">DP</div>
+            <h1 class="text-2xl font-black tracking-tighter text-white">DENTAL PLATFORM <span class="text-teal-400">BUILDER</span></h1>
+        </div>
+        <button onclick="window.location.href='index.html'" class="text-slate-400 hover:text-white text-sm transition-colors uppercase tracking-widest">Cancel</button>
+    </header>
+
+    <main class="max-w-4xl w-full bg-slate-800/50 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+        <!-- Progress Bar -->
+        <div class="bg-slate-800 p-6 flex justify-between items-center border-b border-white/5">
+            <div class="flex items-center gap-4">
+                <div class="progress-dot w-3 h-3 rounded-full bg-slate-600 active" id="dot-1"></div>
+                <div class="progress-dot w-3 h-3 rounded-full bg-slate-600" id="dot-2"></div>
+                <div class="progress-dot w-3 h-3 rounded-full bg-slate-600" id="dot-3"></div>
+                <div class="progress-dot w-3 h-3 rounded-full bg-slate-600" id="dot-4"></div>
+            </div>
+            <div class="text-xs uppercase tracking-widest text-slate-500 font-bold" id="step-indicator">Step 1 of 4</div>
+        </div>
+
+        <form id="onboarding-form" class="p-8 md:p-12 flex-grow">
+            <!-- STEP 1: Identity -->
+            <div class="step-content active" id="step-1">
+                <h2 class="text-3xl font-bold text-white mb-2">Clinic Identity</h2>
+                <p class="text-slate-400 mb-8">Tell us about your clinic and how patients can reach you.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-teal-400 uppercase tracking-wider">Clinic Name (Arabic)</label>
+                        <input type="text" name="clinic_name_ar" placeholder="مثال: عيادة الامل للأسنان" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-teal-400 uppercase tracking-wider">Clinic Name (English)</label>
+                        <input type="text" name="clinic_name_en" placeholder="Example: Hope Dental Clinic" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-teal-400 uppercase tracking-wider">Doctor Name (Arabic)</label>
+                        <input type="text" name="doctor_name_ar" placeholder="مثال: د. أحمد محمد" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-teal-400 uppercase tracking-wider">Doctor Name (English)</label>
+                        <input type="text" name="doctor_name_en" placeholder="Example: Dr. Ahmed Mohamed" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-teal-400 uppercase tracking-wider">WhatsApp Number</label>
+                        <input type="text" name="whatsapp" placeholder="+20123456789" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-teal-400 uppercase tracking-wider">Logo URL (Optional)</label>
+                        <input type="text" name="logo" placeholder="https://example.com/logo.png" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-teal-500 outline-none transition-all">
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: Content Selection -->
+            <div class="step-content" id="step-2">
+                <h2 class="text-3xl font-bold text-white mb-2">Instruction Topics</h2>
+                <p class="text-slate-400 mb-8">Select which topics you want to provide to your patients.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="topics-selection">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- STEP 3: Styles & Theme -->
+            <div class="step-content" id="step-3">
+                <h2 class="text-3xl font-bold text-white mb-2">Visual Branding</h2>
+                <p class="text-slate-400 mb-8">Customize the colors and fonts to match your clinic's brand.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-teal-400 uppercase tracking-wider">Primary Color (Backgrounds)</label>
+                            <input type="color" name="primary_color" value="#0f172a" class="w-full h-12 bg-transparent cursor-pointer">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-teal-400 uppercase tracking-wider">Accent Color (Buttons/Links)</label>
+                            <input type="color" name="accent_color" value="#2dd4bf" class="w-full h-12 bg-transparent cursor-pointer">
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-white/5 flex flex-col items-center justify-center text-center">
+                        <div id="preview-chip" class="w-20 h-20 rounded-2xl shadow-2xl mb-4 border border-white/10"></div>
+                        <p class="text-white font-bold">Theme Preview</p>
+                        <p class="text-xs text-slate-500 mt-1 uppercase tracking-widest">Live Palette</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 4: Launch & Export -->
+            <div class="step-content" id="step-4">
+                <h2 class="text-3xl font-bold text-white mb-2">Ready to Launch?</h2>
+                <p class="text-slate-400 mb-8">Preview your new clinic site or download the configuration files.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <button type="button" onclick="launchDemo()" class="preview-card bg-gradient-to-br from-teal-500 to-emerald-600 p-8 rounded-3xl text-left group">
+                        <div class="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Live Demo</h3>
+                        <p class="text-teal-100 text-sm">See how your site looks with these settings.</p>
+                    </button>
+
+                    <button type="button" onclick="downloadConfig()" class="preview-card bg-slate-900 border border-white/10 p-8 rounded-3xl text-left hover:border-teal-500/50 group">
+                        <div class="bg-teal-500/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6 text-teal-400 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">Export Config</h3>
+                        <p class="text-slate-400 text-sm">Download your JSON files for deployment.</p>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Navigation Buttons -->
+        <div class="bg-slate-800/80 p-6 border-t border-white/5 flex justify-between items-center">
+            <button type="button" id="prev-btn" class="px-6 py-2 text-slate-400 font-bold uppercase tracking-widest hover:text-white transition-colors invisible">Back</button>
+            <button type="button" id="next-btn" class="bg-teal-500 hover:bg-teal-600 text-slate-900 px-8 py-3 rounded-xl font-bold shadow-lg transition-all active:scale-95">Next Step</button>
+        </div>
+    </main>
+
+    <footer class="mt-10 text-slate-500 text-xs text-center uppercase tracking-[0.2em] pb-10">
+        Professional Dental Onboarding System v1.0
+    </footer>
+
+</body>
+</html>
