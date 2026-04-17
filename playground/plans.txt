@@ -1,0 +1,26 @@
+rules :
+1 all development is to be done inside the playground folder 
+2. all paths should be relative to the playground folder 
+3. the site is currently hosted on github as a static site which should be maintained 
+4. no changes should be made to the site or any element outside the playground folder without testing them in the playground folder first and only the developer is allowed to do so 
+5. the data iside the pages should not be altered or modified as it needs medical knowledge to do so 
+
+the next step is to make the site more customizable for the dental clinics. 
+
+1. the data for the instructions should be stored separately as a json file from the CSS formats
+2. with another json file soring the clinic data such as name, address, phone number, email, website, logo, etc. that can be updated by the dental clinic and should be used to replace the place holders in the html files
+3. the DR.TAHA folder should be used when creating a template for refrence when performing the above steps replacing drtaha with the clinic name placeholder 
+4. create a new folder for each clinic and store the json files and the html files in it
+5. create a new page for patient appointment booking that can be used to book appointments with the dental clinic
+6. the appointment booking page should be able to be updated by the dental clinic
+7. adding more ways to customize the UI elements 
+8. adding more language support at first english and arabic
+9. the climic should be able to select which services they provide
+10 the clinic should be able to select one of preset colour palates and designs or customize their own
+11 the clinic should input all the required information in a a form and be provided with a demo of the site before publishing it 
+12 the clinic should be able to select which pages they want to include in their site 
+13 the clinic should be able to select which topics they want to include in their site and be allowed to edit the instructions to meet their needs
+14 the clinic should be able to select which services they want to include in their site 
+15 the clinic should be able to select which languages they want to include in their site 
+16 the clinic should be able to select which colour palates and designs they want to use 
+

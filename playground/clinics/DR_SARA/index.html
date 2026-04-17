@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dental Instructions</title>
+  <link rel="icon" href="resources/instructions_logo.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index_styles.css" />
+  <script src="js/i18n.js" defer></script>
+  <script src="js/site-loader.js" defer></script>
+  <script src="QR_image_viewer.js" defer></script>
+</head>
+<body data-page="home" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+  <header id="site-header"></header>
+  
+  <main class="flex-grow w-full">
+      <section class="section stone-section">
+          <h2 class="section-heading text-white font-bold text-center mb-12 text-4xl">
+              <span class="ar-only">تعليمات عيادة الأسنان</span>
+              <span class="en-only" style="display:none;">Clinic Instructions</span>
+          </h2>
+          <div class="stones-cards-container">
+              <ul id="cards-container" class="stones-cards-wrapper non-list-items">
+                  <!-- Injected by script below -->
+              </ul>
+          </div>
+          
+          <div class="mt-8 text-center flex gap-4 justify-center">
+              <button onclick="window.location.href='clinic_services.html'" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-bold">
+                  <span class="ar-only">الخدمات</span>
+                  <span class="en-only" style="display:none;">Services</span>
+              </button>
+              <button onclick="window.location.href='clinic_schedule.html'" class="bg-green-600 text-white px-6 py-3 rounded-lg font-bold">
+                  <span class="ar-only">المواعيد</span>
+                  <span class="en-only" style="display:none;">Schedule</span>
+              </button>
+              <button onclick="window.location.href='appointment.html'" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold">
+                  <span class="ar-only">حجز موعد</span>
+                  <span class="en-only" style="display:none;">Book Appointment</span>
+              </button>
+          </div>
+      </section>
+  </main>
+  
+  <footer id="site-footer"></footer>
+  
+  <script>
+      const pages = [
+          {id: 'extraction', file: 'extraction_instruction.html', image: 'resources/Button_extraction.jpg'},
+          {id: 'denture', file: 'denture_instructions.html', image: 'resources/Button_remove.jpg'},
+          {id: 'endo', file: 'endo_instructions.html', image: 'resources/button_endo.webp'},
+          {id: 'tmj', file: 'tmj_instructions.html', image: 'resources/button_tmj.jpg'},
+          {id: 'scalling', file: 'scalling_instructions.html', image: 'resources/Button_scalling.jpg'},
+          {id: 'brushing', file: 'brushing.html', image: 'resources/button_brushing.webp'},
+          {id: 'bleaching', file: 'bleaching.html', image: 'resources/button_bleaching.png'},
+          {id: 'ortho', file: 'ortho.html', image: 'resources/button_ortho.png'},
+          {id: 'restoration', file: 'restoration.html', image: 'resources/button_restoration.png'},
+          {id: 'perio_surgery', file: 'perio_surgery.html', image: 'resources/button_perio_surgery.jpg'},
+          {id: 'fixed', file: 'fixed.html', image: 'resources/button_fixed.png'},
+          {id: 'implant', file: 'implant.html', image: 'resources/button_implant.webp'},
+          {id: 'pedo', file: 'pedo.html', image: 'resources/button_pedo.png'},
+          {id: 'pedo_education', file: 'pedo_education.html', image: 'resources/button_pedo_education.png'}
+      ];
+
+      function renderCards() {
+          if (!window.instructionsData) return;
+          const lang = window.i18n ? window.i18n.getLanguage() : 'ar';
+          const container = document.getElementById('cards-container');
+          
+          let html = '';
+          pages.forEach(p => {
+              const data = window.instructionsData[p.id];
+              if (!data) return;
+              
+              const title = lang === 'ar' ? data.title_ar : (data.title_en || data.title_ar);
+              
+              html += `
+              <li class="stone-card">
+                  <a href="${p.file}">
+                      <figure class="stone-image-container">
+                          <picture>
+                              <img class="stone-image" src="${p.image}" alt="${title}">
+                          </picture>
+                      </figure>
+                      <div class="stone-content-overlay">
+                          <span class="stone-name">${title}</span>
+                      </div>
+                  </a>
+              </li>`;
+          });
+          container.innerHTML = html;
+      }
+
+      window.addEventListener('languageChanged', renderCards);
+      
+      // Wait for data to load
+      const interval = setInterval(() => {
+          if (window.instructionsData) {
+              clearInterval(interval);
+              renderCards();
+          }
+      }, 100);
+  </script>
+</body>
+</html>

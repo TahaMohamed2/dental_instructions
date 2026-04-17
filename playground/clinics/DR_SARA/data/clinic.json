@@ -1,0 +1,34 @@
+{
+  "clinic_name_ar": "عيادة د. سارة",
+  "clinic_name_en": "Dr. Sara Dental Clinic",
+  "doctor_name_ar": "د. سارة",
+  "doctor_name_en": "Dr. Sara",
+  "logo": "resources/instructions_logo.ico",
+  "address_ar": "القاهرة، مصر",
+  "address_en": "Cairo, Egypt",
+  "phone": "+201234567890",
+  "whatsapp": "+201234567890",
+  "email": "drsara@example.com",
+  "website": "https://example.com/drsara",
+  "social": {
+    "facebook": "",
+    "instagram": ""
+  },
+  "google_calendar_embed_url": "",
+  "theme": {
+    "primary_color": "#4c1d95",
+    "accent_color": "#ec4899",
+    "font_ar": "Cairo",
+    "font_en": "Inter"
+  },
+  "default_language": "ar",
+  "schedule": {
+    "sunday":    { "name_ar": "عيادة المركز الألماني", "name_en": "German Center Clinic", "location_url": "https://maps.app.goo.gl/JcaiP6viBiuGuBN89", "hours": "12:00 الى 05:00", "phone": "01030020376" },
+    "monday":    { "name_ar": "مركز نور الرحمن",       "name_en": "Nour Al-Rahman Center", "location_url": "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9", "hours": "06:00 الى 10:00", "phone": "01015929494" },
+    "tuesday":   { "name_ar": "مركز الحميدى",          "name_en": "Al-Humaidy Center", "location_url": "https://maps.app.goo.gl/vWcfGuHg89Ru5fNt7", "hours": "08:00 الى 10:00", "phone": "01003621676" },
+    "wednesday": { "name_ar": "عيادة المركز الألماني", "name_en": "German Center Clinic", "location_url": "https://maps.app.goo.gl/JcaiP6viBiuGuBN89", "hours": "12:00 الى 05:00", "phone": "01030020376" },
+    "thursday":  { "name_ar": "مركز نور الرحمن",       "name_en": "Nour Al-Rahman Center", "location_url": "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9", "hours": "06:00 الى 10:00", "phone": "01015929494" },
+    "friday":    { "closed": true },
+    "saturday":  { "name_ar": "عيادة كوزميك",          "name_en": "Cosmic Clinic", "location_url": "https://maps.app.goo.gl/vYQmjw22KckXQxfk9", "hours": "02:00 الى 10:00", "phone": "01055262066" }
+  }
+}
