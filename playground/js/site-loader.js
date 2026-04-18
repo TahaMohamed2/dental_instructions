@@ -17,21 +17,43 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         console.log("Fetching site data...");
-        const [clinicRes, instructionsRes, portfolioRes, servicesRes] = await Promise.all([
-            fetch('data/clinic.json'),
-            fetch('data/instructions.json'),
-            fetch('data/portfolio.json'),
-            fetch('data/services.json')
-        ]);
         
-        if (!clinicRes.ok || !instructionsRes.ok || !portfolioRes.ok || !servicesRes.ok) {
-            throw new Error(`Failed to load JSON files. Clinic: ${clinicRes.status}, Instructions: ${instructionsRes.status}`);
-        }
+        // CHECK FOR PREVIEW MODE
+        const isPreview = sessionStorage.getItem('preview_mode') === 'true';
+        let clinicData, instructionsData, portfolioData, servicesData;
 
-        const clinicData = await clinicRes.json();
-        const instructionsData = await instructionsRes.json();
-        const portfolioData = await portfolioRes.json();
-        const servicesData = await servicesRes.json();
+        if (isPreview) {
+            console.log("RUNNING IN PREVIEW MODE");
+            clinicData = JSON.parse(sessionStorage.getItem('preview_clinic'));
+            instructionsData = JSON.parse(sessionStorage.getItem('preview_instructions'));
+            portfolioData = JSON.parse(sessionStorage.getItem('preview_portfolio'));
+            servicesData = JSON.parse(sessionStorage.getItem('preview_services'));
+            
+            if (!portfolioData) {
+                const pRes = await fetch('data/portfolio_template.json');
+                portfolioData = await pRes.json();
+            }
+            if (!servicesData) {
+                const sRes = await fetch('data/services_template.json');
+                servicesData = await sRes.json();
+            }
+        } else {
+            const [clinicRes, instructionsRes, portfolioRes, servicesRes] = await Promise.all([
+                fetch('data/clinic.json'),
+                fetch('data/instructions.json'),
+                fetch('data/portfolio.json'),
+                fetch('data/services.json')
+            ]);
+            
+            if (!clinicRes.ok || !instructionsRes.ok || !portfolioRes.ok || !servicesRes.ok) {
+                throw new Error("Failed to load clinical datasets.");
+            }
+
+            clinicData = await clinicRes.json();
+            instructionsData = await instructionsRes.json();
+            portfolioData = await portfolioRes.json();
+            servicesData = await servicesRes.json();
+        }
         
         window.clinicData = clinicData;
         window.instructionsData = instructionsData;
@@ -43,6 +65,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         const pageId = document.body.dataset.page;
         handlePageRouting(pageId);
+        
+        // Add a "Exit Preview" banner if in preview mode
+        if (isPreview) {
+            const banner = document.createElement('div');
+            banner.innerHTML = `
+                <div class="fixed top-0 left-0 w-full bg-teal-500 text-slate-900 py-2 px-4 text-center font-bold text-xs z-[9999] shadow-xl flex justify-center items-center gap-4">
+                    <span>DEMO MODE: Viewing your custom clinic configuration</span>
+                    <button onclick="sessionStorage.clear(); window.location.reload();" class="bg-slate-900 text-white px-3 py-1 rounded-full text-[10px] uppercase tracking-widest">Exit Preview</button>
+                    <button onclick="window.location.href='onboarding.html'" class="bg-white/20 text-slate-900 px-3 py-1 rounded-full text-[10px] uppercase tracking-widest border border-slate-900/20 font-black">Back to Builder</button>
+                </div>
+            `;
+            document.body.appendChild(banner);
+            document.body.style.paddingTop = '40px';
+        }
         
         // Listen for language change to re-render
         window.addEventListener('languageChanged', () => {
@@ -67,6 +103,14 @@ function applyClinicBranding(clinic) {
         if(clinic.theme.accent_color) root.style.setProperty('--color-accent', clinic.theme.accent_color);
         if(clinic.theme.font_ar) root.style.setProperty('--font-ar', `"${clinic.theme.font_ar}", sans-serif`);
         if(clinic.theme.font_en) root.style.setProperty('--font-en', `"${clinic.theme.font_en}", sans-serif`);
+        
+        if(clinic.theme.background_image) {
+            document.body.style.backgroundImage = `url(${clinic.theme.background_image})`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+            document.body.style.backgroundAttachment = 'fixed';
+            document.body.style.backgroundRepeat = 'no-repeat';
+        }
     }
     const lang = window.i18n ? window.i18n.getLanguage() : 'ar';
     document.title = lang === 'ar' ? clinic.clinic_name_ar : clinic.clinic_name_en;
@@ -90,9 +134,9 @@ function renderSharedComponents(clinic) {
             
             <nav class="flex items-center gap-2 md:gap-4 overflow-x-auto no-scrollbar py-2">
                  <a href="index.html" class="nav-link text-xs md:text-sm text-slate-300 hover:text-white transition-colors"><span class="ar-only">الرئيسية</span><span class="en-only" style="display:none;">Home</span></a>
-                 <a href="clinic_schedule.html" class="nav-link text-xs md:text-sm text-slate-300 hover:text-white transition-colors"><span class="ar-only">المواعيد</span><span class="en-only" style="display:none;">Schedule</span></a>
-                 <a href="clinic_services.html" class="nav-link text-xs md:text-sm text-slate-300 hover:text-white transition-colors"><span class="ar-only">الخدمات</span><span class="en-only" style="display:none;">Services</span></a>
-                 <a href="portfolio.html" class="nav-link text-xs md:text-sm text-slate-300 hover:text-white transition-colors"><span class="ar-only">سابقة الأعمال</span><span class="en-only" style="display:none;">Portfolio</span></a>
+                 ${(!clinic.enabled_features || clinic.enabled_features.schedule) ? `<a href="clinic_schedule.html" class="nav-link text-xs md:text-sm text-slate-300 hover:text-white transition-colors"><span class="ar-only">المواعيد</span><span class="en-only" style="display:none;">Schedule</span></a>` : ''}
+                 ${(!clinic.enabled_features || clinic.enabled_features.services) ? `<a href="clinic_services.html" class="nav-link text-xs md:text-sm text-slate-300 hover:text-white transition-colors"><span class="ar-only">الخدمات</span><span class="en-only" style="display:none;">Services</span></a>` : ''}
+                 ${(!clinic.enabled_features || clinic.enabled_features.portfolio) ? `<a href="portfolio.html" class="nav-link text-xs md:text-sm text-slate-300 hover:text-white transition-colors"><span class="ar-only">سابقة الأعمال</span><span class="en-only" style="display:none;">Portfolio</span></a>` : ''}
             </nav>
 
             <div class="flex items-center gap-2">
@@ -108,6 +152,10 @@ function renderSharedComponents(clinic) {
                 <p class="mb-2">© ${new Date().getFullYear()} ${clinic.clinic_name_ar}</p>
                 <div class="flex justify-center gap-4 mb-4">
                     <a href="credits.html" class="hover:text-slate-300 transition-colors uppercase tracking-widest">Credits</a>
+                    ${clinic.socials && clinic.socials.facebook ? `<a href="${clinic.socials.facebook}" target="_blank" class="hover:text-slate-300 transition-colors font-bold uppercase tracking-widest text-[#1877F2]">Facebook</a>` : ''}
+                    ${clinic.socials && clinic.socials.instagram ? `<a href="${clinic.socials.instagram}" target="_blank" class="hover:text-slate-300 transition-colors font-bold uppercase tracking-widest text-[#E4405F]">Instagram</a>` : ''}
+                    ${clinic.socials && clinic.socials.linkedin ? `<a href="${clinic.socials.linkedin}" target="_blank" class="hover:text-slate-300 transition-colors font-bold uppercase tracking-widest text-[#0A66C2]">LinkedIn</a>` : ''}
+                    ${clinic.email ? `<a href="mailto:${clinic.email}" class="hover:text-slate-300 transition-colors font-bold uppercase tracking-widest">Email</a>` : ''}
                 </div>
                 <!-- Visitor Counter -->
                 <div class="flex justify-center opacity-50 hover:opacity-100 transition-opacity">
@@ -291,30 +339,53 @@ function renderSchedule(schedule) {
     window.showClinicOnPage = (day) => {
         const item = schedule[day];
         const container = document.getElementById('schedule-details');
-        if (item.closed) {
-            container.innerHTML = `<div class="bg-red-900/20 border border-red-500/50 p-10 rounded-3xl text-center text-xl text-red-300">${lang === 'ar' ? 'العيادة مغلقة يوم الجمعة' : 'Closed on Friday'}</div>`;
-        } else {
-            const name = lang === 'ar' ? item.name_ar : item.name_en;
+        
+        if (!item || (Array.isArray(item) && item.length === 0)) {
             container.innerHTML = `
-                <div class="bg-slate-700/50 backdrop-blur-md rounded-3xl p-8 border border-teal-500/30 shadow-2xl animate-in fade-in slide-in-from-bottom-5">
-                    <h2 class="text-3xl font-bold text-white mb-6 text-center">${name}</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-slate-800/50 p-6 rounded-2xl">
-                             <h4 class="text-teal-400 font-bold mb-2 uppercase tracking-tighter text-xs">${lang === 'ar' ? 'ساعات العمل' : 'Working Hours'}</h4>
-                             <p class="text-2xl text-white font-mono">${item.hours}</p>
-                        </div>
-                        <div class="bg-slate-800/50 p-6 rounded-2xl">
-                             <h4 class="text-teal-400 font-bold mb-2 uppercase tracking-tighter text-xs">${lang === 'ar' ? 'للتواصل' : 'Contact'}</h4>
-                             <p class="text-2xl text-white font-mono">${item.phone}</p>
-                        </div>
-                    </div>
-                    <div class="mt-8 flex justify-center">
-                        <a href="${item.location_url}" target="_blank" class="bg-teal-500 hover:bg-teal-600 text-white px-10 py-4 rounded-full font-bold shadow-xl transition-all hover:scale-105 active:scale-95">
-                             ${lang === 'ar' ? 'فتح في خرائط جوجل' : 'Open in Google Maps'}
-                        </a>
+                <div class="col-span-full py-16 text-center">
+                    <div class="inline-block p-6 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-xl">
+                        <svg class="w-12 h-12 text-slate-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <p class="text-slate-400 font-bold tracking-widest uppercase text-[10px]">
+                             ${lang === 'ar' ? 'العيادة مغلقة أو لا يوجد أطباء متاحون' : 'Clinic is closed or no specialists available'}
+                        </p>
                     </div>
                 </div>
             `;
+        } else {
+            const specialists = Array.isArray(item) ? item : [item];
+            container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 mt-10";
+            container.innerHTML = specialists.map(doc => `
+                <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] shadow-2xl transition-all hover:scale-[1.02] flex flex-col justify-between hover:border-teal-500/30 group">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-teal-500 rounded-2xl flex items-center justify-center font-bold text-slate-900 text-xl shadow-lg shadow-teal-500/20 group-hover:rotate-6 transition-transform">
+                                ${lang === 'ar' ? (doc.doctor_ar || 'د').charAt(0) : (doc.doctor_en || 'D').charAt(0)}
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-white tracking-tighter">${lang === 'ar' ? doc.doctor_ar : doc.doctor_en}</h3>
+                                <p class="text-teal-400 text-[10px] font-bold uppercase tracking-widest">${lang === 'ar' ? doc.specialty_ar : doc.specialty_en}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 mb-8">
+                            <div class="bg-slate-800/50 p-4 rounded-2xl flex flex-col gap-1">
+                                 <span class="text-[9px] text-slate-500 uppercase font-black tracking-widest">${lang === 'ar' ? 'ساعات العمل' : 'Working Hours'}</span>
+                                 <span class="text-white font-mono font-bold text-sm">${doc.hours}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col gap-2">
+                        <a href="appointment.html?docId=${doc.id}" class="w-full bg-teal-500 hover:bg-teal-600 text-slate-900 py-3.5 rounded-2xl font-black uppercase tracking-widest text-[10px] transition-all text-center shadow-lg shadow-teal-500/10 active:scale-95">
+                             ${lang === 'ar' ? 'حجز موعد' : 'Book Appointment'}
+                        </a>
+                        ${(doc.location_url || window.clinicData.location_url) ? `
+                        <a href="${doc.location_url || window.clinicData.location_url}" target="_blank" class="w-full bg-white/5 hover:bg-white/10 text-slate-400 py-3 rounded-2xl font-bold transition-all text-center text-[9px] uppercase tracking-widest">
+                             ${lang === 'ar' ? 'الموقع على الخريطة' : 'View on Map'}
+                        </a>` : ''}
+                    </div>
+                </div>
+            `).join('');
         }
     };
 }

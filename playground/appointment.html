@@ -68,34 +68,66 @@
             const clinic = window.clinicData;
             const lang = window.i18n ? window.i18n.getLanguage() : 'ar';
             
+            // Get Doctor ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const docId = urlParams.get('docId');
+            
+            let selectedDoc = null;
+            if (docId) {
+                // Search for doctor in the rotation
+                Object.values(clinic.schedule).forEach(dayArr => {
+                    const found = dayArr.find(d => d.id === docId);
+                    if (found) selectedDoc = found;
+                });
+            }
+
+            const headerTitle = document.querySelector('h1 .ar-only');
+            const headerTitleEn = document.querySelector('h1 .en-only');
+            const subText = document.querySelector('p .ar-only');
+            const subTextEn = document.querySelector('p .en-only');
+
+            if (selectedDoc) {
+                headerTitle.textContent = `حجز موعد مع ${selectedDoc.doctor_ar}`;
+                headerTitleEn.textContent = `Book with ${selectedDoc.doctor_en}`;
+                subText.textContent = selectedDoc.specialty_ar;
+                subTextEn.textContent = selectedDoc.specialty_en;
+            }
+
             const iframe = document.getElementById('calendar-iframe');
             const placeholder = document.getElementById('calendar-placeholder');
             
-            if (clinic.google_calendar_embed_url && clinic.google_calendar_embed_url.trim() !== "") {
-                iframe.src = clinic.google_calendar_embed_url;
+            const calendarUrl = selectedDoc?.calendar_url || clinic.google_calendar_embed_url;
+
+            if (calendarUrl && calendarUrl.trim() !== "") {
+                iframe.src = calendarUrl;
                 iframe.style.display = "block";
                 placeholder.style.display = "none";
             } else {
+                placeholder.style.display = "block";
+                iframe.style.display = "none";
                 placeholder.innerHTML = `
-                    <p class="text-xl font-semibold mb-2">
-                        <span class="ar-only">غير متوفر حالياً</span>
-                        <span class="en-only" style="display:none;">Currently Unavailable</span>
-                    </p>
-                    <p class="text-sm">
-                        <span class="ar-only">الرجاء التواصل معنا مباشرة عبر واتساب للحجز</span>
-                        <span class="en-only" style="display:none;">Please contact us directly via WhatsApp to book</span>
-                    </p>
+                    <div class="py-10">
+                        <p class="text-xl font-semibold mb-2">
+                            <span class="ar-only">التقويم غير متوفر لهذا الطبيب</span>
+                            <span class="en-only" style="display:none;">Calendar not available for this specialist</span>
+                        </p>
+                        <p class="text-sm">
+                            <span class="ar-only">الرجاء التواصل معنا مباشرة عبر واتساب للحجز</span>
+                            <span class="en-only" style="display:none;">Please contact us directly via WhatsApp to book</span>
+                        </p>
+                    </div>
                 `;
                 if(window.i18n) window.i18n.updateStaticUI();
             }
 
             const waBtn = document.getElementById('whatsapp-btn');
             if (clinic.whatsapp && clinic.whatsapp.trim() !== "") {
+                const targetDocName = selectedDoc ? (lang === 'ar' ? selectedDoc.doctor_ar : selectedDoc.doctor_en) : (lang === 'ar' ? clinic.doctor_name_ar : clinic.doctor_name_en);
                 const message = lang === 'ar' 
-                    ? \`السلام عليكم، أريد حجز موعد مع ${clinic.doctor_name_ar} في ${clinic.clinic_name_ar}.\nالاسم: \nالوقت المفضل: \`
-                    : \`Hello, I would like to book an appointment with ${clinic.doctor_name_en} at ${clinic.clinic_name_en}.\nName: \nPreferred Time: \`;
+                    ? `السلام عليكم، أريد حجز موعد مع ${targetDocName} في ${clinic.clinic_name_ar}.\nالاسم: \nالوقت المفضل: `
+                    : `Hello, I would like to book an appointment with ${targetDocName} at ${clinic.clinic_name_en}.\nName: \nPreferred Time: `;
                 
-                waBtn.href = \`https://wa.me/${clinic.whatsapp.replace(/\\+/g,'')}?text=\${encodeURIComponent(message)}\`;
+                waBtn.href = `https://wa.me/${clinic.whatsapp.replace(/\+/g,'')}?text=${encodeURIComponent(message)}`;
             } else {
                 waBtn.style.display = 'none';
             }

@@ -12,6 +12,20 @@
 body {
   background-color: var(--color-primary) !important;
   font-family: var(--font-ar);
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.7); /* Slate-900 with 70% opacity */
+  z-index: -1;
+  pointer-events: none;
 }
 
 [data-lang="en"] body {

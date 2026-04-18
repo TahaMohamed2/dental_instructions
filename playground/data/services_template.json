@@ -1,0 +1,22 @@
+{
+  "services": [
+    { "id": "fixed", "title_ar": "التركيبات الثابتة", "title_en": "Fixed Prosthodontics", "images": [] },
+    { "id": "bleaching", "title_ar": "التبييض", "title_en": "Whitening / Bleaching", "images": [] },
+    { "id": "cosmetic_fillings", "title_ar": "الحشو التجميلى", "title_en": "Cosmetic Fillings", "images": [] },
+    { "id": "cleaning", "title_ar": "التنظيف و التلميع", "title_en": "Cleaning and Polishing", "images": [] },
+    { "id": "gum_surgery", "title_ar": "جراحات اللثة", "title_en": "Gum Surgery", "images": [] },
+    { "id": "post_core", "title_ar": "الدعامة و اعادة بناء الضرس", "title_en": "Post and Core", "images": [] },
+    { "id": "pedo_fillings", "title_ar": "حشوات الاطفال", "title_en": "Children's Fillings", "images": [] },
+    { "id": "space_maintainer", "title_ar": "حافظ المسافة للاطفال", "title_en": "Space Maintainer", "images": [] },
+    { "id": "permanent_fillings", "title_ar": "الحشو الدائم للاضراس", "title_en": "Permanent Fillings", "images": [] },
+    { "id": "complete_denture", "title_ar": "الطقم الكامل", "title_en": "Complete Denture", "images": [] },
+    { "id": "flexible_denture", "title_ar": "الطقم المرن الجزئى", "title_en": "Flexible Partial Denture", "images": [] },
+    { "id": "night_guard", "title_ar": "واقى الاسنان الليلى", "title_en": "Night Guard", "images": [] },
+    { "id": "endo", "title_ar": "حشو العصب", "title_en": "Root Canal Treatment", "images": [] },
+    { "id": "root_extraction", "title_ar": "خلع الجذور المتبقية", "title_en": "Root Extraction", "images": [] },
+    { "id": "wisdom_extraction", "title_ar": "خلع ضرس العقل", "title_en": "Wisdom Tooth Extraction", "images": [] },
+    { "id": "recementation", "title_ar": "اعادة لصق التركيبات القديمة", "title_en": "Recementation", "images": [] },
+    { "id": "fluoride", "title_ar": "جلسات الفلورايد", "title_en": "Fluoride Treatment", "images": [] },
+    { "id": "xray", "title_ar": "اشعة على الاسنان", "title_en": "Dental X-ray", "images": [] }
+  ]
+}

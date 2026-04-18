@@ -23,4 +23,6 @@ the next step is to make the site more customizable for the dental clinics.
 14 the clinic should be able to select which services they want to include in their site 
 15 the clinic should be able to select which languages they want to include in their site 
 16 the clinic should be able to select which colour palates and designs they want to use 
+17 the client clinic should be able to upload pictures of their work to be added in the section for the provided survices as the current implemented photos are from my work and should not be included in the templates samples or other client products the same for the portfolio
+
 

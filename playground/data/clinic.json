@@ -1,34 +1,67 @@
 {
-  "clinic_name_ar": "عيادة د. طه",
-  "clinic_name_en": "Dr. Taha Dental Clinic",
-  "doctor_name_ar": "د. طه محمد",
-  "doctor_name_en": "Dr. Taha Mohamed",
-  "logo": "resources/instructions_logo.ico",
-  "address_ar": "يرجى تحديد العنوان في هذا الملف",
-  "address_en": "Please specify address in clinic.json",
-  "phone": "+201015929494",
-  "whatsapp": "+201015929494",
-  "email": "clinic@example.com",
-  "website": "https://tahamohamed2.github.io/dental_instructions/",
-  "social": {
-    "facebook": "",
-    "instagram": ""
-  },
-  "google_calendar_embed_url": "",
-  "theme": {
-    "primary_color": "#1e293b",
-    "accent_color": "#2dd4bf",
-    "font_ar": "Cairo",
-    "font_en": "Inter"
-  },
-  "default_language": "ar",
-  "schedule": {
-    "sunday":    { "name_ar": "عيادة المركز الألماني", "name_en": "German Center Clinic", "location_url": "https://maps.app.goo.gl/JcaiP6viBiuGuBN89", "hours": "12:00 الى 05:00", "phone": "01030020376" },
-    "monday":    { "name_ar": "مركز نور الرحمن",       "name_en": "Nour Al-Rahman Center", "location_url": "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9", "hours": "06:00 الى 10:00", "phone": "01015929494" },
-    "tuesday":   { "name_ar": "مركز الحميدى",          "name_en": "Al-Humaidy Center", "location_url": "https://maps.app.goo.gl/vWcfGuHg89Ru5fNt7", "hours": "08:00 الى 10:00", "phone": "01003621676" },
-    "wednesday": { "name_ar": "عيادة المركز الألماني", "name_en": "German Center Clinic", "location_url": "https://maps.app.goo.gl/JcaiP6viBiuGuBN89", "hours": "12:00 الى 05:00", "phone": "01030020376" },
-    "thursday":  { "name_ar": "مركز نور الرحمن",       "name_en": "Nour Al-Rahman Center", "location_url": "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9", "hours": "06:00 الى 10:00", "phone": "01015929494" },
-    "friday":    { "closed": true },
-    "saturday":  { "name_ar": "عيادة كوزميك",          "name_en": "Cosmic Clinic", "location_url": "https://maps.app.goo.gl/vYQmjw22KckXQxfk9", "hours": "02:00 الى 10:00", "phone": "01055262066" }
-  }
+    "clinic_name_ar": "تعليمات عيادة الأسنان",
+    "clinic_name_en": "Dental Clinic Instructions",
+    "doctor_name_ar": "د. طه محمد طه",
+    "doctor_name_en": "Dr. Taha Mohamed Taha",
+    "logo": "resources/instructions_logo.ico",
+    "phone": "+20123456789",
+    "whatsapp": "+20123456789",
+    "email": "taha@example.com",
+    "location_url": "https://maps.google.com",
+    "socials": {
+        "facebook": "https://facebook.com/drtaha",
+        "instagram": "https://instagram.com/drtaha",
+        "linkedin": ""
+    },
+    "theme": {
+        "primary_color": "#0f172a",
+        "accent_color": "#2dd4bf",
+        "background_image": "",
+        "font_ar": "Cairo",
+        "font_en": "Inter"
+    },
+    "enabled_features": {
+        "schedule": true,
+        "services": true,
+        "portfolio": true
+    },
+    "google_calendar_embed_url": "https://calendar.google.com/calendar/embed?src=en.egypt%23holiday%40group.v.calendar.google.com&ctz=Africa%2FCairo",
+    "schedule": {
+        "sunday": [
+            {
+                "id": "doc-taha",
+                "doctor_ar": "د. طه محمد طه",
+                "doctor_en": "Dr. Taha Mohamed",
+                "specialty_ar": "أخصائي زراعة وتركيبات",
+                "specialty_en": "Implant & Prosthetics Specialist",
+                "hours": "5 PM - 10 PM",
+                "calendar_url": "https://calendar.google.com/calendar/embed?src=en.egypt%23holiday%40group.v.calendar.google.com&ctz=Africa%2FCairo"
+            }
+        ],
+        "monday": [
+            {
+                "id": "doc-taha",
+                "doctor_ar": "د. طه محمد طه",
+                "doctor_en": "Dr. Taha Mohamed",
+                "specialty_ar": "أخصائي زراعة وتركيبات",
+                "specialty_en": "Implant & Prosthetics Specialist",
+                "hours": "5 PM - 10 PM",
+                "calendar_url": "https://calendar.google.com/calendar/embed?src=en.egypt%23holiday%40group.v.calendar.google.com&ctz=Africa%2FCairo"
+            },
+            {
+                "id": "doc-azzam",
+                "doctor_ar": "د. عزام أحمد",
+                "doctor_en": "Dr. Azzam Ahmed",
+                "specialty_ar": "أخصائي تقويم الأسنان",
+                "specialty_en": "Orthodontic Specialist",
+                "hours": "2 PM - 6 PM",
+                "calendar_url": ""
+            }
+        ],
+        "tuesday": [],
+        "wednesday": [],
+        "thursday": [],
+        "friday": [],
+        "saturday": []
+    }
 }
