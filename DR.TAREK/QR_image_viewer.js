@@ -27,8 +27,23 @@ function viewQRImage() {
         qrImageViewer.appendChild(qrImage);
         // Append the QR image viewer to the body
         document.body.appendChild(qrImageViewer);
-        // Set the display property to block
-        qrImageViewer.style.display = 'block';
+        // Set overlay styles
+        qrImageViewer.style.position = 'fixed';
+        qrImageViewer.style.top = '0';
+        qrImageViewer.style.left = '0';
+        qrImageViewer.style.width = '100%';
+        qrImageViewer.style.height = '100%';
+        qrImageViewer.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        qrImageViewer.style.display = 'flex';
+        qrImageViewer.style.justifyContent = 'center';
+        qrImageViewer.style.alignItems = 'center';
+        qrImageViewer.style.zIndex = '1000';
+        qrImageViewer.style.cursor = 'pointer';
+        // Set image styles
+        qrImage.style.maxWidth = '90%';
+        qrImage.style.maxHeight = '90%';
+        qrImage.style.borderRadius = '10px';
+        qrImage.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.5)';
     });
 
     // Add an event listener for the image error event

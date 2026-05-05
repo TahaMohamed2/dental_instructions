@@ -14,8 +14,8 @@
 </head>
 <body class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
     <header class="flex justify-between items-center mb-5">
-        <div class="text-2xl font-bold text-white">عيادة د طارق علام</div>
-        <img src="resources/clinic logo.jpeg" alt="Clinic Logo" width="150" height="100" class="rounded-full">
+        <div id="clinic-name" class="text-2xl font-bold blue-gradient-text"></div>
+        <img src="resources/clinic logo.jpeg" alt="Clinic Logo" class="rounded-full max-w-xs max-h-24 object-contain">
     </header>
     <section class="section stone-section flex-grow">
         <h2 class="section-heading text-white font-bold text-center mb-12 text-4xl">تعليمات عيادة الأسنان</h2>
@@ -228,15 +228,27 @@
     <button onclick="location.href='credits.html'" class="absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500">credits</button>
 
 <footer class="text-center bg-slate-700 p-4 mt-auto">
-    <p class="mb-2"><strong>عيادة د طارق علام</strong></p>
-    <p class="mb-1"><a href="https://maps.app.goo.gl/mgizMpMHTamtNYWW6" class="text-blue-400 hover:text-blue-300"><i class="fas fa-map-marker-alt"></i> الموقع</a></p>
-    <p class="mb-1">الهاتف: <a href="tel:01206737707" class="text-blue-400 hover:text-blue-300">01206737707</a></p>
-    <p class="mb-1"><a href="https://wa.me/01206737707" class="text-green-400 hover:text-green-300"><i class="fab fa-whatsapp"></i> واتساب</a></p>
+    <p class="mb-2"><strong id="clinic-name-footer"></strong></p>
+    <p class="mb-1"><a id="location-link" href="" class="text-blue-400 hover:text-blue-300"><i class="fas fa-map-marker-alt"></i> الموقع</a></p>
+    <p class="mb-1"><i class="fas fa-phone"></i> الهاتف: <a id="phone-link" href="" class="text-blue-400 hover:text-blue-300"></a></p>
+    <p class="mb-1"><a id="whatsapp-link" href="" class="text-green-400 hover:text-green-300"><i class="fab fa-whatsapp"></i> واتساب</a></p>
+    <p id="hours" class="mb-1"></p>
     <script type="text/javascript" src="https://www.free-counters.org/count/iih0"></script>
 </footer>
 
 <script>
-var clinicInfo = {"logo":"resources/clinic logo.jpeg","location":"https://maps.app.goo.gl/mgizMpMHTamtNYWW6","phone":"01206737707","whatsapp":"https://wa.me/01206737707","name":"عيادة د طارق علام "};
+var clinicConfig = {"logo":"resources/clinic logo.jpeg","location":"https://maps.app.goo.gl/mgizMpMHTamtNYWW6","phone":"01206737707","whatsapp":"https://wa.me/01206737707","name":"عيادة د طارق علام ","hours":"الأحد إلى الخميس: 2:00 إلى 10:00 مساءً"};
+
+// Populate header
+document.getElementById('clinic-name').textContent = clinicConfig.name;
+
+// Populate footer
+document.getElementById('clinic-name-footer').textContent = clinicConfig.name;
+document.getElementById('location-link').href = clinicConfig.location;
+document.getElementById('phone-link').href = 'tel:' + clinicConfig.phone;
+document.getElementById('phone-link').textContent = clinicConfig.phone;
+document.getElementById('whatsapp-link').href = clinicConfig.whatsapp;
+document.getElementById('hours').textContent = clinicConfig.hours;
 </script>
 
 </body>

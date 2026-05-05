@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.blue-gradient-text {
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 /* QR Image Viewer Styles */
 .qr-image-viewer {
   position: fixed;

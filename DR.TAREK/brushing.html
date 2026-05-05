@@ -11,7 +11,7 @@
 
 <body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
     <button onclick="viewQRImage()" class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100">
-        <img src="resources/QR.png" alt="QR" class="max-w-full rounded-lg shadow-lg" />
+        <img src="resources/clinic_QR.jpeg" alt="QR" class="max-w-full rounded-lg shadow-lg" />
     </button>
 
     <button onclick="location.href='credits.html'" class="absolute bottom-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500">credits</button>
@@ -72,9 +72,11 @@
     </div>
 
 <footer class="mt-8 p-4 bg-slate-700 text-center text-slate-200 rounded-lg shadow-lg">
-<p class="text-lg font-semibold">عيادة د طارق علام </p>
-<p>اتصال: +01030020376</p>
-<p class="text-sm">الموقع: <a href="https://maps.app.goo.gl/JcaiP6viBiuGuBN89" target="_blank" class="text-blue-400 hover:text-blue-300 underline">عرض على الخريطة</a></p>
+<p class="text-lg font-semibold" id="clinic-name-footer"></p>
+<p><i class="fas fa-phone"></i> اتصال: <span id="phone-link"></span></p>
+<p class="text-sm">الموقع: <a id="location-link" href="" target="_blank" class="text-blue-400 hover:text-blue-300 underline"><i class="fas fa-map-marker-alt"></i> عرض على الخريطة</a></p>
+<p><a id="whatsapp-link" href="" class="text-green-400 hover:text-green-300"><i class="fab fa-whatsapp"></i> واتساب</a></p>
+<p id="hours"></p>
 </footer>
 
 <script>
@@ -129,6 +131,16 @@ const clinicConfig = {
     },
     portfolioLink: "my_portfolio/dental_portfolio.html"
 };
+
+// Populate footer using saturday clinic as default
+const defaultClinic = clinicConfig.clinics.saturday;
+document.getElementById('clinic-name-footer').textContent = defaultClinic.name;
+document.getElementById('location-link').href = defaultClinic.location;
+document.getElementById('phone-link').textContent = defaultClinic.contact;
+document.getElementById('phone-link').href = 'tel:' + defaultClinic.contact.replace(/\s+/g, '');
+const whatsappNumber = defaultClinic.contact.replace(/\s+/g, '').replace(/^\+?20/, '');
+document.getElementById('whatsapp-link').href = 'https://wa.me/' + whatsappNumber;
+document.getElementById('hours').textContent = 'ساعات العمل: ' + defaultClinic.workingHours;
 </script>
 
 </body>
