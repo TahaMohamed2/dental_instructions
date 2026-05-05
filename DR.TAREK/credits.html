@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Credits</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index_styles.css" />
+  <script src="QR_image_viewer.js"></script>
+</head>
+<body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
+  <button onclick="viewQRImage()" class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100">
+    <img src="resources/QR.png" alt="QR" class="max-w-full rounded-lg shadow-lg" />
+  </button>
+
+    <!-- Configuration Section - Edit these values to customize clinic data -->
+    <script>
+        const clinicConfig = {
+            // Clinic data configuration - modify these values as needed
+            clinics: {
+                sunday: {
+                    name: "عيادة المركز الألماني",
+                    location: "https://maps.app.goo.gl/JcaiP6viBiuGuBN89",
+                    workingHours:"12:00 الى 05:00",
+                    contact: "+01030020376",
+                    services: "clinic_services.html"
+                },
+                monday: {
+                 name: "مركز نور الرحمن",
+                location: "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9",
+                workingHours: "06:00 الى 10:00",
+                contact: "01015929494 , 01273072101 , 01140447818",
+                services: "clinic_services.html"
+                },
+                tuesday: {
+                    name: "مركز الحميدى",
+                    location: "https://maps.app.goo.gl/vWcfGuHg89Ru5fNt7",
+                    workingHours: "08:00 الى 10:00",
+                    contact: "+20 100 362 1676",
+                    services: "clinic_services.html"
+                },
+                wednesday: {
+                    name: "عيادة المركز الألماني",
+                    location: "https://maps.app.goo.gl/JcaiP6viBiuGuBN89",
+                    workingHours:"12:00 الى 05:00",
+                    contact: "+01030020376",
+                    services: "clinic_services.html"
+                },
+                thursday: {
+                    name: "مركز نور الرحمن",
+                    location: "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9",
+                    workingHours:"06:00 الى 10:00",
+                    contact: "01015929494,01273072101,01140447818",
+                    services: "clinic_services.html"
+                },
+                friday: {
+                    closed: true,
+                    message: "العيادة مغلقة يوم الجمعة"
+                },
+                saturday: {
+                    name: "عيادة كوزميك",
+                    location: "https://maps.app.goo.gl/vYQmjw22KckXQxfk9",
+                    workingHours: "02:00 الى 10:00",
+                    contact: "+20105 5262066",
+                    services: "clinic_services.html"
+                }
+            },
+            portfolioLink: "my_portfolio/dental_portfolio.html"
+        };
+    </script>
+
+<button onclick="window.location.href='index.html'" class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500" alt="الرئيسية">الرئيسية</button>
+
+  <div class="max-w-4xl mx-auto mt-20">
+    <img src="resources/clinic logo.jpeg" alt="Clinic Logo" class="mx-auto mb-4" style="max-width: 150px;">
+    <h1 class="text-4xl font-bold text-center mb-8 text-white">Credits</h1>
+    <p class="mb-4"><a href="my_portfolio/clinic_schedule.html" class="font-bold text-blue-400 hover:text-blue-300 underline">د. طه محمد طه</a></p>
+    <p class="mb-4 text-lg leading-relaxed text-slate-200">تم تصميم هذه الصفحة بواسطة د. طه محمد طه بهدف توعية المرضى وتقديم التعليمات اللازمة لتحقيق معدل نجاح أعلى وتقليل المضاعفات على المدى البعيد.</p>
+    <p class="text-lg leading-relaxed text-slate-200">نهدف من خلال هذه الصفحة إلى تقديم خدمة أفضل للمرضى سواء في العيادات الخاصة أو الجامعات. نرجو منكم مشاركة هذه الصفحة لتحقيق هذا الهدف.    </p>
+  </div>
+
+<footer class="text-center mt-8">
+    <p>Location: <a href="https://maps.app.goo.gl/JcaiP6viBiuGuBN89" target="_blank">عيادة المركز الألماني</a></p>
+    <p>Contact: +01030020376</p>
+    <script type="text/javascript" src="https://www.free-counters.org/count/iih0"></script><br>
+</footer>
+
+</body>
+</html>
