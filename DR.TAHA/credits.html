@@ -1,25 +1,60 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Credits</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="index_styles.css" />
-  <script src="QR_image_viewer.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Credits</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index_styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="QR_image_viewer.js"></script>
 </head>
+
 <body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
-  <button onclick="viewQRImage()" class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100">
-    <img src="resources/QR.png" alt="QR" class="max-w-full rounded-lg shadow-lg" />
-  </button>
+    <button onclick="viewQRImage()"
+        class="absolute bottom-5 left-5 bg-transparent border-none rounded-lg p-1 text-lg cursor-pointer transition-all duration-300 w-12 text-slate-100">
+        <img src="resources/clinic_QR.jpeg" alt="QR" class="max-w-full rounded-lg shadow-lg" />
+    </button>
 
-<button onclick="window.location.href='index.html'" class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500" alt="الرئيسية">الرئيسية</button>
+    <script>
+        // Static contact info for credits page
+        document.getElementById('clinic-name').textContent = "د. طه محمد طه";
+        document.getElementById('clinic-name-footer').textContent = "د. طه محمد طه";
+        document.getElementById('phone-link').href = 'tel:01020124542';
+        document.getElementById('phone-link').textContent = '01020124542';
+        document.getElementById('whatsapp-link').href = 'https://wa.me/201020124542';
+        document.getElementById('preference-message').textContent = 'I prefer contact through whatsapp';
+    </script>
 
-  <div class="max-w-4xl mx-auto mt-20">
-    <h1 class="text-4xl font-bold text-center mb-8 text-white">Credits</h1>
-    <p class="mb-4"><a href="my_portfolio/clinic_schedule.html" class="font-bold text-blue-400 hover:text-blue-300 underline">د. طه محمد طه</a></p>
-    <p class="mb-4 text-lg leading-relaxed text-slate-200">تم تصميم هذه الصفحة بواسطة د. طه محمد طه بهدف توعية المرضى وتقديم التعليمات اللازمة لتحقيق معدل نجاح أعلى وتقليل المضاعفات على المدى البعيد.</p>
-    <p class="text-lg leading-relaxed text-slate-200">نهدف من خلال هذه الصفحة إلى تقديم خدمة أفضل للمرضى سواء في العيادات الخاصة أو الجامعات. نرجو منكم مشاركة هذه الصفحة لتحقيق هذا الهدف.</p>
-  </div>
+    <button onclick="window.location.href='index.html'"
+        class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500"
+        alt="الرئيسية">الرئيسية</button>
+    <div class="absolute top-5 left-5 text-white text-lg font-bold">د. طه محمد طه</div>
+
+    <div class="max-w-4xl mx-auto mt-20">
+        <img src="resources/clinic logo.jpeg" alt="Clinic Logo" class="float-left rounded-full mr-4 object-contain"
+            style="max-width: 150px; max-height: 96px;">
+        <h1 class="text-4xl font-bold text-center mb-8 text-white">Credits</h1>
+        <p class="mb-4"><a
+                href="https://tahamohamed2.github.io/dental_instructions/DR.TAHA/my_portfolio/dental_portfolio.html"
+                class="font-bold text-blue-400 hover:text-blue-300 underline">د. طه محمد طه</a></p>
+        <p class="mb-4 text-lg leading-relaxed text-slate-200">تم تصميم هذه الصفحة بواسطة د. طه محمد طه بهدف توعية
+            المرضى وتقديم التعليمات اللازمة لتحقيق معدل نجاح أعلى وتقليل المضاعفات على المدى البعيد.</p>
+        <p class="text-lg leading-relaxed text-slate-200">نهدف من خلال هذه الصفحة إلى تقديم خدمة أفضل للمرضى سواء في
+            العيادات الخاصة أو الجامعات . نرجو منكم مشاركة هذه الصفحة لتحقيق هذا الهدف. </p>
+    </div>
+
+    <footer class="text-center bg-slate-700 p-4 mt-auto">
+        <p class="mb-2"><strong id="clinic-name-footer" class="blue-gradient-text"></strong></p>
+        <p class="mb-1"><i class="fas fa-phone"></i> الهاتف: <a id="phone-link" href=""
+                class="text-blue-400 hover:text-blue-300"></a></p>
+        <p class="mb-1"><a id="whatsapp-link" href="" class="text-green-400 hover:text-green-300"><i
+                    class="fab fa-whatsapp"></i> واتساب</a></p>
+        <p id="preference-message" class="mb-1 text-sm text-slate-300"></p>
+        <script type="text/javascript" src="https://www.free-counters.org/count/iih0"></script>
+    </footer>
+
 </body>
+
 </html>
