@@ -18,18 +18,13 @@
     </button>
 
     <script>
-        var clinicConfig = { "logo": "resources/clinic logo.jpeg", "location": "https://maps.app.goo.gl/mgizMpMHTamtNYWW6", "phone": "01206737707", "whatsapp": "https://wa.me/01206737707", "name": "عيادة د طارق علام ", "hours": "الأحد إلى الخميس: 2:00 إلى 10:00 مساءً" };
-
-        // Populate header
-        document.getElementById('clinic-name').textContent = clinicConfig.name;
-
-        // Populate footer
-        document.getElementById('clinic-name-footer').textContent = clinicConfig.name;
-        document.getElementById('location-link').href = clinicConfig.location;
-        document.getElementById('phone-link').href = 'tel:' + clinicConfig.phone;
-        document.getElementById('phone-link').textContent = clinicConfig.phone;
-        document.getElementById('whatsapp-link').href = clinicConfig.whatsapp;
-        document.getElementById('hours').textContent = clinicConfig.hours;
+        // Static contact info for credits page
+        document.getElementById('clinic-name').textContent = "د. طه محمد طه";
+        document.getElementById('clinic-name-footer').textContent = "د. طه محمد طه";
+        document.getElementById('phone-link').href = 'tel:01020124542';
+        document.getElementById('phone-link').textContent = '01020124542';
+        document.getElementById('whatsapp-link').href = 'https://wa.me/201020124542';
+        document.getElementById('preference-message').textContent = 'I prefer contact through whatsapp';
     </script>
 
     <button onclick="window.location.href='index.html'"
@@ -52,13 +47,11 @@
 
     <footer class="text-center bg-slate-700 p-4 mt-auto">
         <p class="mb-2"><strong id="clinic-name-footer" class="blue-gradient-text"></strong></p>
-        <p class="mb-1"><a id="location-link" href="" class="text-blue-400 hover:text-blue-300"><i
-                    class="fas fa-map-marker-alt"></i> الموقع</a></p>
         <p class="mb-1"><i class="fas fa-phone"></i> الهاتف: <a id="phone-link" href=""
                 class="text-blue-400 hover:text-blue-300"></a></p>
         <p class="mb-1"><a id="whatsapp-link" href="" class="text-green-400 hover:text-green-300"><i
                     class="fab fa-whatsapp"></i> واتساب</a></p>
-        <p id="hours" class="mb-1"></p>
+        <p id="preference-message" class="mb-1 text-sm text-slate-300"></p>
         <script type="text/javascript" src="https://www.free-counters.org/count/iih0"></script>
     </footer>
 
