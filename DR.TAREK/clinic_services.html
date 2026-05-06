@@ -9,20 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body dir="rtl" class="bg-slate-800 text-slate-100 font-sans p-5 flex flex-col min-h-screen relative">
-<script>
-var clinicConfig = {"logo":"resources/clinic logo.jpeg","location":"https://maps.app.goo.gl/mgizMpMHTamtNYWW6","phone":"01206737707","whatsapp":"https://wa.me/01206737707","name":"عيادة د طارق علام ","hours":"Daily from 6 PM to 10 PM"};
-
-// Populate header
-document.getElementById('clinic-name').textContent = clinicConfig.name;
-
-// Populate footer
-document.getElementById('clinic-name-footer').textContent = clinicConfig.name;
-document.getElementById('location-link').href = clinicConfig.location;
-document.getElementById('phone-link').href = 'tel:' + clinicConfig.phone;
-document.getElementById('phone-link').textContent = clinicConfig.phone;
-document.getElementById('whatsapp-link').href = clinicConfig.whatsapp;
-document.getElementById('hours').textContent = clinicConfig.hours;
-</script>
+<script src="populate_clinic.js"></script>
 
     <button onclick="window.location.href='index.html'" class="absolute top-5 right-5 bg-gray-600 text-slate-100 text-xs border-none rounded-lg px-2 py-1 cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-500" alt="الرئيسية">الرئيسية</button>
     <div class="absolute top-5 left-5 text-white text-lg font-bold">د. طه محمد طه</div>
