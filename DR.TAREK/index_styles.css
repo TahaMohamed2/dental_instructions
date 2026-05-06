@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .blue-gradient-text {
-  background: linear-gradient(to right, #0A2A4E, #3087AD);
+  background: linear-gradient(to right, #76b2f7, #3087AD);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -17,7 +17,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Dark overlay */
   display: none;
   justify-content: center;
   align-items: center;
