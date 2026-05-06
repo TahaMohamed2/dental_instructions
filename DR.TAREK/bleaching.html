@@ -37,76 +37,28 @@
         <p class="mb-4 text-slate-200 leading-relaxed">قد تحتاج إلى جلسة دورية للمحافظة على نفس درجة لون الأسنان كل 6 اشهر أو سنة</p>
     </div>
 
-<footer class="mt-8 p-4 bg-slate-700 text-center text-slate-200 rounded-lg shadow-lg">
-<p class="text-lg font-semibold" id="clinic-name-footer"></p>
-<p><i class="fas fa-phone"></i> اتصال: <span id="phone-link"></span></p>
-<p class="text-sm">الموقع: <a id="location-link" href="" target="_blank" class="text-blue-400 hover:text-blue-300 underline"><i class="fas fa-map-marker-alt"></i> عرض على الخريطة</a></p>
-<p><a id="whatsapp-link" href="" class="text-green-400 hover:text-green-300"><i class="fab fa-whatsapp"></i> واتساب</a></p>
-<p id="hours"></p>
+<footer class="text-center bg-slate-700 p-4 mt-auto">
+    <p class="mb-2"><strong id="clinic-name-footer" class="blue-gradient-text"></strong></p>
+    <p class="mb-1"><a id="location-link" href="" class="text-blue-400 hover:text-blue-300"><i class="fas fa-map-marker-alt"></i> الموقع</a></p>
+    <p class="mb-1"><i class="fas fa-phone"></i> الهاتف: <a id="phone-link" href="" class="text-blue-400 hover:text-blue-300"></a></p>
+    <p class="mb-1"><a id="whatsapp-link" href="" class="text-green-400 hover:text-green-300"><i class="fab fa-whatsapp"></i> واتساب</a></p>
+    <p id="hours" class="mb-1"></p>
+    <script type="text/javascript" src="https://www.free-counters.org/count/iih0"></script>
 </footer>
 
 <script>
-const clinicConfig = {
-    clinics: {
-        sunday: {
-            name: "عيادة د طارق علام ",
-            location: "https://maps.app.goo.gl/JcaiP6viBiuGuBN89",
-            workingHours:"12:00 الى 05:00",
-            contact: "+01030020376",
-            services: "clinic_services.html"
-        },
-        monday: {
-         name: "مركز نور الرحمن",
-        location: "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9",
-        workingHours: "06:00 الى 10:00",
-        contact: "01015929494 , 01273072101 , 01140447818",
-        services: "clinic_services.html"
-        },
-        tuesday: {
-            name: "مركز الحميدى",
-            location: "https://maps.app.goo.gl/vWcfGuHg89Ru5fNt7",
-            workingHours: "08:00 الى 10:00",
-            contact: "+20 100 362 1676",
-            services: "clinic_services.html"
-        },
-        wednesday: {
-            name: "عيادة د طارق علام ",
-            location: "https://maps.app.goo.gl/JcaiP6viBiuGuBN89",
-            workingHours:"12:00 الى 05:00",
-            contact: "+01030020376",
-            services: "clinic_services.html"
-        },
-        thursday: {
-            name: "مركز نور الرحمن",
-            location: "https://maps.app.goo.gl/WtHt5dxyuXCTPLrH9",
-            workingHours:"06:00 الى 10:00",
-            contact: "01015929494,01273072101,01140447818",
-            services: "clinic_services.html"
-        },
-        friday: {
-            closed: true,
-            message: "العيادة مغلقة يوم الجمعة"
-        },
-        saturday: {
-            name: "عيادة د طارق علام ",
-            location: "https://maps.app.goo.gl/vYQmjw22KckXQxfk9",
-            workingHours: "02:00 الى 10:00",
-            contact: "+20105 5262066",
-            services: "clinic_services.html"
-        }
-    },
-    portfolioLink: "my_portfolio/dental_portfolio.html"
-};
+var clinicConfig = {"logo":"resources/clinic logo.jpeg","location":"https://maps.app.goo.gl/mgizMpMHTamtNYWW6","phone":"01206737707","whatsapp":"https://wa.me/01206737707","name":"عيادة د طارق علام ","hours":"الأحد إلى الخميس: 2:00 إلى 10:00 مساءً"};
 
-// Populate footer using saturday clinic as default
-const defaultClinic = clinicConfig.clinics.saturday;
-document.getElementById('clinic-name-footer').textContent = defaultClinic.name;
-document.getElementById('location-link').href = defaultClinic.location;
-document.getElementById('phone-link').textContent = defaultClinic.contact;
-document.getElementById('phone-link').href = 'tel:' + defaultClinic.contact.replace(/\s+/g, '');
-const whatsappNumber = defaultClinic.contact.replace(/\s+/g, '').replace(/^\+?20/, '');
-document.getElementById('whatsapp-link').href = 'https://wa.me/' + whatsappNumber;
-document.getElementById('hours').textContent = 'ساعات العمل: ' + defaultClinic.workingHours;
+// Populate header
+document.getElementById('clinic-name').textContent = clinicConfig.name;
+
+// Populate footer
+document.getElementById('clinic-name-footer').textContent = clinicConfig.name;
+document.getElementById('location-link').href = clinicConfig.location;
+document.getElementById('phone-link').href = 'tel:' + clinicConfig.phone;
+document.getElementById('phone-link').textContent = clinicConfig.phone;
+document.getElementById('whatsapp-link').href = clinicConfig.whatsapp;
+document.getElementById('hours').textContent = clinicConfig.hours;
 </script>
 
 </body>

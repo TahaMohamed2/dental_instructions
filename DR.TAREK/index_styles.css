@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .blue-gradient-text {
-  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  background: linear-gradient(to right, #0A2A4E, #3087AD);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

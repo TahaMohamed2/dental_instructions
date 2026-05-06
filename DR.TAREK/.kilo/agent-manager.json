@@ -8,12 +8,32 @@
     "ses_205dbe6b5ffey5VLrJcdmVRyOq": {
       "worktreeId": null,
       "createdAt": "2026-05-05T21:56:03.118Z"
+    },
+    "ses_2054000ceffeyAZVMzTGty2MuK": {
+      "worktreeId": null,
+      "createdAt": "2026-05-06T00:46:20.239Z"
+    },
+    "ses_20538f62affeMJBkNC5e3bFxG3": {
+      "worktreeId": null,
+      "createdAt": "2026-05-06T00:54:01.482Z"
+    },
+    "ses_20537e618ffeuXf95mu30v2aND": {
+      "worktreeId": null,
+      "createdAt": "2026-05-06T00:55:11.180Z"
+    },
+    "ses_203558943ffeZ2S42OcEHtUVZ3": {
+      "worktreeId": null,
+      "createdAt": "2026-05-06T09:42:03.399Z"
     }
   },
   "tabOrder": {
     "local": [
       "ses_205dfe240ffeOmRnUhOYoCBxmS",
-      "ses_205dbe6b5ffey5VLrJcdmVRyOq"
+      "ses_205dbe6b5ffey5VLrJcdmVRyOq",
+      "ses_2054000ceffeyAZVMzTGty2MuK",
+      "ses_20538f62affeMJBkNC5e3bFxG3",
+      "ses_20537e618ffeuXf95mu30v2aND",
+      "ses_203558943ffeZ2S42OcEHtUVZ3"
     ]
   }
 }
